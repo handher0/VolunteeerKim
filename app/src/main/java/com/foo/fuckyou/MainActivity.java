@@ -21,4 +21,4 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }//fuck
-}
+}//시발 깃헙 병신같은년들 작작해
