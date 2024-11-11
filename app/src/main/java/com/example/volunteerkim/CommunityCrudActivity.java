@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.volunteerkim.databinding.ActivityCommunityCrudBinding;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +30,7 @@ public class CommunityCrudActivity extends AppCompatActivity {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         //Create
-        binding.btUpload.setOnClickListener(new View.OnClickListener() {
+        binding.btCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -46,14 +47,31 @@ public class CommunityCrudActivity extends AppCompatActivity {
                 db.collection("Boards").document("Review").collection("Posts").add(post)
                         .addOnSuccessListener(documentReference -> {
                             Log.d("Firestore", "게시글 추가 성공: " + documentReference.getId());
+                            post.put("PostId", documentReference.getId());
                         })
                         .addOnFailureListener(e -> {
                             Log.w("Firestore", "게시글 추가 실패", e);
                         });
 
             }
+        });
 
-
+        //Read
+        binding.btRead.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db.collection("Boards").document("Review").collection("Posts")
+                        .get()
+                        .addOnCompleteListener(task -> {
+                            if (task.isSuccessful()) {
+                                for (QueryDocumentSnapshot document : task.getResult()) {
+                                    Log.d("Firestore", document.getId() + " => " + document.getData());
+                                }
+                            } else {
+                                Log.w("Firestore", "게시글 가져오기 실패", task.getException());
+                            }
+                        });
+            }
         });
 
 
