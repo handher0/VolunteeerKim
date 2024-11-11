@@ -97,6 +97,25 @@ public class CommunityCrudActivity extends AppCompatActivity {
             }
         });
 
+        //Delete
+
+        binding.btDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                DocumentReference postRef = db.collection("Boards").document("Review")
+                        .collection("Posts").document("Bu1pzXm18N7J9QvlpByi");
+
+                postRef.delete()
+                        .addOnSuccessListener(aVoid -> {
+                            Log.d("Firestore", "게시글 삭제 성공");
+                        })
+                        .addOnFailureListener(e -> {
+                            Log.w("Firestore", "게시글 삭제 실패", e);
+                        });
+
+            }
+        });
 
     }
 }
