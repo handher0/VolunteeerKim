@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.volunteerkim.databinding.ActivityCommunityCrudBinding;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -33,8 +34,13 @@ public class CommunityCrudActivity extends AppCompatActivity {
         binding.btCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                DocumentReference newPostRef = db.collection("Boards")
+                        .document("Review")
+                        .collection("Posts")
+                        .document();
 
                 Map<Object, Object> post = new HashMap<>();
+
                 post.put("place", binding.etVplace.getText().toString());
                 post.put("startTime", Integer.parseInt(binding.etStartTime.getText().toString()));
                 post.put("endTime", Integer.parseInt(binding.etEndTime.getText().toString()));
@@ -42,17 +48,15 @@ public class CommunityCrudActivity extends AppCompatActivity {
                 post.put("stars", Integer.parseInt(binding.etStar.getText().toString()));
                 post.put("content", binding.etContent.getText().toString());
                 post.put("info", binding.etInfo.getText().toString());
+                post.put("postId", newPostRef.getId());
                 post.put("timestamp", FieldValue.serverTimestamp());
 
-                db.collection("Boards").document("Review").collection("Posts").add(post)
-                        .addOnSuccessListener(documentReference -> {
-                            Log.d("Firestore", "게시글 추가 성공: " + documentReference.getId());
-                            post.put("PostId", documentReference.getId());
+                newPostRef.set(post).addOnSuccessListener(documentReference -> {
+                            Log.d("Firestore", "게시글 추가 성공: " + newPostRef.getId());
                         })
                         .addOnFailureListener(e -> {
                             Log.w("Firestore", "게시글 추가 실패", e);
                         });
-
             }
         });
 
@@ -73,10 +77,6 @@ public class CommunityCrudActivity extends AppCompatActivity {
                         });
             }
         });
-
-
-
-
 
     }
 }
