@@ -59,7 +59,7 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onItemClick(View view, int position) {
                 String chatRoomId = chatRoomList.get(position);
-                Intent intent = new Intent(MainActivity2.this, ChatRoomActivity.class);
+                Intent intent = new Intent(MainActivity2.this, ChatRoomActivity111.class);
                 intent.putExtra("chatRoomId", chatRoomId);
                 startActivity(intent);
             }
@@ -116,7 +116,7 @@ public class MainActivity2 extends AppCompatActivity {
         userChatsRef.child(chatRoomId).setValue(true);
         FirebaseDatabase.getInstance().getReference("users").child(friendId).child("chats").child(chatRoomId).setValue(true);
 
-        Intent intent = new Intent(this, ChatRoomActivity.class);
+        Intent intent = new Intent(this, ChatRoomActivity111.class);
         intent.putExtra("chatRoomId", chatRoomId);
         startActivity(intent);
     }

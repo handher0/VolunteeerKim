@@ -2,14 +2,16 @@
   "project_info": {
     "project_number": "939503009350",
     "project_id": "volunteerkim-9ab83",
-    "storage_bucket": "volunteerkim-9ab83.firebasestorage.app"
+    "storage_bucket": "volunteerkim-9ab83.firebasestorage.app",
+    "firebase_url": "https://volunteerkim-9ab83-default-rtdb.asia-southeast1.firebasedatabase.app"
+
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:939503009350:android:62470ecd5ad0c0ccfb9447",
         "android_client_info": {
-          "package_name": "com.example.volunteerkim"
+          "package_name": "com.example.fuckyou"
         }
       },
       "oauth_client": [],

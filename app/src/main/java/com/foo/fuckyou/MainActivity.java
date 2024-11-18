@@ -2,22 +2,26 @@ package com.foo.fuckyou;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log; // 로그를 위한 import
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity"; // 로그 태그
+
     private RecyclerView recyclerViewChatList;
     private Button buttonCreateChatRoom;
     private ArrayList<String> chatRoomList;
@@ -44,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Firebase 참조 초기화
         userChatsRef = FirebaseDatabase.getInstance().getReference("users").child(currentUserId).child("chats");
+        Log.d(TAG, "Firebase Database Reference: " + userChatsRef.toString());
 
         // 기존 채팅방 불러오기
         loadChatRooms();
@@ -67,21 +72,37 @@ public class MainActivity extends AppCompatActivity {
                     chatRoomList.add(chatRoomId);
                 }
                 chatListAdapter.notifyDataSetChanged();
+                Log.d(TAG, "Chat rooms loaded: " + chatRoomList);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                // 오류 처리
+                Log.e(TAG, "Failed to load chat rooms", error.toException());
             }
         });
     }
 
     private void createChatRoom(String friendId) {
         String chatRoomId = ChatHelper.generateChatRoomId(currentUserId, friendId);
-        userChatsRef.child(chatRoomId).setValue(true); // 현재 사용자 채팅방 추가
-        FirebaseDatabase.getInstance().getReference("users").child(friendId).child("chats").child(chatRoomId).setValue(true); // 친구의 채팅방 추가
+        userChatsRef.child(chatRoomId).setValue(true)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Log.d(TAG, "Chat room created for current user: " + chatRoomId);
+                    } else {
+                        Log.e(TAG, "Failed to create chat room for current user", task.getException());
+                    }
+                });
 
-        Intent intent = new Intent(this, ChatRoomActivity.class);
+        FirebaseDatabase.getInstance().getReference("users").child(friendId).child("chats").child(chatRoomId).setValue(true)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Log.d(TAG, "Chat room created for friend: " + friendId);
+                    } else {
+                        Log.e(TAG, "Failed to create chat room for friend", task.getException());
+                    }
+                });
+
+        Intent intent = new Intent(this, ChatRoomActivity.class); // ChatRoomActivity로 수정
         intent.putExtra("chatRoomId", chatRoomId);
         startActivity(intent);
     }

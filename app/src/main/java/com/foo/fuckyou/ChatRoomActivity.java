@@ -1,17 +1,21 @@
 package com.foo.fuckyou;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,22 +28,18 @@ public class ChatRoomActivity extends AppCompatActivity {
     private Button buttonSend;
 
     private DatabaseReference chatRoomRef;
-    private String currentUserId = "test_user_1"; // 테스트용 사용자 ID
+    private String chatRoomId;
+    private String currentUserId = "test_user_id"; // 테스트용 사용자 ID
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_room);
 
-        String chatRoomId = getIntent().getStringExtra("chatRoomId");
-
-        if (chatRoomId == null) {
-            finish();
-            return;
-        }
-
-        // Firebase Database 경로 설정
+        chatRoomId = getIntent().getStringExtra("chatRoomId");
         chatRoomRef = FirebaseDatabase.getInstance().getReference("chatRooms").child(chatRoomId).child("messages");
+
+        Log.d("DatabaseReference", "Path to chat room messages: " + chatRoomRef.toString());
 
         recyclerViewMessages = findViewById(R.id.recyclerViewMessages);
         recyclerViewMessages.setLayoutManager(new LinearLayoutManager(this));
@@ -51,10 +51,7 @@ public class ChatRoomActivity extends AppCompatActivity {
         editTextMessage = findViewById(R.id.editTextMessage);
         buttonSend = findViewById(R.id.buttonSend);
 
-        // 메시지 전송 버튼 클릭 이벤트
         buttonSend.setOnClickListener(v -> sendMessage());
-
-        // Firebase에서 메시지 실시간 수신
         loadMessages();
     }
 
@@ -94,7 +91,6 @@ public class ChatRoomActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                // 오류 처리
             }
         });
     }

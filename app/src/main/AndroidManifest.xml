@@ -1,6 +1,7 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.foo.fuckyou">
 
-    <!-- 인터넷 권한, Firebase Database 접근을 위해 필요 -->
+    <!-- 인터넷 권한 -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -11,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fuckyou">
 
-        <!-- 메인 액티비티 설정 -->
+        <!-- MainActivity -->
         <activity android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -20,11 +21,11 @@
             </intent-filter>
         </activity>
 
-        <!-- ChatRoomActivity 등록 -->
+        <!-- ChatRoomActivity -->
         <activity android:name=".ChatRoomActivity"
             android:exported="true" />
 
-        <!-- Firebase 메시지 및 알림 설정 -->
+        <!-- Firebase 메타데이터 -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_launcher_foreground" />
