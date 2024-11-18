@@ -10,12 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:src=""
-            android:layout_width="match_parent"
-            android:scaleType="fitXY"
-            android:layout_height="500dp"/>
-
 
         <ImageView
             android:layout_width="match_parent"
