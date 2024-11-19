@@ -113,7 +113,6 @@ public class CommunityCrudActivity extends AppCompatActivity {
                         .addOnFailureListener(e -> {
                             Log.w("Firestore", "게시글 삭제 실패", e);
                         });
-
             }
         });
 
