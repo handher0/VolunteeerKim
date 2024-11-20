@@ -82,23 +82,43 @@
                 android:padding="12dp" />
 
             <!-- 봉사지 정보 입력 필드들 -->
-            <EditText
-                android:id="@+id/et_category"
+            <Spinner
+                android:id="@+id/spinner_category"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:hint="상담"
-                android:padding="12dp" />
+                android:padding="12dp"
+                android:background="@drawable/bg_spinner_category" />
 
-            <EditText
-                android:id="@+id/et_address"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:hint="주소"
-                android:padding="12dp" />
 
             <!-- 봉사 시간 -->
+
+            <!-- 봉사 시간 입력 부분 다음에 추가 -->
+
+            <!-- 리뷰 내용 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="리뷰 내용"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_content"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_edit_content"
+                android:gravity="top"
+                android:hint="봉사 활동에 대한 리뷰를 작성해주세요"
+                android:padding="12dp"
+                android:textSize="14sp"
+                android:inputType="textMultiLine" />
+
+            <!-- 인증사진 첨부 부분 -->
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
