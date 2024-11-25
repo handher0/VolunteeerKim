@@ -1,4 +1,4 @@
-package com.foo.fuckyou;
+package com.example.volunteerkim;
 
 import android.content.Context;
 import android.view.GestureDetector;

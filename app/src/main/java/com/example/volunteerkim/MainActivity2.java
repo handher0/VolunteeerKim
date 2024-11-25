@@ -1,16 +1,20 @@
-package com.foo.fuckyou;
+package com.example.volunteerkim;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log; // 로그를 위한 import
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.foo.fuckyou.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,24 +23,19 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity"; // 로그 태그
-
+public class MainActivity2 extends AppCompatActivity {
     private RecyclerView recyclerViewChatList;
     private Button buttonCreateChatRoom;
     private ArrayList<String> chatRoomList;
     private ChatListAdapter chatListAdapter;
 
-    // 테스트용 사용자 ID
-    private String currentUserId = "test_user_1";
-    private String friendId = "test_user_2";
-
     private DatabaseReference userChatsRef;
+    private String currentUserId = "test_user_id"; // 테스트용 사용자 ID
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.chat_activity_main);
 
         recyclerViewChatList = findViewById(R.id.recyclerViewChatList);
         recyclerViewChatList.setLayoutManager(new LinearLayoutManager(this));
@@ -46,20 +45,30 @@ public class MainActivity extends AppCompatActivity {
         chatListAdapter = new ChatListAdapter(chatRoomList);
         recyclerViewChatList.setAdapter(chatListAdapter);
 
-        // Firebase 참조 초기화
         userChatsRef = FirebaseDatabase.getInstance().getReference("users").child(currentUserId).child("chats");
-        Log.d(TAG, "Firebase Database Reference: " + userChatsRef.toString());
 
-        // 기존 채팅방 불러오기
         loadChatRooms();
 
-        // 채팅방 생성 버튼 클릭 이벤트
         buttonCreateChatRoom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createChatRoom(friendId);  // friendId는 고정된 테스트용 값입니다.
+                openCreateChatRoomDialog();
             }
         });
+
+        recyclerViewChatList.addOnItemTouchListener(new RecyclerItemClickListener(this, recyclerViewChatList, new RecyclerItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                String chatRoomId = chatRoomList.get(position);
+                Intent intent = new Intent(MainActivity2.this, ChatRoomActivity111.class);
+                intent.putExtra("chatRoomId", chatRoomId);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onLongItemClick(View view, int position) {
+            }
+        }));
     }
 
     private void loadChatRooms() {
@@ -72,37 +81,43 @@ public class MainActivity extends AppCompatActivity {
                     chatRoomList.add(chatRoomId);
                 }
                 chatListAdapter.notifyDataSetChanged();
-                Log.d(TAG, "Chat rooms loaded: " + chatRoomList);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Log.e(TAG, "Failed to load chat rooms", error.toException());
+                Toast.makeText(MainActivity2.this, "Failed to load chat rooms.", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
+    private void openCreateChatRoomDialog() {
+        EditText editTextFriendId = new EditText(this);
+        editTextFriendId.setHint("Enter Friend's ID");
+
+        new AlertDialog.Builder(this)
+                .setTitle("Create Chat Room")
+                .setView(editTextFriendId)
+                .setPositiveButton("Create", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String friendId = editTextFriendId.getText().toString().trim();
+                        if (!friendId.isEmpty()) {
+                            createChatRoom(friendId);
+                        } else {
+                            Toast.makeText(MainActivity2.this, "Friend's ID cannot be empty", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                })
+                .setNegativeButton("Cancel", null)
+                .show();
+    }
+
     private void createChatRoom(String friendId) {
         String chatRoomId = ChatHelper.generateChatRoomId(currentUserId, friendId);
-        userChatsRef.child(chatRoomId).setValue(true)
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        Log.d(TAG, "Chat room created for current user: " + chatRoomId);
-                    } else {
-                        Log.e(TAG, "Failed to create chat room for current user", task.getException());
-                    }
-                });
+        userChatsRef.child(chatRoomId).setValue(true);
+        FirebaseDatabase.getInstance().getReference("users").child(friendId).child("chats").child(chatRoomId).setValue(true);
 
-        FirebaseDatabase.getInstance().getReference("users").child(friendId).child("chats").child(chatRoomId).setValue(true)
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        Log.d(TAG, "Chat room created for friend: " + friendId);
-                    } else {
-                        Log.e(TAG, "Failed to create chat room for friend", task.getException());
-                    }
-                });
-
-        Intent intent = new Intent(this, ChatRoomActivity.class); // ChatRoomActivity로 수정
+        Intent intent = new Intent(this, ChatRoomActivity111.class);
         intent.putExtra("chatRoomId", chatRoomId);
         startActivity(intent);
     }

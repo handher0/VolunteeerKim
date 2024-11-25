@@ -1,4 +1,4 @@
-package com.foo.fuckyou;
+package volunteerkim.foo.fuckyou;
 
 import org.junit.Test;
 

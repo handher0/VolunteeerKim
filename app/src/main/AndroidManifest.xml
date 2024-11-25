@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.foo.fuckyou">
+    package="com.example.volunteerkim">
+
 
     <!-- 인터넷 권한 -->
     <uses-permission android:name="android.permission.INTERNET" />

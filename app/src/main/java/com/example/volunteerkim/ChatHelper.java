@@ -1,4 +1,4 @@
-package com.foo.fuckyou;
+package com.example.volunteerkim;
 
 public class ChatHelper {
     public static String generateChatRoomId(String userId1, String userId2) {

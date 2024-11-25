@@ -1,4 +1,4 @@
-package com.foo.fuckyou;
+package com.example.volunteerkim;
 
 public class Message {
     private String text;
