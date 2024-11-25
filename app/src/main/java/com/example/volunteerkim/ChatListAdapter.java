@@ -7,7 +7,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.foo.fuckyou.R;
+import com.example.volunteerkim.R;
 
 import java.util.ArrayList;
 
