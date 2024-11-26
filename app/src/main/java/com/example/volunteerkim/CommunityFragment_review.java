@@ -71,8 +71,15 @@ public class CommunityFragment_review extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         binding.btnAdd.setOnClickListener(v -> {
-            getActivity().getSupportFragmentManager()
+            CommunityFragment_review_post reviewPostFragment = new CommunityFragment_review_post();
+            requireActivity().getSupportFragmentManager()
                     .beginTransaction()
+                    .setCustomAnimations(
+                            R.anim.slide_in_right,  // 새 화면 들어올 때
+                            R.anim.slide_out_left,  // 현재 화면 나갈 때
+                            R.anim.slide_in_left,   // 뒤로가기 시 들어올 때
+                            R.anim.slide_out_right  // 뒤로가기 시 나갈 때
+                    )
                     .replace(R.id.fragment_container, new CommunityFragment_review_post())
                     .addToBackStack(null)
                     .commit();
