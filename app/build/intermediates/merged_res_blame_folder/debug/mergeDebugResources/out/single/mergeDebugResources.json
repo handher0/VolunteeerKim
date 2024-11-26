@@ -20,10 +20,6 @@
         "source": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-main-42:/layout/activity_signup.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-40:/layout_activity_intro.xml.flat",
-        "source": "com.example.volunteerkim.app-main-42:/layout/activity_intro.xml"
-    },
-    {
         "merged": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-40:/xml_backup_rules.xml.flat",
         "source": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-main-42:/xml/backup_rules.xml"
     },
@@ -38,6 +34,10 @@
     {
         "merged": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-40:/mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-main-42:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_activity_login.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/activity_login.xml"
     },
     {
         "merged": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-40:/mipmap-hdpi_ic_launcher_round.webp.flat",
