@@ -21,6 +21,6 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        //테스트
+        //시발깃
     }
 }
