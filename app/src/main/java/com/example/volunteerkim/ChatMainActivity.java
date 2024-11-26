@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class ChatMainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity"; // 로그 태그
 
     private RecyclerView recyclerViewChatList;

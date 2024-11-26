@@ -2,6 +2,8 @@ R_DEF: Internal format may change without notice
 local
 color black
 color white
+drawable bg_message_received
+drawable bg_message_sent
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable kimbongsa
@@ -10,6 +12,9 @@ id btn_register
 id btn_register2
 id btn_register_button
 id btn_signup
+id buttonCreateChatRoom
+id buttonSend
+id editTextMessage
 id et_login_id
 id et_login_pw
 id et_register_id
@@ -19,15 +24,24 @@ id joinBtn
 id loginBtn
 id login_chk
 id main
+id recyclerViewChatList
+id recyclerViewMessages
 id textView
 id textView3
+id textViewChatRoomId
+id textViewMessage
+id textViewTime
 id tv_register_id
 id tv_register_nickname
 id tv_register_pw
-layout activity_intro
-layout activity_login
 layout activity_main
 layout activity_signup
+layout chat_activity_main
+layout chat_activity_room
+layout chat_item_list
+layout chat_item_message
+layout login_activity
+layout login_activity_intro
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name

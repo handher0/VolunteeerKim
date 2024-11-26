@@ -3010,6 +3010,8 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable bg_message_received
+drawable bg_message_sent
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3254,7 +3256,9 @@ id btn_register
 id btn_register2
 id btn_register_button
 id btn_signup
+id buttonCreateChatRoom
 id buttonPanel
+id buttonSend
 id cache_measures
 id callMeasure
 id cancel_button
@@ -3328,6 +3332,7 @@ id easeInOut
 id easeOut
 id east
 id edge
+id editTextMessage
 id edit_query
 id edit_text_id
 id elastic
@@ -3527,6 +3532,8 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id recyclerViewChatList
+id recyclerViewMessages
 id report_drawn
 id reverseSawtooth
 id right
@@ -3619,6 +3626,9 @@ id textStart
 id textTop
 id textView
 id textView3
+id textViewChatRoomId
+id textViewMessage
+id textViewTime
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3789,12 +3799,14 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_intro
-layout activity_login
 layout activity_main
 layout activity_signup
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
+layout chat_activity_main
+layout chat_activity_room
+layout chat_item_list
+layout chat_item_message
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3813,6 +3825,8 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout login_activity
+layout login_activity_intro
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
