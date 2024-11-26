@@ -31,20 +31,10 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.VolunteerKim" >
-
-        <!--
+        <activity android:name="com.example.volunteerkim.LoginActivity" />
+        <activity android:name="com.example.volunteerkim.SignupActivity" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        -->
-        <activity
-            android:name="com.example.volunteerkim.SignupActivity"
+            android:name="com.example.volunteerkim.IntroActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,7 +42,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.volunteerkim.LoginActivity" />
         <activity
             android:name="com.google.firebase.auth.internal.GenericIdpActivity"
             android:excludeFromRecents="true"
