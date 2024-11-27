@@ -12,7 +12,7 @@ public class IntroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intro);
+        setContentView(R.layout.login_activity_intro);
 
         findViewById(R.id.loginBtn).setOnClickListener(v -> navigateTo(LoginActivity.class));
         findViewById(R.id.joinBtn).setOnClickListener(v -> navigateTo(SignupActivity.class));

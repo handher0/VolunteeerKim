@@ -38,6 +38,10 @@ android {
 }
 
 dependencies {
+    implementation(platform("com.google.firebase:firebase-bom:33.6.0")) // 최신 BOM 버전
+    implementation ("com.google.firebase:firebase-auth") // Firebase Authentication 추가
+    implementation ("com.google.firebase:firebase-database") // Realtime Database 추가 (필요하면)
+    implementation ("com.google.firebase:firebase-firestore") // Firestore 추가 (필요하면)
 
     implementation(libs.appcompat)
     implementation(libs.material)
