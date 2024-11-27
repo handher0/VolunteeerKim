@@ -67,7 +67,6 @@ id et_endTime
 id et_id
 id et_info
 id et_name
-id et_nickname
 id et_password
 id et_password_confirm
 id et_photo
@@ -103,10 +102,8 @@ id tv_name
 id tv_title
 layout activity_community_crud
 layout activity_intro
-layout activity_login
 layout activity_main
 layout activity_post_list
-layout activity_signup
 layout chat_activity_main
 layout chat_activity_room
 layout chat_item_list
@@ -118,7 +115,8 @@ layout fragment_home
 layout fragment_my_page
 layout item_post
 layout login_activity
-layout login_activity_intro
+layout login_intro
+layout login_signup
 menu bottom_navigation_menu
 mipmap ic_launcher
 mipmap ic_launcher_round

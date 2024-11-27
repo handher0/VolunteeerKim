@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.volunteerkim.app-mergeDebugResources-38:/values-en-rXC/values-en-rXC.xml",
+            "outputFile": "com.example.volunteerkim.app-mergeDebugResources-41:/values-en-rXC/values-en-rXC.xml",
             "map": [
                 {
-                    "source": "/Users/dongoh-kim/.gradle/caches/transforms-4/26e40758f215a288c4e54a922cba4608/transformed/appcompat-1.7.0/res/values-en-rXC/values-en-rXC.xml",
+                    "source": "/Users/handher0/.gradle/caches/transforms-4/eb94fd35e7265296d10302e1cdec2ec6/transformed/appcompat-1.7.0/res/values-en-rXC/values-en-rXC.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/dongoh-kim/.gradle/caches/transforms-4/40238803f8effc2c269ea37e1c19e483/transformed/core-1.13.0/res/values-en-rXC/values-en-rXC.xml",
+                    "source": "/Users/handher0/.gradle/caches/transforms-4/632b1ac7142b9f5fd246c189d5918c17/transformed/core-1.13.0/res/values-en-rXC/values-en-rXC.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/Users/dongoh-kim/.gradle/caches/transforms-4/c165f8d986a13d0d40e4d6ae6f9f379f/transformed/credentials-1.2.0-rc01/res/values-en-rXC/values-en-rXC.xml",
+                    "source": "/Users/handher0/.gradle/caches/transforms-4/4c257dfbab355244c6ffe48c2f655b8e/transformed/credentials-1.2.0-rc01/res/values-en-rXC/values-en-rXC.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -55,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "/Users/dongoh-kim/.gradle/caches/transforms-4/81cebd051bfd141276418ba3e0817323/transformed/browser-1.4.0/res/values-en-rXC/values-en-rXC.xml",
+                    "source": "/Users/handher0/.gradle/caches/transforms-4/6af30e24496bbd721e171af8012a883a/transformed/browser-1.4.0/res/values-en-rXC/values-en-rXC.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

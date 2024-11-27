@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.volunteerkim.app-mergeDebugResources-38:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.example.volunteerkim.app-mergeDebugResources-41:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "/Users/dongoh-kim/.gradle/caches/transforms-4/26e40758f215a288c4e54a922cba4608/transformed/appcompat-1.7.0/res/values-watch-v20/values-watch-v20.xml",
+                    "source": "/Users/handher0/.gradle/caches/transforms-4/eb94fd35e7265296d10302e1cdec2ec6/transformed/appcompat-1.7.0/res/values-watch-v20/values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/dongoh-kim/.gradle/caches/transforms-4/cb61642a29853545e441c4c2f4132e5e/transformed/play-services-auth-20.7.0/res/values-watch-v20/values.xml",
+                    "source": "/Users/handher0/.gradle/caches/transforms-4/d0796d12310eed14510c0ba017648c92/transformed/play-services-auth-20.7.0/res/values-watch-v20/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",
                         "startColumns": "0,0,0,0,0,0,0,0",

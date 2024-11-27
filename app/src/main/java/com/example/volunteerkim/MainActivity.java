@@ -47,8 +47,6 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-<<<<<<< HEAD
-=======
 
         bottomNavigationView.setOnItemReselectedListener(new NavigationBarView.OnItemReselectedListener() {
             @Override
@@ -56,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
->>>>>>> origin/feature/kj
+
     }
 
     private void transferTo(Fragment fragment){
