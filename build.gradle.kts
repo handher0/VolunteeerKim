@@ -2,9 +2,6 @@
 plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.google.gms.google.services) apply false
-<<<<<<< HEAD
-}
-=======
 }
 
 buildscript {
@@ -13,4 +10,3 @@ buildscript {
         mavenCentral()
     }
 }
->>>>>>> origin/feature/kj
