@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- 기본 테마 색상 -->
+    <color name="colorPrimary">#4CAF50</color>  <!-- 초록색 계열 메인 색상 -->
+    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="colorAccent">#8BC34A</color>
+
+    <!-- 기본 색상 -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#757575</color>
+    <color name="lightGray">#EEEEEE</color>
+
+    <!-- 카테고리 버튼 색상 -->
+    <color name="selectedGreen">#4CAF50</color>  <!-- 선택된 '봉사 리뷰' 버튼 색상 -->
+    <color name="unselectedGray">#757575</color> <!-- 선택되지 않은 버튼 텍스트 색상 -->
+
+    <!-- 별점 색상 -->
+    <color name="starYellow">#FFC107</color>    <!-- 별점 색상 -->
+
+    <!-- 텍스트 색상 -->
+    <color name="textPrimary">#212121</color>   <!-- 주요 텍스트 -->
+    <color name="textSecondary">#757575</color> <!-- 부가 텍스트 -->
+    <color name="linkColor">#2196F3</color>     <!-- '상세보기/리뷰보기' 텍스트 색상 -->
+
+    <!-- 구분선 색상 -->
+    <color name="dividerColor">#EEEEEE</color>
 </resources>
