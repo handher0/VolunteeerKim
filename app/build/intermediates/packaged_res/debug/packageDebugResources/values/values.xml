@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="colorAccent">#8BC34A</color>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="dividerColor">#EEEEEE</color>
+    <color name="gray">#757575</color>
+    <color name="lightGray">#EEEEEE</color>
+    <color name="linkColor">#2196F3</color>
+    <color name="selectedGreen">#4CAF50</color>
+    <color name="starYellow">#FFC107</color>
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#757575</color>
+    <color name="unselectedGray">#757575</color>
+    <color name="white">#FFFFFF</color>
     <string name="app_name">VolunteerKim</string>
     <string name="gcm_defaultSenderId" translatable="false">939503009350</string>
     <string name="google_api_key" translatable="false">AIzaSyCi7YoL2mlTaCMff9nE1i0uQ2KzmM4ZbU4</string>
     <string name="google_app_id" translatable="false">1:939503009350:android:62470ecd5ad0c0ccfb9447</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCi7YoL2mlTaCMff9nE1i0uQ2KzmM4ZbU4</string>
     <string name="google_storage_bucket" translatable="false">volunteerkim-9ab83.firebasestorage.app</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="project_id" translatable="false">volunteerkim-9ab83</string>
     <style name="Base.Theme.VolunteerKim" parent="Theme.Material3.DayNight.NoActionBar">
         
