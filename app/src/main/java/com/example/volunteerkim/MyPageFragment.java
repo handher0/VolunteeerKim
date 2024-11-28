@@ -2,11 +2,17 @@ package com.example.volunteerkim;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.naver.maps.map.MapFragment;
+import com.naver.maps.map.NaverMap;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,4 +67,23 @@ public class MyPageFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_my_page, container, false);
     }
+
+//    private NaverMap naverMap;
+//
+//    @Override
+//    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+//        super.onViewCreated(view, savedInstanceState);
+//
+//        FragmentManager fm = getChildFragmentManager();
+//        MapFragment mapFragment = (MapFragment)fm.findFragmentById(R.id.map_fragment);
+//        if (mapFragment == null) {
+//            mapFragment = MapFragment.newInstance();
+//            fm.beginTransaction().add(R.id.map_fragment, mapFragment).commit();
+//        }
+//
+//        mapFragment.getMapAsync(map -> {
+//            naverMap = map;
+//            // 여기서 지도 설정 가능
+//        });
+//    }
 }

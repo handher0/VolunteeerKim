@@ -10,6 +10,7 @@ android {
     // Android 4.0 ~
     buildFeatures{
         viewBinding = true
+        buildConfig = true
     }
 
     defaultConfig {
@@ -20,6 +21,12 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+
+        manifestPlaceholders["CLIENT_ID"] = "cbxzt68nzc"
+
+
+
     }
 
     buildTypes {
@@ -55,6 +62,9 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore")
 
     implementation("com.naver.maps:map-sdk:3.20.0")
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("com.google.code.gson:gson:2.8.9")
 
 
 }

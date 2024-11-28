@@ -58,10 +58,18 @@
                 android:id="@+id/et_search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="봉사지 검색"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:maxLines="1"
+                android:singleLine="true"/>
+
+            <TextView
+                android:id="@+id/et_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:drawableEnd="@drawable/baseline_search_24"
-                android:hint="봉사지 검색해서 찾고 싶은 곳 찾기?"
-                android:padding="12dp" />
+                android:textSize="14sp" />
 
             <!-- 봉사지 정보 직접 추가하기 -->
             <TextView
