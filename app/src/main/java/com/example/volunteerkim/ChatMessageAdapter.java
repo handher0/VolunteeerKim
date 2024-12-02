@@ -4,45 +4,65 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
-public class ChatMessageAdapter extends RecyclerView.Adapter<ChatMessageAdapter.ViewHolder> {
-    private ArrayList<ChatMessage> messages;
-    private String currentUserId;
+public class ChatMessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    private List<ChatMessage> messages; // List로 선언
+    private String currentUserId; // Non-static field
 
-    public ChatMessageAdapter(ArrayList<ChatMessage> messages, String currentUserId) {
+    public ChatMessageAdapter(List<ChatMessage> messages, String currentUserId) {
         this.messages = messages;
-        this.currentUserId = currentUserId;
+        this.currentUserId = currentUserId; // 초기화
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        // 메시지의 뷰 타입 결정 (기본 메시지)
+        return 1;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.chat_item_message, parent, false);
-        return new ViewHolder(view);
+        return new MessageViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         ChatMessage message = messages.get(position);
 
-        if (message.getSenderId().equals(currentUserId)) {
-            holder.textViewMessage.setBackgroundResource(R.drawable.bg_message_sent);
-            holder.textViewMessage.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_END);
-        } else {
-            holder.textViewMessage.setBackgroundResource(R.drawable.bg_message_received);
-            holder.textViewMessage.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_START);
-        }
+        if (holder instanceof MessageViewHolder) {
+            // 메시지 ViewHolder 처리
+            MessageViewHolder messageHolder = (MessageViewHolder) holder;
 
-        holder.textViewMessage.setText(message.getText());
-        String timeText = new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date(message.getTimestamp()));
-        holder.textViewTime.setText(timeText);
+            // 초기화: 모든 말풍선 숨김
+            messageHolder.leftMessageContainer.setVisibility(View.GONE);
+            messageHolder.rightMessageContainer.setVisibility(View.GONE);
+
+            // 현재 사용자와 메시지 송신자를 비교하여 말풍선 위치 설정
+            if (message.getSenderId().equals(currentUserId)) {
+                // 현재 사용자의 메시지 -> 오른쪽
+                messageHolder.rightMessageContainer.setVisibility(View.VISIBLE);
+                messageHolder.textViewRightMessage.setText(message.getText());
+                String timeText = new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date(message.getTimestamp()));
+                messageHolder.textViewRightTime.setText(timeText);
+            } else {
+                // 상대방의 메시지 -> 왼쪽
+                messageHolder.leftMessageContainer.setVisibility(View.VISIBLE);
+                messageHolder.textViewLeftMessage.setText(message.getText());
+                String timeText = new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date(message.getTimestamp()));
+                messageHolder.textViewLeftTime.setText(timeText);
+            }
+        }
     }
 
     @Override
@@ -50,13 +70,20 @@ public class ChatMessageAdapter extends RecyclerView.Adapter<ChatMessageAdapter.
         return messages.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView textViewMessage, textViewTime;
+    // ViewHolder 클래스
+    public static class MessageViewHolder extends RecyclerView.ViewHolder {
+        View leftMessageContainer, rightMessageContainer;
+        TextView textViewLeftMessage, textViewLeftTime;
+        TextView textViewRightMessage, textViewRightTime;
 
-        public ViewHolder(@NonNull View itemView) {
+        public MessageViewHolder(@NonNull View itemView) {
             super(itemView);
-            textViewMessage = itemView.findViewById(R.id.textViewMessage);
-            textViewTime = itemView.findViewById(R.id.textViewTime);
+            leftMessageContainer = itemView.findViewById(R.id.leftMessageContainer);
+            rightMessageContainer = itemView.findViewById(R.id.rightMessageContainer);
+            textViewLeftMessage = itemView.findViewById(R.id.textViewLeftMessage);
+            textViewLeftTime = itemView.findViewById(R.id.textViewLeftTime);
+            textViewRightMessage = itemView.findViewById(R.id.textViewRightMessage);
+            textViewRightTime = itemView.findViewById(R.id.textViewRightTime);
         }
     }
 }

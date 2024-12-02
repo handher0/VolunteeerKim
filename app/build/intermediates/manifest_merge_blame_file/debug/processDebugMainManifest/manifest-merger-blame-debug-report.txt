@@ -9,354 +9,429 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:25:5-67
-11-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:25:22-64
-12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:26:5-79
-12-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:26:22-76
-13    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-13-->[com.google.android.recaptcha:recaptcha:18.5.1] /Users/dongoh-kim/.gradle/caches/transforms-4/36af962aca68f6df41dc1251cd3ba05b/transformed/recaptcha-18.5.1/AndroidManifest.xml:9:5-98
-13-->[com.google.android.recaptcha:recaptcha:18.5.1] /Users/dongoh-kim/.gradle/caches/transforms-4/36af962aca68f6df41dc1251cd3ba05b/transformed/recaptcha-18.5.1/AndroidManifest.xml:9:22-95
-14
-15    <permission
-15-->[androidx.core:core:1.13.0] /Users/dongoh-kim/.gradle/caches/transforms-4/40238803f8effc2c269ea37e1c19e483/transformed/core-1.13.0/AndroidManifest.xml:22:5-24:47
-16        android:name="com.example.volunteerkim.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-16-->[androidx.core:core:1.13.0] /Users/dongoh-kim/.gradle/caches/transforms-4/40238803f8effc2c269ea37e1c19e483/transformed/core-1.13.0/AndroidManifest.xml:23:9-81
-17        android:protectionLevel="signature" />
-17-->[androidx.core:core:1.13.0] /Users/dongoh-kim/.gradle/caches/transforms-4/40238803f8effc2c269ea37e1c19e483/transformed/core-1.13.0/AndroidManifest.xml:24:9-44
-18
-19    <uses-permission android:name="com.example.volunteerkim.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-19-->[androidx.core:core:1.13.0] /Users/dongoh-kim/.gradle/caches/transforms-4/40238803f8effc2c269ea37e1c19e483/transformed/core-1.13.0/AndroidManifest.xml:26:5-97
-19-->[androidx.core:core:1.13.0] /Users/dongoh-kim/.gradle/caches/transforms-4/40238803f8effc2c269ea37e1c19e483/transformed/core-1.13.0/AndroidManifest.xml:26:22-94
-20
-21    <application
-21-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:5:5-25:19
-22        android:allowBackup="true"
-22-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:6:9-35
-23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-23-->[androidx.core:core:1.13.0] /Users/dongoh-kim/.gradle/caches/transforms-4/40238803f8effc2c269ea37e1c19e483/transformed/core-1.13.0/AndroidManifest.xml:28:18-86
-24        android:dataExtractionRules="@xml/data_extraction_rules"
-24-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:7:9-65
-25        android:debuggable="true"
-26        android:extractNativeLibs="false"
-27        android:fullBackupContent="@xml/backup_rules"
-27-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:8:9-54
-28        android:icon="@mipmap/ic_launcher"
-28-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:9:9-43
-29        android:label="@string/app_name"
-29-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:10:9-41
-30        android:roundIcon="@mipmap/ic_launcher_round"
-30-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:11:9-54
-31        android:supportsRtl="true"
-31-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:12:9-35
-32        android:testOnly="true"
-33        android:theme="@style/Theme.VolunteerKim" >
-33-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:13:9-50
-34        <activity android:name="com.example.volunteerkim.LoginActivity" />
-34-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:16:9-51
-34-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:16:19-48
-35        <activity android:name="com.example.volunteerkim.SignupActivity" />
-35-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:17:9-52
-35-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:17:19-49
-36        <activity
-36-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:18:9-24:20
-37            android:name="com.example.volunteerkim.IntroActivity"
-37-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:18:19-48
-38            android:exported="true" >
-38-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:19:13-36
-39            <intent-filter>
-39-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:20:13-23:29
-40                <action android:name="android.intent.action.MAIN" />
-40-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:21:17-69
-40-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:21:25-66
-41
-42                <category android:name="android.intent.category.LAUNCHER" />
-42-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:22:17-77
-42-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:22:27-74
-43            </intent-filter>
-44        </activity>
-45        <activity
-45-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:29:9-46:20
-46            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-46-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:30:13-80
-47            android:excludeFromRecents="true"
-47-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:31:13-46
-48            android:exported="true"
-48-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:32:13-36
-49            android:launchMode="singleTask"
-49-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:33:13-44
-50            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-50-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:34:13-72
-51            <intent-filter>
-51-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:35:13-45:29
-52                <action android:name="android.intent.action.VIEW" />
-52-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:17-69
-52-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:25-66
-53
-54                <category android:name="android.intent.category.DEFAULT" />
-54-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:17-76
-54-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:27-73
-55                <category android:name="android.intent.category.BROWSABLE" />
-55-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:17-78
-55-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:27-75
-56
-57                <data
-57-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:41:17-44:51
-58                    android:host="firebase.auth"
-58-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:42:21-49
-59                    android:path="/"
-59-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:43:21-37
-60                    android:scheme="genericidp" />
-60-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:44:21-48
-61            </intent-filter>
-62        </activity>
-63        <activity
-63-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:47:9-64:20
-64            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-64-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:48:13-79
-65            android:excludeFromRecents="true"
-65-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:49:13-46
-66            android:exported="true"
-66-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:50:13-36
-67            android:launchMode="singleTask"
-67-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:51:13-44
-68            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-68-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:52:13-72
-69            <intent-filter>
-69-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:53:13-63:29
-70                <action android:name="android.intent.action.VIEW" />
-70-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:17-69
-70-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:25-66
-71
-72                <category android:name="android.intent.category.DEFAULT" />
-72-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:17-76
-72-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:27-73
-73                <category android:name="android.intent.category.BROWSABLE" />
-73-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:17-78
-73-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:27-75
-74
-75                <data
-75-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:41:17-44:51
-76                    android:host="firebase.auth"
-76-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:42:21-49
-77                    android:path="/"
-77-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:43:21-37
-78                    android:scheme="recaptcha" />
-78-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:44:21-48
-79            </intent-filter>
-80        </activity>
-81
-82        <service
-82-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:66:9-72:19
-83            android:name="com.google.firebase.components.ComponentDiscoveryService"
-83-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:67:13-84
-84            android:directBootAware="true"
-84-->[com.google.firebase:firebase-common:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/6a852318b71e904f1f19b07194897366/transformed/firebase-common-21.0.0/AndroidManifest.xml:32:13-43
-85            android:exported="false" >
-85-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:68:13-37
-86            <meta-data
-86-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:69:13-71:85
-87                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-87-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:70:17-109
-88                android:value="com.google.firebase.components.ComponentRegistrar" />
-88-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/c131860c1ddb1000388b331277cc3aad/transformed/firebase-auth-23.1.0/AndroidManifest.xml:71:17-82
-89            <meta-data
-89-->[com.google.firebase:firebase-database:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/864d5454dc35c5e08843fedac03b57b7/transformed/firebase-database-21.0.0/AndroidManifest.xml:29:13-31:85
-90                android:name="com.google.firebase.components:com.google.firebase.database.FirebaseDatabaseKtxRegistrar"
-90-->[com.google.firebase:firebase-database:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/864d5454dc35c5e08843fedac03b57b7/transformed/firebase-database-21.0.0/AndroidManifest.xml:30:17-120
-91                android:value="com.google.firebase.components.ComponentRegistrar" />
-91-->[com.google.firebase:firebase-database:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/864d5454dc35c5e08843fedac03b57b7/transformed/firebase-database-21.0.0/AndroidManifest.xml:31:17-82
-92            <meta-data
-92-->[com.google.firebase:firebase-database:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/864d5454dc35c5e08843fedac03b57b7/transformed/firebase-database-21.0.0/AndroidManifest.xml:32:13-34:85
-93                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-93-->[com.google.firebase:firebase-database:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/864d5454dc35c5e08843fedac03b57b7/transformed/firebase-database-21.0.0/AndroidManifest.xml:33:17-109
-94                android:value="com.google.firebase.components.ComponentRegistrar" />
-94-->[com.google.firebase:firebase-database:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/864d5454dc35c5e08843fedac03b57b7/transformed/firebase-database-21.0.0/AndroidManifest.xml:34:17-82
-95            <meta-data
-95-->[com.google.firebase:firebase-firestore:25.1.1] /Users/dongoh-kim/.gradle/caches/transforms-4/639a4d2143706c1fee3379514cfac194/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:17:13-19:85
-96                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
-96-->[com.google.firebase:firebase-firestore:25.1.1] /Users/dongoh-kim/.gradle/caches/transforms-4/639a4d2143706c1fee3379514cfac194/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:18:17-122
-97                android:value="com.google.firebase.components.ComponentRegistrar" />
-97-->[com.google.firebase:firebase-firestore:25.1.1] /Users/dongoh-kim/.gradle/caches/transforms-4/639a4d2143706c1fee3379514cfac194/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:19:17-82
-98            <meta-data
-98-->[com.google.firebase:firebase-firestore:25.1.1] /Users/dongoh-kim/.gradle/caches/transforms-4/639a4d2143706c1fee3379514cfac194/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:20:13-22:85
-99                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-99-->[com.google.firebase:firebase-firestore:25.1.1] /Users/dongoh-kim/.gradle/caches/transforms-4/639a4d2143706c1fee3379514cfac194/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:21:17-111
-100                android:value="com.google.firebase.components.ComponentRegistrar" />
-100-->[com.google.firebase:firebase-firestore:25.1.1] /Users/dongoh-kim/.gradle/caches/transforms-4/639a4d2143706c1fee3379514cfac194/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:22:17-82
-101            <meta-data
-101-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/ce87b71f209be0c17f32c7ff44b7670a/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:12:13-14:85
-102                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
-102-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/ce87b71f209be0c17f32c7ff44b7670a/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:13:17-116
-103                android:value="com.google.firebase.components.ComponentRegistrar" />
-103-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/ce87b71f209be0c17f32c7ff44b7670a/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:14:17-82
-104            <meta-data
-104-->[com.google.firebase:firebase-common:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/6a852318b71e904f1f19b07194897366/transformed/firebase-common-21.0.0/AndroidManifest.xml:35:13-37:85
-105                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
-105-->[com.google.firebase:firebase-common:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/6a852318b71e904f1f19b07194897366/transformed/firebase-common-21.0.0/AndroidManifest.xml:36:17-109
-106                android:value="com.google.firebase.components.ComponentRegistrar" />
-106-->[com.google.firebase:firebase-common:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/6a852318b71e904f1f19b07194897366/transformed/firebase-common-21.0.0/AndroidManifest.xml:37:17-82
-107        </service>
-108        <service
-108-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/473873adfbf3b4720487135abf3d55ca/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:24:9-32:19
-109            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
-109-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/473873adfbf3b4720487135abf3d55ca/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:25:13-94
-110            android:enabled="true"
-110-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/473873adfbf3b4720487135abf3d55ca/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:26:13-35
-111            android:exported="false" >
-111-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/473873adfbf3b4720487135abf3d55ca/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:27:13-37
-112            <meta-data
-112-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/473873adfbf3b4720487135abf3d55ca/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:29:13-31:104
-113                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
-113-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/473873adfbf3b4720487135abf3d55ca/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:30:17-76
-114                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl" />
-114-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/473873adfbf3b4720487135abf3d55ca/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:31:17-101
-115        </service>
-116
-117        <activity
-117-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/473873adfbf3b4720487135abf3d55ca/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:34:9-41:20
-118            android:name="androidx.credentials.playservices.HiddenActivity"
-118-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/473873adfbf3b4720487135abf3d55ca/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:35:13-76
-119            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-119-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/473873adfbf3b4720487135abf3d55ca/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:36:13-87
-120            android:enabled="true"
-120-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/473873adfbf3b4720487135abf3d55ca/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:37:13-35
-121            android:exported="false"
-121-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/473873adfbf3b4720487135abf3d55ca/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:38:13-37
-122            android:fitsSystemWindows="true"
-122-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/473873adfbf3b4720487135abf3d55ca/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:39:13-45
-123            android:theme="@style/Theme.Hidden" >
-123-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/473873adfbf3b4720487135abf3d55ca/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:40:13-48
-124        </activity>
-125        <activity
-125-->[com.google.android.gms:play-services-auth:20.7.0] /Users/dongoh-kim/.gradle/caches/transforms-4/cb61642a29853545e441c4c2f4132e5e/transformed/play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
-126            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-126-->[com.google.android.gms:play-services-auth:20.7.0] /Users/dongoh-kim/.gradle/caches/transforms-4/cb61642a29853545e441c4c2f4132e5e/transformed/play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
-127            android:excludeFromRecents="true"
-127-->[com.google.android.gms:play-services-auth:20.7.0] /Users/dongoh-kim/.gradle/caches/transforms-4/cb61642a29853545e441c4c2f4132e5e/transformed/play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
-128            android:exported="false"
-128-->[com.google.android.gms:play-services-auth:20.7.0] /Users/dongoh-kim/.gradle/caches/transforms-4/cb61642a29853545e441c4c2f4132e5e/transformed/play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
-129            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-129-->[com.google.android.gms:play-services-auth:20.7.0] /Users/dongoh-kim/.gradle/caches/transforms-4/cb61642a29853545e441c4c2f4132e5e/transformed/play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
-130        <!--
-131            Service handling Google Sign-In user revocation. For apps that do not integrate with
-132            Google Sign-In, this service will never be started.
-133        -->
-134        <service
-134-->[com.google.android.gms:play-services-auth:20.7.0] /Users/dongoh-kim/.gradle/caches/transforms-4/cb61642a29853545e441c4c2f4132e5e/transformed/play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
-135            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-135-->[com.google.android.gms:play-services-auth:20.7.0] /Users/dongoh-kim/.gradle/caches/transforms-4/cb61642a29853545e441c4c2f4132e5e/transformed/play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
-136            android:exported="true"
-136-->[com.google.android.gms:play-services-auth:20.7.0] /Users/dongoh-kim/.gradle/caches/transforms-4/cb61642a29853545e441c4c2f4132e5e/transformed/play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
-137            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-137-->[com.google.android.gms:play-services-auth:20.7.0] /Users/dongoh-kim/.gradle/caches/transforms-4/cb61642a29853545e441c4c2f4132e5e/transformed/play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
-138            android:visibleToInstantApps="true" />
-138-->[com.google.android.gms:play-services-auth:20.7.0] /Users/dongoh-kim/.gradle/caches/transforms-4/cb61642a29853545e441c4c2f4132e5e/transformed/play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
-139
-140        <provider
-140-->[com.google.firebase:firebase-common:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/6a852318b71e904f1f19b07194897366/transformed/firebase-common-21.0.0/AndroidManifest.xml:23:9-28:39
-141            android:name="com.google.firebase.provider.FirebaseInitProvider"
-141-->[com.google.firebase:firebase-common:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/6a852318b71e904f1f19b07194897366/transformed/firebase-common-21.0.0/AndroidManifest.xml:24:13-77
-142            android:authorities="com.example.volunteerkim.firebaseinitprovider"
-142-->[com.google.firebase:firebase-common:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/6a852318b71e904f1f19b07194897366/transformed/firebase-common-21.0.0/AndroidManifest.xml:25:13-72
-143            android:directBootAware="true"
-143-->[com.google.firebase:firebase-common:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/6a852318b71e904f1f19b07194897366/transformed/firebase-common-21.0.0/AndroidManifest.xml:26:13-43
-144            android:exported="false"
-144-->[com.google.firebase:firebase-common:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/6a852318b71e904f1f19b07194897366/transformed/firebase-common-21.0.0/AndroidManifest.xml:27:13-37
-145            android:initOrder="100" />
-145-->[com.google.firebase:firebase-common:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/6a852318b71e904f1f19b07194897366/transformed/firebase-common-21.0.0/AndroidManifest.xml:28:13-36
+11-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:4:5-67
+11-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:4:22-64
+12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+12-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:5:5-79
+12-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:5:22-76
+13    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+13-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:6:5-81
+13-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:6:22-78
+14    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+14-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:26:5-79
+14-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:26:22-76
+15
+16    <uses-feature
+16-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:7:5-9:35
+17        android:glEsVersion="0x00020000"
+17-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:8:9-41
+18        android:required="true" />
+18-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:9:9-32
+19    <uses-feature
+19-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:10:5-12:36
+20        android:name="android.hardware.wifi"
+20-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:11:9-45
+21        android:required="false" />
+21-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:12:9-33
+22
+23    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+23-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:16:5-76
+23-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:16:22-73
+24    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+24-->[com.google.android.recaptcha:recaptcha:18.5.1] /Users/dongoh-kim/.gradle/caches/transforms-4/43c4f135a1618b6c2391237f9e2e4156/transformed/recaptcha-18.5.1/AndroidManifest.xml:9:5-98
+24-->[com.google.android.recaptcha:recaptcha:18.5.1] /Users/dongoh-kim/.gradle/caches/transforms-4/43c4f135a1618b6c2391237f9e2e4156/transformed/recaptcha-18.5.1/AndroidManifest.xml:9:22-95
+25
+26    <permission
+26-->[androidx.core:core:1.13.0] /Users/dongoh-kim/.gradle/caches/transforms-4/632b1ac7142b9f5fd246c189d5918c17/transformed/core-1.13.0/AndroidManifest.xml:22:5-24:47
+27        android:name="com.example.volunteerkim.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+27-->[androidx.core:core:1.13.0] /Users/dongoh-kim/.gradle/caches/transforms-4/632b1ac7142b9f5fd246c189d5918c17/transformed/core-1.13.0/AndroidManifest.xml:23:9-81
+28        android:protectionLevel="signature" />
+28-->[androidx.core:core:1.13.0] /Users/dongoh-kim/.gradle/caches/transforms-4/632b1ac7142b9f5fd246c189d5918c17/transformed/core-1.13.0/AndroidManifest.xml:24:9-44
+29
+30    <uses-permission android:name="com.example.volunteerkim.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+30-->[androidx.core:core:1.13.0] /Users/dongoh-kim/.gradle/caches/transforms-4/632b1ac7142b9f5fd246c189d5918c17/transformed/core-1.13.0/AndroidManifest.xml:26:5-97
+30-->[androidx.core:core:1.13.0] /Users/dongoh-kim/.gradle/caches/transforms-4/632b1ac7142b9f5fd246c189d5918c17/transformed/core-1.13.0/AndroidManifest.xml:26:22-94
+31
+32    <application
+32-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:8:5-35:19
+33        android:allowBackup="true"
+33-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:9:9-35
+34        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+34-->[androidx.core:core:1.13.0] /Users/dongoh-kim/.gradle/caches/transforms-4/632b1ac7142b9f5fd246c189d5918c17/transformed/core-1.13.0/AndroidManifest.xml:28:18-86
+35        android:dataExtractionRules="@xml/data_extraction_rules"
+35-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:10:9-65
+36        android:debuggable="true"
+37        android:extractNativeLibs="false"
+38        android:fullBackupContent="@xml/backup_rules"
+38-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:11:9-54
+39        android:icon="@mipmap/ic_launcher"
+39-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:12:9-43
+40        android:label="@string/app_name"
+40-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:13:9-41
+41        android:roundIcon="@mipmap/ic_launcher_round"
+41-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:14:9-54
+42        android:supportsRtl="true"
+42-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:15:9-35
+43        android:testOnly="true"
+44        android:theme="@style/Theme.VolunteerKim" >
+44-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:16:9-50
+45        <activity android:name="com.example.volunteerkim.LoginActivity" />
+45-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:19:9-51
+45-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:19:19-48
+46        <activity android:name="com.example.volunteerkim.SignupActivity" />
+46-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:20:9-52
+46-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:20:19-49
+47        <activity
+47-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:21:9-28:20
+48            android:name="com.example.volunteerkim.IntroActivity"
+48-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:22:13-42
+49            android:exported="true" >
+49-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:23:13-36
+50            <intent-filter>
+50-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:24:13-27:29
+51                <action android:name="android.intent.action.MAIN" />
+51-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:25:17-69
+51-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:25:25-66
+52
+53                <category android:name="android.intent.category.LAUNCHER" />
+53-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:26:17-77
+53-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:26:27-74
+54            </intent-filter>
+55        </activity>
+56        <activity
+56-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:29:9-83
+57            android:name="com.example.volunteerkim.CommunityCrudActivity"
+57-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:29:19-56
+58            android:exported="true" />
+58-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:29:57-80
+59        <activity
+59-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:30:9-74
+60            android:name="com.example.volunteerkim.MainActivity"
+60-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:30:19-47
+61            android:exported="true" />
+61-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:30:48-71
+62
+63        <meta-data
+63-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:32:9-34:42
+64            android:name="com.naver.maps.map.cbxzt68nzc"
+64-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:33:13-57
+65            android:value="cbxzt68nzc" />
+65-->/Users/dongoh-kim/KimBongsexy/app/src/main/AndroidManifest.xml:34:13-39
+66
+67        <activity
+67-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:29:9-46:20
+68            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+68-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:30:13-80
+69            android:excludeFromRecents="true"
+69-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:31:13-46
+70            android:exported="true"
+70-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:32:13-36
+71            android:launchMode="singleTask"
+71-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:33:13-44
+72            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+72-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:34:13-72
+73            <intent-filter>
+73-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:35:13-45:29
+74                <action android:name="android.intent.action.VIEW" />
+74-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:17-69
+74-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:25-66
+75
+76                <category android:name="android.intent.category.DEFAULT" />
+76-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:17-76
+76-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:27-73
+77                <category android:name="android.intent.category.BROWSABLE" />
+77-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:17-78
+77-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:27-75
+78
+79                <data
+79-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:41:17-44:51
+80                    android:host="firebase.auth"
+80-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:42:21-49
+81                    android:path="/"
+81-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:43:21-37
+82                    android:scheme="genericidp" />
+82-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:44:21-48
+83            </intent-filter>
+84        </activity>
+85        <activity
+85-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:47:9-64:20
+86            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+86-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:48:13-79
+87            android:excludeFromRecents="true"
+87-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:49:13-46
+88            android:exported="true"
+88-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:50:13-36
+89            android:launchMode="singleTask"
+89-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:51:13-44
+90            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+90-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:52:13-72
+91            <intent-filter>
+91-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:53:13-63:29
+92                <action android:name="android.intent.action.VIEW" />
+92-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:17-69
+92-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:25-66
+93
+94                <category android:name="android.intent.category.DEFAULT" />
+94-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:17-76
+94-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:27-73
+95                <category android:name="android.intent.category.BROWSABLE" />
+95-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:17-78
+95-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:27-75
+96
+97                <data
+97-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:41:17-44:51
+98                    android:host="firebase.auth"
+98-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:42:21-49
+99                    android:path="/"
+99-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:43:21-37
+100                    android:scheme="recaptcha" />
+100-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:44:21-48
+101            </intent-filter>
+102        </activity>
+103
+104        <service
+104-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:66:9-72:19
+105            android:name="com.google.firebase.components.ComponentDiscoveryService"
+105-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:67:13-84
+106            android:directBootAware="true"
+106-->[com.google.firebase:firebase-common:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/e3417a37238ea9e785d88ba70a86e04f/transformed/firebase-common-21.0.0/AndroidManifest.xml:32:13-43
+107            android:exported="false" >
+107-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:68:13-37
+108            <meta-data
+108-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:69:13-71:85
+109                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+109-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:70:17-109
+110                android:value="com.google.firebase.components.ComponentRegistrar" />
+110-->[com.google.firebase:firebase-auth:23.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/1aaa05188a5602c3cbcb79081aafaefc/transformed/firebase-auth-23.1.0/AndroidManifest.xml:71:17-82
+111            <meta-data
+111-->[com.google.firebase:firebase-database:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/19acc955edd8f4fe978d42050198596b/transformed/firebase-database-21.0.0/AndroidManifest.xml:29:13-31:85
+112                android:name="com.google.firebase.components:com.google.firebase.database.FirebaseDatabaseKtxRegistrar"
+112-->[com.google.firebase:firebase-database:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/19acc955edd8f4fe978d42050198596b/transformed/firebase-database-21.0.0/AndroidManifest.xml:30:17-120
+113                android:value="com.google.firebase.components.ComponentRegistrar" />
+113-->[com.google.firebase:firebase-database:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/19acc955edd8f4fe978d42050198596b/transformed/firebase-database-21.0.0/AndroidManifest.xml:31:17-82
+114            <meta-data
+114-->[com.google.firebase:firebase-database:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/19acc955edd8f4fe978d42050198596b/transformed/firebase-database-21.0.0/AndroidManifest.xml:32:13-34:85
+115                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+115-->[com.google.firebase:firebase-database:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/19acc955edd8f4fe978d42050198596b/transformed/firebase-database-21.0.0/AndroidManifest.xml:33:17-109
+116                android:value="com.google.firebase.components.ComponentRegistrar" />
+116-->[com.google.firebase:firebase-database:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/19acc955edd8f4fe978d42050198596b/transformed/firebase-database-21.0.0/AndroidManifest.xml:34:17-82
+117            <meta-data
+117-->[com.google.firebase:firebase-firestore:25.1.1] /Users/dongoh-kim/.gradle/caches/transforms-4/cdb96ded63188c78dc665b12fe42a2f2/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:17:13-19:85
+118                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
+118-->[com.google.firebase:firebase-firestore:25.1.1] /Users/dongoh-kim/.gradle/caches/transforms-4/cdb96ded63188c78dc665b12fe42a2f2/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:18:17-122
+119                android:value="com.google.firebase.components.ComponentRegistrar" />
+119-->[com.google.firebase:firebase-firestore:25.1.1] /Users/dongoh-kim/.gradle/caches/transforms-4/cdb96ded63188c78dc665b12fe42a2f2/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:19:17-82
+120            <meta-data
+120-->[com.google.firebase:firebase-firestore:25.1.1] /Users/dongoh-kim/.gradle/caches/transforms-4/cdb96ded63188c78dc665b12fe42a2f2/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:20:13-22:85
+121                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+121-->[com.google.firebase:firebase-firestore:25.1.1] /Users/dongoh-kim/.gradle/caches/transforms-4/cdb96ded63188c78dc665b12fe42a2f2/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:21:17-111
+122                android:value="com.google.firebase.components.ComponentRegistrar" />
+122-->[com.google.firebase:firebase-firestore:25.1.1] /Users/dongoh-kim/.gradle/caches/transforms-4/cdb96ded63188c78dc665b12fe42a2f2/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:22:17-82
+123            <meta-data
+123-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/a5ea51029740a5711ea19d234cc35c92/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:12:13-14:85
+124                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+124-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/a5ea51029740a5711ea19d234cc35c92/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:13:17-116
+125                android:value="com.google.firebase.components.ComponentRegistrar" />
+125-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/a5ea51029740a5711ea19d234cc35c92/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:14:17-82
+126            <meta-data
+126-->[com.google.firebase:firebase-common:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/e3417a37238ea9e785d88ba70a86e04f/transformed/firebase-common-21.0.0/AndroidManifest.xml:35:13-37:85
+127                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+127-->[com.google.firebase:firebase-common:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/e3417a37238ea9e785d88ba70a86e04f/transformed/firebase-common-21.0.0/AndroidManifest.xml:36:17-109
+128                android:value="com.google.firebase.components.ComponentRegistrar" />
+128-->[com.google.firebase:firebase-common:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/e3417a37238ea9e785d88ba70a86e04f/transformed/firebase-common-21.0.0/AndroidManifest.xml:37:17-82
+129        </service>
+130
+131        <activity
+131-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:19:9-23:51
+132            android:name="com.naver.maps.map.app.LegendActivity"
+132-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:20:13-65
+133            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+133-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:21:13-91
+134            android:label="@string/navermap_legend"
+134-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:22:13-52
+135            android:theme="@style/navermap_app" />
+135-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:23:13-48
+136        <activity
+136-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:24:9-28:51
+137            android:name="com.naver.maps.map.app.LegalNoticeActivity"
+137-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:25:13-70
+138            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+138-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:26:13-91
+139            android:label="@string/navermap_legal_notice"
+139-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:27:13-58
+140            android:theme="@style/navermap_app" />
+140-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:28:13-48
+141        <activity
+141-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:29:9-33:51
+142            android:name="com.naver.maps.map.app.OpenSourceLicenseActivity"
+142-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:30:13-76
+143            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+143-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:31:13-91
+144            android:label="@string/navermap_open_source_license"
+144-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:32:13-65
+145            android:theme="@style/navermap_app" />
+145-->[com.naver.maps:map-sdk:3.20.0] /Users/dongoh-kim/.gradle/caches/transforms-4/59b99daa4f880c8185e1d30763466df6/transformed/map-sdk-3.20.0/AndroidManifest.xml:33:13-48
 146
-147        <activity
-147-->[com.google.android.gms:play-services-base:18.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/4e34674a1b448cc5d94a8839cb9748ff/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:9-22:45
-148            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-148-->[com.google.android.gms:play-services-base:18.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/4e34674a1b448cc5d94a8839cb9748ff/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:19-85
-149            android:exported="false"
-149-->[com.google.android.gms:play-services-base:18.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/4e34674a1b448cc5d94a8839cb9748ff/transformed/play-services-base-18.1.0/AndroidManifest.xml:22:19-43
-150            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-150-->[com.google.android.gms:play-services-base:18.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/4e34674a1b448cc5d94a8839cb9748ff/transformed/play-services-base-18.1.0/AndroidManifest.xml:21:19-78
-151
-152        <provider
-152-->[androidx.emoji2:emoji2:1.3.0] /Users/dongoh-kim/.gradle/caches/transforms-4/7ef664428245d06d3f3af8bc6165ee93/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
-153            android:name="androidx.startup.InitializationProvider"
-153-->[androidx.emoji2:emoji2:1.3.0] /Users/dongoh-kim/.gradle/caches/transforms-4/7ef664428245d06d3f3af8bc6165ee93/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
-154            android:authorities="com.example.volunteerkim.androidx-startup"
-154-->[androidx.emoji2:emoji2:1.3.0] /Users/dongoh-kim/.gradle/caches/transforms-4/7ef664428245d06d3f3af8bc6165ee93/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
-155            android:exported="false" >
-155-->[androidx.emoji2:emoji2:1.3.0] /Users/dongoh-kim/.gradle/caches/transforms-4/7ef664428245d06d3f3af8bc6165ee93/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
-156            <meta-data
-156-->[androidx.emoji2:emoji2:1.3.0] /Users/dongoh-kim/.gradle/caches/transforms-4/7ef664428245d06d3f3af8bc6165ee93/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
-157                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-157-->[androidx.emoji2:emoji2:1.3.0] /Users/dongoh-kim/.gradle/caches/transforms-4/7ef664428245d06d3f3af8bc6165ee93/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
-158                android:value="androidx.startup" />
-158-->[androidx.emoji2:emoji2:1.3.0] /Users/dongoh-kim/.gradle/caches/transforms-4/7ef664428245d06d3f3af8bc6165ee93/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
-159            <meta-data
-159-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/dongoh-kim/.gradle/caches/transforms-4/6c8bdef4f34242066a49898f97471d74/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
-160                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-160-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/dongoh-kim/.gradle/caches/transforms-4/6c8bdef4f34242066a49898f97471d74/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
-161                android:value="androidx.startup" />
-161-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/dongoh-kim/.gradle/caches/transforms-4/6c8bdef4f34242066a49898f97471d74/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
-162            <meta-data
-162-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/b9ece786eb7a7ce91ed4376beac51e63/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
-163                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-163-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/b9ece786eb7a7ce91ed4376beac51e63/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
-164                android:value="androidx.startup" />
-164-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/b9ece786eb7a7ce91ed4376beac51e63/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
-165        </provider>
-166
-167        <meta-data
-167-->[com.google.android.gms:play-services-basement:18.4.0] /Users/dongoh-kim/.gradle/caches/transforms-4/f8e848fdac2eb4ccccf885dff1507e60/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
-168            android:name="com.google.android.gms.version"
-168-->[com.google.android.gms:play-services-basement:18.4.0] /Users/dongoh-kim/.gradle/caches/transforms-4/f8e848fdac2eb4ccccf885dff1507e60/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
-169            android:value="@integer/google_play_services_version" />
-169-->[com.google.android.gms:play-services-basement:18.4.0] /Users/dongoh-kim/.gradle/caches/transforms-4/f8e848fdac2eb4ccccf885dff1507e60/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
-170
-171        <receiver
-171-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/b9ece786eb7a7ce91ed4376beac51e63/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
-172            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-172-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/b9ece786eb7a7ce91ed4376beac51e63/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
-173            android:directBootAware="false"
-173-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/b9ece786eb7a7ce91ed4376beac51e63/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
-174            android:enabled="true"
-174-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/b9ece786eb7a7ce91ed4376beac51e63/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+147        <service
+147-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/f8ec46643c5e91654d40c21c4ed613c5/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:24:9-32:19
+148            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
+148-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/f8ec46643c5e91654d40c21c4ed613c5/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:25:13-94
+149            android:enabled="true"
+149-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/f8ec46643c5e91654d40c21c4ed613c5/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:26:13-35
+150            android:exported="false" >
+150-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/f8ec46643c5e91654d40c21c4ed613c5/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:27:13-37
+151            <meta-data
+151-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/f8ec46643c5e91654d40c21c4ed613c5/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:29:13-31:104
+152                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
+152-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/f8ec46643c5e91654d40c21c4ed613c5/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:30:17-76
+153                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl" />
+153-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/f8ec46643c5e91654d40c21c4ed613c5/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:31:17-101
+154        </service>
+155
+156        <activity
+156-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/f8ec46643c5e91654d40c21c4ed613c5/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:34:9-41:20
+157            android:name="androidx.credentials.playservices.HiddenActivity"
+157-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/f8ec46643c5e91654d40c21c4ed613c5/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:35:13-76
+158            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+158-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/f8ec46643c5e91654d40c21c4ed613c5/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:36:13-87
+159            android:enabled="true"
+159-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/f8ec46643c5e91654d40c21c4ed613c5/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:37:13-35
+160            android:exported="false"
+160-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/f8ec46643c5e91654d40c21c4ed613c5/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:38:13-37
+161            android:fitsSystemWindows="true"
+161-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/f8ec46643c5e91654d40c21c4ed613c5/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:39:13-45
+162            android:theme="@style/Theme.Hidden" >
+162-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/dongoh-kim/.gradle/caches/transforms-4/f8ec46643c5e91654d40c21c4ed613c5/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:40:13-48
+163        </activity>
+164        <activity
+164-->[com.google.android.gms:play-services-auth:20.7.0] /Users/dongoh-kim/.gradle/caches/transforms-4/d0796d12310eed14510c0ba017648c92/transformed/play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
+165            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+165-->[com.google.android.gms:play-services-auth:20.7.0] /Users/dongoh-kim/.gradle/caches/transforms-4/d0796d12310eed14510c0ba017648c92/transformed/play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
+166            android:excludeFromRecents="true"
+166-->[com.google.android.gms:play-services-auth:20.7.0] /Users/dongoh-kim/.gradle/caches/transforms-4/d0796d12310eed14510c0ba017648c92/transformed/play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
+167            android:exported="false"
+167-->[com.google.android.gms:play-services-auth:20.7.0] /Users/dongoh-kim/.gradle/caches/transforms-4/d0796d12310eed14510c0ba017648c92/transformed/play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
+168            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+168-->[com.google.android.gms:play-services-auth:20.7.0] /Users/dongoh-kim/.gradle/caches/transforms-4/d0796d12310eed14510c0ba017648c92/transformed/play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
+169        <!--
+170            Service handling Google Sign-In user revocation. For apps that do not integrate with
+171            Google Sign-In, this service will never be started.
+172        -->
+173        <service
+173-->[com.google.android.gms:play-services-auth:20.7.0] /Users/dongoh-kim/.gradle/caches/transforms-4/d0796d12310eed14510c0ba017648c92/transformed/play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
+174            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+174-->[com.google.android.gms:play-services-auth:20.7.0] /Users/dongoh-kim/.gradle/caches/transforms-4/d0796d12310eed14510c0ba017648c92/transformed/play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
 175            android:exported="true"
-175-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/b9ece786eb7a7ce91ed4376beac51e63/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
-176            android:permission="android.permission.DUMP" >
-176-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/b9ece786eb7a7ce91ed4376beac51e63/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
-177            <intent-filter>
-177-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/b9ece786eb7a7ce91ed4376beac51e63/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
-178                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-178-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/b9ece786eb7a7ce91ed4376beac51e63/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
-178-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/b9ece786eb7a7ce91ed4376beac51e63/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
-179            </intent-filter>
-180            <intent-filter>
-180-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/b9ece786eb7a7ce91ed4376beac51e63/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
-181                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-181-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/b9ece786eb7a7ce91ed4376beac51e63/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
-181-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/b9ece786eb7a7ce91ed4376beac51e63/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
-182            </intent-filter>
-183            <intent-filter>
-183-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/b9ece786eb7a7ce91ed4376beac51e63/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
-184                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-184-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/b9ece786eb7a7ce91ed4376beac51e63/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
-184-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/b9ece786eb7a7ce91ed4376beac51e63/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
-185            </intent-filter>
-186            <intent-filter>
-186-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/b9ece786eb7a7ce91ed4376beac51e63/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
-187                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-187-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/b9ece786eb7a7ce91ed4376beac51e63/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
-187-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/b9ece786eb7a7ce91ed4376beac51e63/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
-188            </intent-filter>
-189        </receiver> <!-- The activities will be merged into the manifest of the hosting app. -->
-190        <activity
-190-->[com.google.android.play:core-common:2.0.3] /Users/dongoh-kim/.gradle/caches/transforms-4/3186db334751d78e7826d87503222738/transformed/core-common-2.0.3/AndroidManifest.xml:14:9-18:65
-191            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
-191-->[com.google.android.play:core-common:2.0.3] /Users/dongoh-kim/.gradle/caches/transforms-4/3186db334751d78e7826d87503222738/transformed/core-common-2.0.3/AndroidManifest.xml:15:13-93
-192            android:exported="false"
-192-->[com.google.android.play:core-common:2.0.3] /Users/dongoh-kim/.gradle/caches/transforms-4/3186db334751d78e7826d87503222738/transformed/core-common-2.0.3/AndroidManifest.xml:16:13-37
-193            android:stateNotNeeded="true"
-193-->[com.google.android.play:core-common:2.0.3] /Users/dongoh-kim/.gradle/caches/transforms-4/3186db334751d78e7826d87503222738/transformed/core-common-2.0.3/AndroidManifest.xml:17:13-42
-194            android:theme="@style/Theme.PlayCore.Transparent" />
-194-->[com.google.android.play:core-common:2.0.3] /Users/dongoh-kim/.gradle/caches/transforms-4/3186db334751d78e7826d87503222738/transformed/core-common-2.0.3/AndroidManifest.xml:18:13-62
-195    </application>
-196
-197</manifest>
+175-->[com.google.android.gms:play-services-auth:20.7.0] /Users/dongoh-kim/.gradle/caches/transforms-4/d0796d12310eed14510c0ba017648c92/transformed/play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
+176            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+176-->[com.google.android.gms:play-services-auth:20.7.0] /Users/dongoh-kim/.gradle/caches/transforms-4/d0796d12310eed14510c0ba017648c92/transformed/play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
+177            android:visibleToInstantApps="true" />
+177-->[com.google.android.gms:play-services-auth:20.7.0] /Users/dongoh-kim/.gradle/caches/transforms-4/d0796d12310eed14510c0ba017648c92/transformed/play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
+178
+179        <provider
+179-->[com.google.firebase:firebase-common:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/e3417a37238ea9e785d88ba70a86e04f/transformed/firebase-common-21.0.0/AndroidManifest.xml:23:9-28:39
+180            android:name="com.google.firebase.provider.FirebaseInitProvider"
+180-->[com.google.firebase:firebase-common:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/e3417a37238ea9e785d88ba70a86e04f/transformed/firebase-common-21.0.0/AndroidManifest.xml:24:13-77
+181            android:authorities="com.example.volunteerkim.firebaseinitprovider"
+181-->[com.google.firebase:firebase-common:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/e3417a37238ea9e785d88ba70a86e04f/transformed/firebase-common-21.0.0/AndroidManifest.xml:25:13-72
+182            android:directBootAware="true"
+182-->[com.google.firebase:firebase-common:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/e3417a37238ea9e785d88ba70a86e04f/transformed/firebase-common-21.0.0/AndroidManifest.xml:26:13-43
+183            android:exported="false"
+183-->[com.google.firebase:firebase-common:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/e3417a37238ea9e785d88ba70a86e04f/transformed/firebase-common-21.0.0/AndroidManifest.xml:27:13-37
+184            android:initOrder="100" />
+184-->[com.google.firebase:firebase-common:21.0.0] /Users/dongoh-kim/.gradle/caches/transforms-4/e3417a37238ea9e785d88ba70a86e04f/transformed/firebase-common-21.0.0/AndroidManifest.xml:28:13-36
+185
+186        <activity
+186-->[com.google.android.gms:play-services-base:18.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/4add1480f354ca348dca4e5015726590/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:9-22:45
+187            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+187-->[com.google.android.gms:play-services-base:18.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/4add1480f354ca348dca4e5015726590/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:19-85
+188            android:exported="false"
+188-->[com.google.android.gms:play-services-base:18.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/4add1480f354ca348dca4e5015726590/transformed/play-services-base-18.1.0/AndroidManifest.xml:22:19-43
+189            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+189-->[com.google.android.gms:play-services-base:18.1.0] /Users/dongoh-kim/.gradle/caches/transforms-4/4add1480f354ca348dca4e5015726590/transformed/play-services-base-18.1.0/AndroidManifest.xml:21:19-78
+190
+191        <provider
+191-->[androidx.emoji2:emoji2:1.3.0] /Users/dongoh-kim/.gradle/caches/transforms-4/82ac173c5691a895de65eda5edbfc62c/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+192            android:name="androidx.startup.InitializationProvider"
+192-->[androidx.emoji2:emoji2:1.3.0] /Users/dongoh-kim/.gradle/caches/transforms-4/82ac173c5691a895de65eda5edbfc62c/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+193            android:authorities="com.example.volunteerkim.androidx-startup"
+193-->[androidx.emoji2:emoji2:1.3.0] /Users/dongoh-kim/.gradle/caches/transforms-4/82ac173c5691a895de65eda5edbfc62c/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+194            android:exported="false" >
+194-->[androidx.emoji2:emoji2:1.3.0] /Users/dongoh-kim/.gradle/caches/transforms-4/82ac173c5691a895de65eda5edbfc62c/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+195            <meta-data
+195-->[androidx.emoji2:emoji2:1.3.0] /Users/dongoh-kim/.gradle/caches/transforms-4/82ac173c5691a895de65eda5edbfc62c/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+196                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+196-->[androidx.emoji2:emoji2:1.3.0] /Users/dongoh-kim/.gradle/caches/transforms-4/82ac173c5691a895de65eda5edbfc62c/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+197                android:value="androidx.startup" />
+197-->[androidx.emoji2:emoji2:1.3.0] /Users/dongoh-kim/.gradle/caches/transforms-4/82ac173c5691a895de65eda5edbfc62c/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+198            <meta-data
+198-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/dongoh-kim/.gradle/caches/transforms-4/00fb7a570d988a26bcc4c1e7b609e025/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
+199                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+199-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/dongoh-kim/.gradle/caches/transforms-4/00fb7a570d988a26bcc4c1e7b609e025/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
+200                android:value="androidx.startup" />
+200-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/dongoh-kim/.gradle/caches/transforms-4/00fb7a570d988a26bcc4c1e7b609e025/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
+201            <meta-data
+201-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/93e5b39374ad5ff6b8f551b3a1ccd9a3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+202                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+202-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/93e5b39374ad5ff6b8f551b3a1ccd9a3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+203                android:value="androidx.startup" />
+203-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/93e5b39374ad5ff6b8f551b3a1ccd9a3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+204        </provider>
+205
+206        <meta-data
+206-->[com.google.android.gms:play-services-basement:18.4.0] /Users/dongoh-kim/.gradle/caches/transforms-4/990f49ef55d7c8b0c4d297179a6a835f/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
+207            android:name="com.google.android.gms.version"
+207-->[com.google.android.gms:play-services-basement:18.4.0] /Users/dongoh-kim/.gradle/caches/transforms-4/990f49ef55d7c8b0c4d297179a6a835f/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
+208            android:value="@integer/google_play_services_version" />
+208-->[com.google.android.gms:play-services-basement:18.4.0] /Users/dongoh-kim/.gradle/caches/transforms-4/990f49ef55d7c8b0c4d297179a6a835f/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
+209
+210        <receiver
+210-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/93e5b39374ad5ff6b8f551b3a1ccd9a3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+211            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+211-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/93e5b39374ad5ff6b8f551b3a1ccd9a3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+212            android:directBootAware="false"
+212-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/93e5b39374ad5ff6b8f551b3a1ccd9a3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+213            android:enabled="true"
+213-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/93e5b39374ad5ff6b8f551b3a1ccd9a3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+214            android:exported="true"
+214-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/93e5b39374ad5ff6b8f551b3a1ccd9a3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+215            android:permission="android.permission.DUMP" >
+215-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/93e5b39374ad5ff6b8f551b3a1ccd9a3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+216            <intent-filter>
+216-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/93e5b39374ad5ff6b8f551b3a1ccd9a3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+217                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+217-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/93e5b39374ad5ff6b8f551b3a1ccd9a3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+217-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/93e5b39374ad5ff6b8f551b3a1ccd9a3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+218            </intent-filter>
+219            <intent-filter>
+219-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/93e5b39374ad5ff6b8f551b3a1ccd9a3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+220                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+220-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/93e5b39374ad5ff6b8f551b3a1ccd9a3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+220-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/93e5b39374ad5ff6b8f551b3a1ccd9a3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+221            </intent-filter>
+222            <intent-filter>
+222-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/93e5b39374ad5ff6b8f551b3a1ccd9a3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+223                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+223-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/93e5b39374ad5ff6b8f551b3a1ccd9a3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+223-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/93e5b39374ad5ff6b8f551b3a1ccd9a3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+224            </intent-filter>
+225            <intent-filter>
+225-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/93e5b39374ad5ff6b8f551b3a1ccd9a3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+226                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+226-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/93e5b39374ad5ff6b8f551b3a1ccd9a3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+226-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/dongoh-kim/.gradle/caches/transforms-4/93e5b39374ad5ff6b8f551b3a1ccd9a3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+227            </intent-filter>
+228        </receiver> <!-- The activities will be merged into the manifest of the hosting app. -->
+229        <activity
+229-->[com.google.android.play:core-common:2.0.3] /Users/dongoh-kim/.gradle/caches/transforms-4/023ff229eb5c4456e260e879773fdb4c/transformed/core-common-2.0.3/AndroidManifest.xml:14:9-18:65
+230            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+230-->[com.google.android.play:core-common:2.0.3] /Users/dongoh-kim/.gradle/caches/transforms-4/023ff229eb5c4456e260e879773fdb4c/transformed/core-common-2.0.3/AndroidManifest.xml:15:13-93
+231            android:exported="false"
+231-->[com.google.android.play:core-common:2.0.3] /Users/dongoh-kim/.gradle/caches/transforms-4/023ff229eb5c4456e260e879773fdb4c/transformed/core-common-2.0.3/AndroidManifest.xml:16:13-37
+232            android:stateNotNeeded="true"
+232-->[com.google.android.play:core-common:2.0.3] /Users/dongoh-kim/.gradle/caches/transforms-4/023ff229eb5c4456e260e879773fdb4c/transformed/core-common-2.0.3/AndroidManifest.xml:17:13-42
+233            android:theme="@style/Theme.PlayCore.Transparent" />
+233-->[com.google.android.play:core-common:2.0.3] /Users/dongoh-kim/.gradle/caches/transforms-4/023ff229eb5c4456e260e879773fdb4c/transformed/core-common-2.0.3/AndroidManifest.xml:18:13-62
+234    </application>
+235
+236</manifest>

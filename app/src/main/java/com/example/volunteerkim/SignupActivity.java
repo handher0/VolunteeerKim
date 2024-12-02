@@ -1,93 +1,118 @@
-// src/main/java/com/example/volunteerkim/SignupActivity.java
 package com.example.volunteerkim;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
-import android.view.View;
+import android.util.Patterns;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
-import com.google.firebase.auth.FirebaseUser;
 
 public class SignupActivity extends AppCompatActivity {
 
-    private EditText etEmail, etPassword, etNickname;
-    private Button btnRegister;
+    private EditText etId, etPassword, etPasswordConfirm, etEmail;
+    private CheckBox cbTerms1, cbTerms2;
+    private Button btnCheckId, btnNext;
     private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
+        setContentView(R.layout.login_signup);
 
-        // FirebaseAuth 인스턴스 초기화
+        // FirebaseAuth 초기화
         mAuth = FirebaseAuth.getInstance();
 
-        // XML에서 레이아웃 요소 가져오기
-        etEmail = findViewById(R.id.et_register_id);
-        etPassword = findViewById(R.id.et_register_pw);
-        etNickname = findViewById(R.id.et_register_nickname);
-        btnRegister = findViewById(R.id.btn_register_button);
+        // XML에서 UI 요소 초기화
+        etId = findViewById(R.id.et_id);
+        etPassword = findViewById(R.id.et_password);
+        etPasswordConfirm = findViewById(R.id.et_password_confirm);
+        etEmail = findViewById(R.id.et_email);
+        cbTerms1 = findViewById(R.id.cb_terms_1);
+        cbTerms2 = findViewById(R.id.cb_terms_2);
+        btnCheckId = findViewById(R.id.btn_check_id);
+        btnNext = findViewById(R.id.btn_next);
 
-        // 회원가입 버튼 클릭 시 동작
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                registerUser();
-            }
-        });
+        // ID 중복 확인 버튼
+        btnCheckId.setOnClickListener(v -> checkDuplicateId());
+
+        // 회원가입 버튼
+        btnNext.setOnClickListener(v -> registerUser());
+    }
+
+    private void checkDuplicateId() {
+        // ID 중복 확인 로직 (서버 연결이 필요하거나 로컬에서 간단히 처리 가능)
+        String id = etId.getText().toString().trim();
+        if (TextUtils.isEmpty(id)) {
+            etId.setError("ID is required.");
+        } else {
+            // 예제: ID가 이미 존재하는지 확인하는 로직
+            // 실제로는 서버 요청이 필요
+            Toast.makeText(this, "ID is available.", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void registerUser() {
-        String email = etEmail.getText().toString().trim();
+        String id = etId.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
-        String nickname = etNickname.getText().toString().trim();
+        String passwordConfirm = etPasswordConfirm.getText().toString().trim();
+        String email = etEmail.getText().toString().trim();
 
         // 입력값 검증
+        if (TextUtils.isEmpty(id)) {
+            etId.setError("ID is required.");
+            etId.requestFocus();
+            return;
+        }
         if (TextUtils.isEmpty(email)) {
             etEmail.setError("Email is required.");
+            etEmail.requestFocus();
+            return;
+        }
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            etEmail.setError("Enter a valid email.");
+            etEmail.requestFocus();
             return;
         }
         if (TextUtils.isEmpty(password)) {
             etPassword.setError("Password is required.");
-            return;
-        }
-        if (TextUtils.isEmpty(nickname)) {
-            etNickname.setError("Nickname is required.");
+            etPassword.requestFocus();
             return;
         }
         if (password.length() < 6) {
             etPassword.setError("Password must be at least 6 characters.");
+            etPassword.requestFocus();
+            return;
+        }
+        if (!password.equals(passwordConfirm)) {
+            etPasswordConfirm.setError("Passwords do not match.");
+            etPasswordConfirm.requestFocus();
+            return;
+        }
+        if (!cbTerms1.isChecked() || !cbTerms2.isChecked()) {
+            Toast.makeText(this, "Please agree to all terms and conditions.", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Firebase Auth로 회원가입
+        // Firebase Authentication을 사용한 회원가입
         mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, task -> {
+                .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        // 회원가입 성공
-                        FirebaseUser user = mAuth.getCurrentUser();
                         Toast.makeText(SignupActivity.this, "Registration successful!", Toast.LENGTH_SHORT).show();
-
-                        // LoginActivity로 이동
-                        Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
-                        startActivity(intent);
-                        finish(); // 회원가입 완료 후 SignupActivity 종료
+                        // 회원가입 성공 후 추가 처리 (예: 메인 화면 이동)
+                        finish();
                     } else {
-                        // 회원가입 실패
                         if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                             etEmail.setError("This email is already registered.");
+                            etEmail.requestFocus();
                         } else {
-                            Toast.makeText(SignupActivity.this, "Registration failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                            Log.e("SignupActivity", "Registration error: ", task.getException());
+                            Toast.makeText(SignupActivity.this, "Registration failed: " + task.getException().getMessage(),
+                                    Toast.LENGTH_LONG).show();
                         }
                     }
                 });

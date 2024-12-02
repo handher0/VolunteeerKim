@@ -1,102 +1,76 @@
-// src/main/java/com/example/volunteerkim/LoginActivity.java
 package com.example.volunteerkim;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText etEmail, etPassword;
-    private Button btnLogin, btnRegister, btnFindPassword;
-    private CheckBox chkRememberId;
-    private FirebaseAuth mAuth;
+    private static final String TAG = "LoginActivity"; // 로그 태그
+    private EditText etEmail, etPassword; // 이메일과 비밀번호 필드
+    private FirebaseAuth mAuth; // Firebase Authentication 인스턴스
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
 
-        // FirebaseAuth 인스턴스 초기화
-        mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance(); // FirebaseAuth 초기화
 
-        // XML 요소 초기화
-        etEmail = findViewById(R.id.et_login_id);
-        etPassword = findViewById(R.id.et_login_pw);
-        btnLogin = findViewById(R.id.btn_login);
-        btnRegister = findViewById(R.id.btn_register);
-        btnFindPassword = findViewById(R.id.btn_register2);
-        chkRememberId = findViewById(R.id.login_chk);
+        etEmail = findViewById(R.id.et_email); // 이메일 입력 필드
+        etPassword = findViewById(R.id.et_password); // 비밀번호 입력 필드
 
         // 로그인 버튼 클릭 리스너
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loginUser();
-            }
-        });
+        findViewById(R.id.btn_login).setOnClickListener(v -> loginUser());
 
         // 회원가입 버튼 클릭 리스너
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        // 비밀번호 찾기 버튼 클릭 리스너
-        btnFindPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // 비밀번호 찾기 기능 구현 (비밀번호 찾기 화면으로 이동하거나 Firebase Password Reset 사용 가능)
-                Toast.makeText(LoginActivity.this, "비밀번호 찾기 기능을 구현해주세요.", Toast.LENGTH_SHORT).show();
-            }
+        findViewById(R.id.btn_sign_in).setOnClickListener(v -> {
+            Intent intent = new Intent(this, SignupActivity.class);
+            startActivity(intent);
         });
     }
 
     private void loginUser() {
-        String email = etEmail.getText().toString().trim();
-        String password = etPassword.getText().toString().trim();
+        String email = etEmail.getText().toString().trim(); // 이메일 입력 값
+        String password = etPassword.getText().toString().trim(); // 비밀번호 입력 값
 
-        // 입력값 검증
+        Log.d(TAG, "Login attempt with email: " + email); // 로그: 입력된 이메일 확인
+
         if (TextUtils.isEmpty(email)) {
-            etEmail.setError("Email is required.");
+            etEmail.setError("Email is required."); // 이메일 미입력 시 에러 표시
+            Log.e(TAG, "Login failed: Email is empty."); // 로그: 이메일 미입력
             return;
         }
         if (TextUtils.isEmpty(password)) {
-            etPassword.setError("Password is required.");
+            etPassword.setError("Password is required."); // 비밀번호 미입력 시 에러 표시
+            Log.e(TAG, "Login failed: Password is empty."); // 로그: 비밀번호 미입력
             return;
         }
 
-        // Firebase Authentication을 사용하여 로그인
+        // Firebase Authentication으로 이메일과 비밀번호 인증
         mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, task -> {
+                .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         // 로그인 성공
-                        FirebaseUser user = mAuth.getCurrentUser();
-                        Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
+                        Log.d(TAG, "Login successful for email: " + email); // 로그: 로그인 성공
+                        Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_SHORT).show();
 
                         // 메인 화면으로 이동
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        Intent intent = new Intent(this, MainActivity.class);
                         startActivity(intent);
-                        finish();
+                        Log.d(TAG, "Navigating to MainActivity."); // 로그: 메인 액티비티로 이동 시도
+                        finish(); // 현재 액티비티 종료
                     } else {
                         // 로그인 실패
-                        Toast.makeText(LoginActivity.this, "Authentication failed: " + task.getException().getMessage(),
-                                Toast.LENGTH_SHORT).show();
-                        Log.e("LoginActivity", "Login error: ", task.getException());
+                        Log.e(TAG, "Login failed: " + task.getException()); // 로그: 로그인 실패 원인
+                        Toast.makeText(getApplicationContext(), "Login failed. Please check your credentials.", Toast.LENGTH_SHORT).show();
                     }
                 });
     }

@@ -1,5 +1,4 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#DCF8C6"/> <!-- 밝은 파란색 배경 -->
-    <corners android:radius="16dp" android:bottomRightRadius="0dp"/> <!-- 오른쪽 모서리 둥글기 -->
-    <padding android:left="10dp" android:top="8dp" android:right="10dp" android:bottom="8dp"/> <!-- 패딩 설정 -->
+    <solid android:color="#4CAF50" /> <!-- 초록색 -->
+    <corners android:radius="16dp" />
 </shape>

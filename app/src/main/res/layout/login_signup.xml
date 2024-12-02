@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CCFFCC"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 아이디 입력 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <EditText
+                android:id="@+id/et_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="아이디(닉네임)을 입력해주세요"
+                android:inputType="text"
+                android:padding="8dp"
+                android:background="@android:drawable/edit_text"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_check_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="중복확인"
+                android:textSize="12sp"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- 비밀번호 입력 -->
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="비밀번호를 입력해주세요"
+            android:inputType="textPassword"
+            android:padding="8dp"
+            android:background="@android:drawable/edit_text"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp" />
+
+        <!-- 비밀번호 확인 -->
+        <EditText
+            android:id="@+id/et_password_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="비밀번호 확인"
+            android:inputType="textPassword"
+            android:padding="8dp"
+            android:background="@android:drawable/edit_text"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp" />
+
+        <!-- 이메일 입력 -->
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="이메일을 입력해주세요"
+            android:inputType="textEmailAddress"
+            android:padding="8dp"
+            android:background="@android:drawable/edit_text"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp" />
+
+        <!-- 약관 동의 -->
+        <CheckBox
+            android:id="@+id/cb_terms_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="약관 동의"
+            android:layout_marginTop="16dp" />
+
+        <CheckBox
+            android:id="@+id/cb_terms_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="약관 동의" />
+
+        <!-- Next 버튼 -->
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#F4A8A8"
+            android:text="Next"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:padding="12dp" />
+    </LinearLayout>
+</ScrollView>
