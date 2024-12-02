@@ -24,6 +24,14 @@
         "source": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-main-45:/layout/chat_activity_main.xml"
     },
     {
+        "merged": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-43:/drawable_vms.png.flat",
+        "source": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-main-45:/drawable/vms.png"
+    },
+    {
+        "merged": "com.example.volunteerkim.app-debug-43:/menu_bottom_navigation_menu.xml.flat",
+        "source": "com.example.volunteerkim.app-main-45:/menu/bottom_navigation_menu.xml"
+    },
+    {
         "merged": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-43:/xml_data_extraction_rules.xml.flat",
         "source": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-main-45:/xml/data_extraction_rules.xml"
     },
@@ -130,10 +138,6 @@
     {
         "merged": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-43:/layout_chat_item_list.xml.flat",
         "source": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-main-45:/layout/chat_item_list.xml"
-    },
-    {
-        "merged": "com.example.volunteerkim.app-debug-43:/layout_fragment_home.xml.flat",
-        "source": "com.example.volunteerkim.app-main-45:/layout/fragment_home.xml"
     },
     {
         "merged": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-43:/drawable_baseline_star_rate_24.xml.flat",

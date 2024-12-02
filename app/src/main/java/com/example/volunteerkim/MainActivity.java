@@ -1,5 +1,7 @@
 package com.example.volunteerkim;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -38,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (itemId == R.id.page_2) {
                     transferTo(CommunityFragment_review.newInstance("param1", "param2"));
+                    return true;
+                }
+                if (itemId == R.id.page_3) {
+                    // 페이지 3 클릭 시 외부 링크로 이동
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.vms.or.kr/main.do"));
+                    startActivity(browserIntent);
                     return true;
                 }
                 if (itemId == R.id.page_4) {
