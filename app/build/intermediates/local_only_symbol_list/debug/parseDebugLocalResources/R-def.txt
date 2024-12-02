@@ -35,6 +35,7 @@ drawable bg_spinner_category
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable kimbongsa
+drawable vms
 drawable vms_svg
 id bottom_navigation
 id bt_create
@@ -51,11 +52,16 @@ id btn_category_notice
 id btn_category_question
 id btn_check_id
 id btn_detail
+id btn_donation
 id btn_login
+id btn_menu
 id btn_next
+id btn_ranking
+id btn_recommendation
 id btn_search
 id btn_sign_in
 id btn_submit
+id btn_total_time
 id buttonCreateChatRoom
 id buttonSend
 id cb_terms_1
@@ -80,6 +86,7 @@ id et_time_start
 id et_vplace
 id fabAddPost
 id fragment_container
+id img_banner
 id joinBtn
 id leftMessageContainer
 id loginBtn
@@ -93,6 +100,8 @@ id ratingBar
 id recyclerView
 id recyclerViewChatList
 id recyclerViewMessages
+id recycler_mates
+id recycler_reviews
 id rightMessageContainer
 id spinner_category
 id textViewChatRoomId
@@ -105,8 +114,11 @@ id toolbar
 id tvTitle
 id tv_address
 id tv_login_title
+id tv_mate_title
 id tv_name
+id tv_review_title
 id tv_title
+id tv_user_name
 layout activity_community_crud
 layout activity_intro
 layout activity_main

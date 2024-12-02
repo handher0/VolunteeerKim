@@ -3295,6 +3295,7 @@ drawable notify_panel_notification_icon_bg
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable vms
 drawable vms_svg
 id ALT
 id BOTTOM_END
@@ -3416,11 +3417,16 @@ id btn_category_notice
 id btn_category_question
 id btn_check_id
 id btn_detail
+id btn_donation
 id btn_login
+id btn_menu
 id btn_next
+id btn_ranking
+id btn_recommendation
 id btn_search
 id btn_sign_in
 id btn_submit
+id btn_total_time
 id buttonCreateChatRoom
 id buttonPanel
 id buttonSend
@@ -3570,6 +3576,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id img_banner
 id immediateStop
 id included
 id indeterminate
@@ -3751,6 +3758,8 @@ id rectangles
 id recyclerView
 id recyclerViewChatList
 id recyclerViewMessages
+id recycler_mates
+id recycler_reviews
 id report_drawn
 id reverseSawtooth
 id right
@@ -3881,8 +3890,11 @@ id triangle
 id tvTitle
 id tv_address
 id tv_login_title
+id tv_mate_title
 id tv_name
+id tv_review_title
 id tv_title
+id tv_user_name
 id unchecked
 id uniform
 id unlabeled
