@@ -1,20 +1,64 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:padding="8dp">
 
-    <TextView
-        android:id="@+id/textViewMessage"
+    <!-- 왼쪽 말풍선 (수신 메시지) -->
+    <LinearLayout
+        android:id="@+id/leftMessageContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Message text" />
+        android:padding="8dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_gravity="start"
+        android:background="@drawable/bg_message_received">
 
-    <TextView
-        android:id="@+id/textViewTime"
+        <TextView
+            android:id="@+id/textViewLeftMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:maxWidth="250dp"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/textViewLeftTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#BDBDBD"
+            android:layout_marginTop="4dp"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- 오른쪽 말풍선 (송신 메시지) -->
+    <LinearLayout
+        android:id="@+id/rightMessageContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="16:46"
-        android:textSize="10sp"
-        android:textColor="#888888" />
-</LinearLayout>
+        android:padding="8dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_gravity="end"
+        android:background="@drawable/bg_message_sent">
+
+        <TextView
+            android:id="@+id/textViewRightMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:maxWidth="250dp"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/textViewRightTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#BDBDBD"
+            android:layout_marginTop="4dp"
+            android:textSize="12sp" />
+    </LinearLayout>
+</FrameLayout>

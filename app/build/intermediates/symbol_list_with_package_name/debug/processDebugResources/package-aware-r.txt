@@ -3500,6 +3500,8 @@ id easeOut
 id east
 id edge
 id editTextMessage
+id editTextUser1
+id editTextUser2
 id edit_query
 id edit_text_id
 id elastic
@@ -3583,6 +3585,7 @@ id jumpToStart
 id labeled
 id layout
 id left
+id leftMessageContainer
 id leftToRight
 id legacy
 id light
@@ -3751,6 +3754,7 @@ id recyclerViewMessages
 id report_drawn
 id reverseSawtooth
 id right
+id rightMessageContainer
 id rightToLeft
 id right_icon
 id right_side
@@ -3840,8 +3844,11 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textViewChatRoomId
-id textViewMessage
-id textViewTime
+id textViewDate
+id textViewLeftMessage
+id textViewLeftTime
+id textViewRightMessage
+id textViewRightTime
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -4023,6 +4030,7 @@ layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout chat_activity_main
 layout chat_activity_room
+layout chat_item_date_header
 layout chat_item_list
 layout chat_item_message
 layout custom_dialog
@@ -4042,6 +4050,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_chat
+layout fragment_chat_room
 layout fragment_community_review
 layout fragment_community_review_post
 layout fragment_home
@@ -4205,6 +4214,7 @@ string fab_transformation_sheet_behavior
 string fallback_menu_item_copy_link
 string fallback_menu_item_open_in_browser
 string fallback_menu_item_share_link
+string firebase_database_url
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id

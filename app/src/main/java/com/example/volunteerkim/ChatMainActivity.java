@@ -2,109 +2,57 @@ package com.example.volunteerkim;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log; // 로그를 위한 import
-import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
-import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.volunteerkim.R;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
 
 public class ChatMainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity"; // 로그 태그
-
-    private RecyclerView recyclerViewChatList;
+    private EditText editTextUser1, editTextUser2;
     private Button buttonCreateChatRoom;
-    private ArrayList<String> chatRoomList;
-    private ChatListAdapter chatListAdapter;
-
-    // 테스트용 사용자 ID
-    private String currentUserId = "test_user_1";
-    private String friendId = "test_user_2";
-
-    private DatabaseReference userChatsRef;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.chat_activity_main);
+        setContentView(R.layout.chat_activity_main); // 올바른 XML 파일 연결
 
-        recyclerViewChatList = findViewById(R.id.recyclerViewChatList);
-        recyclerViewChatList.setLayoutManager(new LinearLayoutManager(this));
-
+        // XML에서 위젯 참조
+        editTextUser1 = findViewById(R.id.editTextUser1);
+        editTextUser2 = findViewById(R.id.editTextUser2);
         buttonCreateChatRoom = findViewById(R.id.buttonCreateChatRoom);
-        chatRoomList = new ArrayList<>();
-        chatListAdapter = new ChatListAdapter(chatRoomList);
-        recyclerViewChatList.setAdapter(chatListAdapter);
 
-        // Firebase 참조 초기화
-        userChatsRef = FirebaseDatabase.getInstance().getReference("users").child(currentUserId).child("chats");
-        Log.d(TAG, "Firebase Database Reference: " + userChatsRef.toString());
+        // 버튼 클릭 이벤트
+        buttonCreateChatRoom.setOnClickListener(v -> {
+            String user1 = editTextUser1.getText().toString().trim();
+            String user2 = editTextUser2.getText().toString().trim();
 
-        // 기존 채팅방 불러오기
-        loadChatRooms();
-
-        // 채팅방 생성 버튼 클릭 이벤트
-        buttonCreateChatRoom.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createChatRoom(friendId);  // friendId는 고정된 테스트용 값입니다.
+            if (user1.isEmpty() || user2.isEmpty()) {
+                Toast.makeText(this, "Both User1 and User2 must be filled!", Toast.LENGTH_SHORT).show();
+                return;
             }
+
+            createChatRoom(user1, user2);
         });
     }
 
-    private void loadChatRooms() {
-        userChatsRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                chatRoomList.clear();
-                for (DataSnapshot chatSnapshot : snapshot.getChildren()) {
-                    String chatRoomId = chatSnapshot.getKey();
-                    chatRoomList.add(chatRoomId);
-                }
-                chatListAdapter.notifyDataSetChanged();
-                Log.d(TAG, "Chat rooms loaded: " + chatRoomList);
-            }
+    private void createChatRoom(String user1, String user2) {
+        // Generate chat room ID
+        String chatRoomId = ChatHelper.generateChatRoomId(user1, user2);
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.e(TAG, "Failed to load chat rooms", error.toException());
-            }
-        });
-    }
+        // Update Firebase
+        DatabaseReference userChatRef = FirebaseDatabase.getInstance().getReference("users");
+        userChatRef.child(user1).child("chats").child(chatRoomId).setValue(true);
+        userChatRef.child(user2).child("chats").child(chatRoomId).setValue(true);
 
-    private void createChatRoom(String friendId) {
-        String chatRoomId = ChatHelper.generateChatRoomId(currentUserId, friendId);
-        userChatsRef.child(chatRoomId).setValue(true)
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        Log.d(TAG, "Chat room created for current user: " + chatRoomId);
-                    } else {
-                        Log.e(TAG, "Failed to create chat room for current user", task.getException());
-                    }
-                });
-
-        FirebaseDatabase.getInstance().getReference("users").child(friendId).child("chats").child(chatRoomId).setValue(true)
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        Log.d(TAG, "Chat room created for friend: " + friendId);
-                    } else {
-                        Log.e(TAG, "Failed to create chat room for friend", task.getException());
-                    }
-                });
-
-        Intent intent = new Intent(this, ChatRoomActivity.class); // ChatRoomActivity로 수정
+        // Start ChatRoomActivity
+        Intent intent = new Intent(this, ChatRoomActivity.class);
         intent.putExtra("chatRoomId", chatRoomId);
+        intent.putExtra("currentUserId", user1); // Pass User1 as the current user
         startActivity(intent);
     }
 }
