@@ -11,8 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.naver.maps.map.MapFragment;
-import com.naver.maps.map.NaverMap;
 
 /**
  * A simple {@link Fragment} subclass.

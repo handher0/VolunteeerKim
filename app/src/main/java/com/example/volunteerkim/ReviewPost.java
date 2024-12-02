@@ -4,11 +4,12 @@ import com.google.firebase.Timestamp;
 
 public class ReviewPost {
     String place;
+    String address;
     String author;
     String category;
     String content;
-    int startTime;
-    int endTime;
+    String startTime;
+    String endTime;
     String photo;
     Timestamp timestamp;
     float rating;
@@ -16,9 +17,10 @@ public class ReviewPost {
     public ReviewPost() {}
 
     // 모든 필드를 포함한 생성자
-    public ReviewPost(String place, String author, String category, String content,
-                      int startTime, int endTime, Timestamp timestamp, float rating) {
+    public ReviewPost(String place, String address, String author, String category, String content,
+                      String startTime, String endTime, Timestamp timestamp, float rating) {
         this.place = place;
+        this.address = address;
         this.author = author;
         this.category = category;
         this.content = content;
@@ -33,6 +35,8 @@ public class ReviewPost {
         return place;
     }
 
+    public String getAddress(){return address;}
+
     public String getAuthor() {
         return author;
     }
@@ -45,11 +49,11 @@ public class ReviewPost {
         return content;
     }
 
-    public int getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
-    public int getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
@@ -66,6 +70,8 @@ public class ReviewPost {
         this.place = place;
     }
 
+    public void setAddress(String address) { this.address = address;}
+
     public void setAuthor(String author) {
         this.author = author;
     }
@@ -78,11 +84,11 @@ public class ReviewPost {
         this.content = content;
     }
 
-    public void setStartTime(int startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
-    public void setEndTime(int endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 
