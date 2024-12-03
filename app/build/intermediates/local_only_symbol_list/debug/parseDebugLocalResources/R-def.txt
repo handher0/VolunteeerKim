@@ -142,6 +142,7 @@ menu bottom_navigation_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
+string default_web_client_id
 string firebase_database_url
 string gcm_defaultSenderId
 string google_api_key

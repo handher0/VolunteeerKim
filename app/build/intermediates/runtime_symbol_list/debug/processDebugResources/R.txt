@@ -4056,6 +4056,7 @@ int string common_open_on_phone 0x7f110040
 int string common_signin_button_text 0x7f110041
 int string common_signin_button_text_long 0x7f110042
 int string copy_toast_msg 0x7f110043
+int string default_web_client_id 0x7f1100c7
 int string error_a11y_label 0x7f110044
 int string error_icon_content_description 0x7f110045
 int string exposed_dropdown_menu_content_description 0x7f110046
