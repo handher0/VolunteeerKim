@@ -47,10 +47,14 @@ dependencies {
     // Firebase BoM 사용 (버전 관리 통합)
     implementation(platform("com.google.firebase:firebase-bom:33.6.0"))
 
+
     // Firebase 개별 라이브러리 추가
     implementation("com.google.firebase:firebase-auth") // Firebase Authentication
+    implementation("com.google.android.gms:play-services-auth:21.2.0")//구글 로그인
     implementation("com.google.firebase:firebase-database") // Realtime Database
     implementation("com.google.firebase:firebase-firestore") // Firestore (필요한 경우)
+
+
 
     // AndroidX 및 기타 라이브러리
     implementation(libs.appcompat)
