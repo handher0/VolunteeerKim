@@ -25,6 +25,7 @@ public class Community_CRUD {
         Map<Object, Object> post = new HashMap<>();
 
         post.put("place", reviewPost.getPlace());
+        post.put("address",reviewPost.getAddress());
         post.put("author", reviewPost.getAuthor());
         post.put("category", reviewPost.getCategory());
         post.put("content", reviewPost.getContent());

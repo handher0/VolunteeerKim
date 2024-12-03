@@ -69,12 +69,12 @@ id cb_terms_2
 id editTextMessage
 id editTextUser1
 id editTextUser2
+id et_address
 id et_content
 id et_email
 id et_endTime
 id et_id
 id et_info
-id et_name
 id et_password
 id et_password_confirm
 id et_photo
