@@ -50,16 +50,37 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     private void checkDuplicateId() {
-        // ID 중복 확인 로직 (서버 연결이 필요하거나 로컬에서 간단히 처리 가능)
+        // ID 입력값 가져오기
         String id = etId.getText().toString().trim();
         if (TextUtils.isEmpty(id)) {
             etId.setError("ID is required.");
-        } else {
-            // 예제: ID가 이미 존재하는지 확인하는 로직
-            // 실제로는 서버 요청이 필요
-            Toast.makeText(this, "ID is available.", Toast.LENGTH_SHORT).show();
+            return;
         }
+
+        // Firestore 초기화
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        // Firestore에서 ID가 존재하는지 확인
+        db.collection("users")
+                .whereEqualTo("nickname", id)
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        if (!task.getResult().isEmpty()) {
+                            // ID가 이미 존재할 경우
+                            etId.setError("This ID is already taken.");
+                            Toast.makeText(this, "This ID is already taken. Please choose another one.", Toast.LENGTH_SHORT).show();
+                        } else {
+                            // ID가 사용 가능할 경우
+                            Toast.makeText(this, "ID is available.", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        // Firestore 요청 실패
+                        Toast.makeText(this, "Failed to check ID: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
+
 
     private void registerUser() {
         String id = etId.getText().toString().trim();
@@ -107,12 +128,31 @@ public class SignupActivity extends AppCompatActivity {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        // 회원가입 성공, UID 가져오기
-                        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                        // Firestore 초기화
+                        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-                        // Firestore에 UID와 닉네임 저장
-                        saveUserToFirestore(uid, id);
-
+                        // Firestore에서 닉네임 중복 확인
+                        db.collection("users")
+                                .whereEqualTo("nickname", id)
+                                .get()
+                                .addOnCompleteListener(nicknameTask -> {
+                                    if (nicknameTask.isSuccessful()) {
+                                        if (!nicknameTask.getResult().isEmpty()) {
+                                            // 닉네임 중복 발견
+                                            Toast.makeText(SignupActivity.this, "This nickname is already taken.", Toast.LENGTH_SHORT).show();
+                                            FirebaseAuth.getInstance().getCurrentUser().delete(); // 이메일 등록 취소
+                                        } else {
+                                            // 닉네임 중복 없음, Firestore에 UID와 닉네임 저장
+                                            String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                                            saveUserToFirestore(uid, id);
+                                        }
+                                    } else {
+                                        // Firestore 닉네임 확인 실패
+                                        Toast.makeText(SignupActivity.this, "Failed to check nickname: " + nicknameTask.getException().getMessage(),
+                                                Toast.LENGTH_SHORT).show();
+                                        FirebaseAuth.getInstance().getCurrentUser().delete(); // 이메일 등록 취소
+                                    }
+                                });
                     } else {
                         if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                             etEmail.setError("This email is already registered.");
@@ -125,7 +165,7 @@ public class SignupActivity extends AppCompatActivity {
                 });
     }
 
-    private void saveUserToFirestore(String uid, String nickname) {
+        private void saveUserToFirestore(String uid, String nickname) {
         // Firestore 초기화
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 

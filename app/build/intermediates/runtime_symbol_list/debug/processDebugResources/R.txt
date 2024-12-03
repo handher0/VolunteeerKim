@@ -3296,11 +3296,13 @@ int id btn_category_question 0x7f080075
 int id btn_check_id 0x7f080076
 int id btn_detail 0x7f080077
 int id btn_donation 0x7f080078
+int id btn_google_login 0x7f080251
 int id btn_login 0x7f080079
 int id btn_menu 0x7f08007a
 int id btn_next 0x7f08007b
 int id btn_ranking 0x7f08007c
 int id btn_recommendation 0x7f08007d
+int id btn_save 0x7f080252
 int id btn_search 0x7f08007e
 int id btn_sign_in 0x7f08007f
 int id btn_submit 0x7f080080
@@ -3401,6 +3403,7 @@ int id et_email 0x7f0800de
 int id et_endTime 0x7f0800df
 int id et_id 0x7f0800e0
 int id et_info 0x7f0800e1
+int id et_nickname 0x7f080253
 int id et_password 0x7f0800e2
 int id et_password_confirm 0x7f0800e3
 int id et_photo 0x7f0800e4
@@ -3886,6 +3889,7 @@ int layout abc_tooltip 0x7f0b001b
 int layout activity_community_crud 0x7f0b001c
 int layout activity_intro 0x7f0b001d
 int layout activity_main 0x7f0b001e
+int layout activity_nickname 0x7f0b0080
 int layout activity_post_list 0x7f0b001f
 int layout browser_actions_context_menu_page 0x7f0b0020
 int layout browser_actions_context_menu_row 0x7f0b0021
