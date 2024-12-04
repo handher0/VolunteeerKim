@@ -18,6 +18,7 @@ color textPrimary
 color textSecondary
 color unselectedGray
 color white
+drawable ad1
 drawable baseline_account_circle_24
 drawable baseline_add_24
 drawable baseline_add_photo_alternate_24
@@ -90,7 +91,7 @@ id et_time_start
 id et_vplace
 id fabAddPost
 id fragment_container
-id img_banner
+id img_banner_ad
 id joinBtn
 id leftMessageContainer
 id loginBtn
@@ -117,11 +118,17 @@ id textViewRightTime
 id toolbar
 id tvTitle
 id tv_address
+id tv_calendar
 id tv_login_title
 id tv_mate_title
 id tv_name
+id tv_ranking
+id tv_recommendation
 id tv_review_title
+id tv_task_1
+id tv_task_2
 id tv_title
+id tv_total_time
 id tv_user_name
 layout activity_community_crud
 layout activity_intro
@@ -133,6 +140,7 @@ layout chat_activity_room
 layout chat_item_date_header
 layout chat_item_list
 layout chat_item_message
+layout fragment_calendar
 layout fragment_chat
 layout fragment_chat_add_friend
 layout fragment_chat_room
@@ -140,6 +148,9 @@ layout fragment_community_review
 layout fragment_community_review_post
 layout fragment_home
 layout fragment_my_page
+layout fragment_ranking
+layout fragment_recommendation
+layout fragment_total_time
 layout item_post
 layout login_activity
 layout login_intro

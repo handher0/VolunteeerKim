@@ -56,12 +56,12 @@
         "source": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-main-41:/layout/fragment_home.xml"
     },
     {
-        "merged": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-39:/drawable_baseline_arrow_drop_down_24.xml.flat",
-        "source": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-main-41:/drawable/baseline_arrow_drop_down_24.xml"
+        "merged": "com.example.volunteerkim.app-debug-39:/layout_fragment_recommendation.xml.flat",
+        "source": "com.example.volunteerkim.app-main-41:/layout/fragment_recommendation.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_login_activity.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/login_activity.xml"
+        "merged": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-39:/drawable_baseline_arrow_drop_down_24.xml.flat",
+        "source": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-main-41:/drawable/baseline_arrow_drop_down_24.xml"
     },
     {
         "merged": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-39:/drawable_vms.png.flat",
@@ -70,6 +70,10 @@
     {
         "merged": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-39:/layout_login_intro.xml.flat",
         "source": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-main-41:/layout/login_intro.xml"
+    },
+    {
+        "merged": "com.example.volunteerkim.app-debug-39:/layout_fragment_calendar.xml.flat",
+        "source": "com.example.volunteerkim.app-main-41:/layout/fragment_calendar.xml"
     },
     {
         "merged": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-39:/layout_activity_nickname.xml.flat",
@@ -94,6 +98,10 @@
     {
         "merged": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-39:/mipmap-hdpi_ic_launcher.webp.flat",
         "source": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-main-41:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.volunteerkim.app-debug-39:/layout_fragment_ranking.xml.flat",
+        "source": "com.example.volunteerkim.app-main-41:/layout/fragment_ranking.xml"
     },
     {
         "merged": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-39:/drawable_baseline_home_24.xml.flat",
@@ -180,6 +188,10 @@
         "source": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-main-41:/layout/chat_item_date_header.xml"
     },
     {
+        "merged": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-39:/drawable_ad1.png.flat",
+        "source": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-main-41:/drawable/ad1.png"
+    },
+    {
         "merged": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-39:/layout_activity_community_crud.xml.flat",
         "source": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-main-41:/layout/activity_community_crud.xml"
     },
@@ -218,6 +230,10 @@
     {
         "merged": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-39:/drawable_baseline_space_dashboard_24.xml.flat",
         "source": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-main-41:/drawable/baseline_space_dashboard_24.xml"
+    },
+    {
+        "merged": "com.example.volunteerkim.app-debug-39:/layout_fragment_total_time.xml.flat",
+        "source": "com.example.volunteerkim.app-main-41:/layout/fragment_total_time.xml"
     },
     {
         "merged": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-39:/drawable_vms_svg.xml.flat",

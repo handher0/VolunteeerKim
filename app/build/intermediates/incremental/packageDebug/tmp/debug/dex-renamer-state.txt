@@ -1,4 +1,4 @@
-#Wed Dec 04 17:25:47 KST 2024
+#Wed Dec 04 19:06:36 KST 2024
 base.0=/Users/handher0/AndroidStudioProjects/VolunteerKim/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/Users/handher0/AndroidStudioProjects/VolunteerKim/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 base.2=/Users/handher0/AndroidStudioProjects/VolunteerKim/app/build/intermediates/dex/debug/mergeProjectDexDebug/12/classes.dex

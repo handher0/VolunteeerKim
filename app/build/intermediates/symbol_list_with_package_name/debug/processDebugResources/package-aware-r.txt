@@ -3024,6 +3024,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable ad1
 drawable avd_hide_password
 drawable avd_show_password
 drawable baseline_account_circle_24
@@ -3459,7 +3460,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id img_banner
+id img_banner_ad
 id immediateStop
 id included
 id indeterminate
@@ -3743,11 +3744,17 @@ id transition_transform
 id triangle
 id tvTitle
 id tv_address
+id tv_calendar
 id tv_login_title
 id tv_mate_title
 id tv_name
+id tv_ranking
+id tv_recommendation
 id tv_review_title
+id tv_task_1
+id tv_task_2
 id tv_title
+id tv_total_time
 id tv_user_name
 id unchecked
 id uniform
@@ -3916,6 +3923,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_calendar
 layout fragment_chat
 layout fragment_chat_add_friend
 layout fragment_chat_room
@@ -3923,6 +3931,9 @@ layout fragment_community_review
 layout fragment_community_review_post
 layout fragment_home
 layout fragment_my_page
+layout fragment_ranking
+layout fragment_recommendation
+layout fragment_total_time
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout item_post
