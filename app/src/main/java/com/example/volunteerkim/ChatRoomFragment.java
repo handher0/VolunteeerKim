@@ -85,8 +85,10 @@ public class ChatRoomFragment extends Fragment {
         messageAdapter = new ChatMessageAdapter(messages, currentUserId);
         recyclerViewMessages.setAdapter(messageAdapter);
 
+        // 초기화 확인 및 예외 처리
         if (chatRoomId == null || currentUserId == null) {
             Toast.makeText(getContext(), "Error: Missing user or chat room information.", Toast.LENGTH_SHORT).show();
+            Log.e("ChatRoomFragment", "Missing chatRoomId or currentUserId");
             return;
         }
 
@@ -106,13 +108,20 @@ public class ChatRoomFragment extends Fragment {
         String messageId = chatRoomRef.push().getKey();
         if (messageId != null) {
             Map<String, Object> messageData = new HashMap<>();
-            messageData.put("sender", currentUserId);
-            messageData.put("message", messageText);
+            messageData.put("messageId", messageId);
+            messageData.put("senderId", currentUserId);
+            messageData.put("text", messageText);
             messageData.put("timestamp", System.currentTimeMillis());
 
             chatRoomRef.child(messageId).setValue(messageData)
-                    .addOnSuccessListener(aVoid -> editTextMessage.setText(""))
-                    .addOnFailureListener(e -> Toast.makeText(getContext(), "Failed to send message.", Toast.LENGTH_SHORT).show());
+                    .addOnSuccessListener(aVoid -> {
+                        editTextMessage.setText("");
+                        Log.d("ChatRoomFragment", "Message sent successfully.");
+                    })
+                    .addOnFailureListener(e -> {
+                        Log.e("ChatRoomFragment", "Failed to send message.", e);
+                        Toast.makeText(getContext(), "Failed to send message.", Toast.LENGTH_SHORT).show();
+                    });
         }
     }
 
@@ -121,18 +130,27 @@ public class ChatRoomFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 messages.clear();
-                for (DataSnapshot messageSnapshot : snapshot.getChildren()) {
-                    String messageId = messageSnapshot.getKey();
-                    String text = messageSnapshot.child("message").getValue(String.class);
-                    String senderId = messageSnapshot.child("sender").getValue(String.class);
-                    Long timestamp = messageSnapshot.child("timestamp").getValue(Long.class);
+                Log.d("ChatRoomFragment", "Loading messages for chatRoomId: " + chatRoomId);
 
-                    if (messageId != null && text != null && senderId != null && timestamp != null) {
-                        messages.add(new ChatMessage(messageId, text, senderId, timestamp));
+                for (DataSnapshot messageSnapshot : snapshot.getChildren()) {
+                    try {
+                        String messageId = messageSnapshot.getKey();
+                        String text = messageSnapshot.child("text").getValue(String.class);
+                        String senderId = messageSnapshot.child("senderId").getValue(String.class);
+                        Long timestamp = messageSnapshot.child("timestamp").getValue(Long.class);
+
+                        if (messageId != null && text != null && senderId != null && timestamp != null) {
+                            messages.add(new ChatMessage(messageId, text, senderId, timestamp));
+                            Log.d("ChatRoomFragment", "Parsed message: " + text + ", senderId: " + senderId);
+                        } else {
+                            Log.w("ChatRoomFragment", "Incomplete message data at " + messageSnapshot.getKey());
+                        }
+                    } catch (Exception e) {
+                        Log.e("ChatRoomFragment", "Error parsing message data", e);
                     }
                 }
                 messageAdapter.notifyDataSetChanged();
-                recyclerViewMessages.scrollToPosition(messages.size() - 1);
+                recyclerViewMessages.scrollToPosition(Math.max(messages.size() - 1, 0));
             }
 
             @Override

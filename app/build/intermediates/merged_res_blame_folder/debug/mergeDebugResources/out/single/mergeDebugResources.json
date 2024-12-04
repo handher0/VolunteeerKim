@@ -176,6 +176,10 @@
         "source": "com.example.volunteerkim.app-main-41:/drawable/baseline_search_24.xml"
     },
     {
+        "merged": "com.example.volunteerkim.app-debug-39:/layout_fragment_chat_add_friend.xml.flat",
+        "source": "com.example.volunteerkim.app-main-41:/layout/fragment_chat_add_friend.xml"
+    },
+    {
         "merged": "com.example.volunteerkim.app-debug-39:/drawable_bg_message_sent.xml.flat",
         "source": "com.example.volunteerkim.app-main-41:/drawable/bg_message_sent.xml"
     },

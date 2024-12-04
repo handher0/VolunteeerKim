@@ -5,26 +5,30 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- User1 입력 필드 -->
-    <EditText
-        android:id="@+id/editTextUser1"
+    <!-- 상단바 역할의 제목 -->
+    <TextView
+        android:id="@+id/chatListTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter User1 ID"
-        android:inputType="text" />
+        android:text="채팅방 목록"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:background="#6750A4"
+        android:textColor="#000000"
+        android:layout_marginBottom="8dp" />
 
-    <!-- User2 입력 필드 -->
-    <EditText
-        android:id="@+id/editTextUser2"
+    <!-- 채팅방 목록 RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewChatList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter User2 ID"
-        android:inputType="text" />
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
-    <!-- 채팅방 생성 버튼 -->
     <Button
-        android:id="@+id/buttonCreateChatRoom"
+        android:id="@+id/buttonAddFriends"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create Chat Room" />
+        android:layout_marginTop="8dp"
+        android:text="Add Friends" />
 </LinearLayout>
