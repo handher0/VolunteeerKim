@@ -3305,7 +3305,6 @@ id btn_ranking
 id btn_recommendation
 id btn_save
 id btn_search
-id btn_sign_in
 id btn_submit
 id btn_total_time
 id buttonAddFriend
