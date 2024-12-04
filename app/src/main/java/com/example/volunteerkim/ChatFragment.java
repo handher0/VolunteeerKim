@@ -23,20 +23,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ChatFragment extends Fragment {
+
     private static final String TAG = "ChatFragment";
-    private String user1id = "1234"; // 현재 로그인한 사용자 ID
+    private static final String ARG_USER1ID = "user1id";
+    private String user1id; // 현재 로그인한 사용자 닉네임
 
     private RecyclerView recyclerViewChatList;
     private ChatListAdapter chatListAdapter;
-
 
     public ChatFragment() {
         // Required empty public constructor
     }
 
-    public static ChatRoomFragment newInstance(String chatRoomId, String user1Id) {
-        ChatRoomFragment fragment = new ChatRoomFragment();
+    /**
+     * ChatFragment의 newInstance 메서드. MainActivity에서 닉네임 전달 시 사용.
+     */
+    public static ChatFragment newInstance(String user1id) {
+        ChatFragment fragment = new ChatFragment();
         Bundle args = new Bundle();
+        args.putString(ARG_USER1ID, user1id);
         fragment.setArguments(args);
         return fragment;
     }
@@ -48,18 +53,34 @@ public class ChatFragment extends Fragment {
     }
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            user1id = getArguments().getString(ARG_USER1ID);
+            if (user1id != null) {
+                Log.d(TAG, "Received user1id in ChatFragment: " + user1id);
+            } else {
+                Log.e(TAG, "user1id is null in ChatFragment");
+            }
+        } else {
+            Log.e(TAG, "getArguments() is null in ChatFragment");
+        }
+    }
+
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         Button buttonAddFriends = view.findViewById(R.id.buttonAddFriends);
         if (buttonAddFriends != null) {
             buttonAddFriends.setOnClickListener(v -> {
-                ChatAddFriendFragment addFriendFragment = new ChatAddFriendFragment();
+                ChatAddFriendFragment addFriendFragment = ChatAddFriendFragment.newInstance(user1id);
                 getParentFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, addFriendFragment) // fragment_container는 ChatFragment가 있는 컨테이너 ID
-                        .addToBackStack(null) // 뒤로 가기 지원
+                        .replace(R.id.fragment_container, addFriendFragment)
+                        .addToBackStack(null)
                         .commit();
             });
+
         }
 
         // RecyclerView 설정
@@ -76,7 +97,7 @@ public class ChatFragment extends Fragment {
     }
 
     /**
-     * 채팅방을 열고 Chat RoomFragment로 이동
+     * 채팅방을 열고 ChatRoomFragment로 이동
      */
     private void openChatRoom(String user2id) {
         String chatRoomId = ChatHelper.generateChatRoomId(user1id, user2id);
@@ -106,6 +127,7 @@ public class ChatFragment extends Fragment {
                             String[] ids = chatRoomId.split("_");
                             String user2id = ids[0].equals(user1id) ? ids[1] : ids[0]; // 상대방 ID 추출
                             chatPartners.add(user2id);
+                            Log.d(TAG, "Chat room ID: " + chatRoomId + ", Partner ID: " + user2id);
                         }
                     }
                     Log.d(TAG, "Loaded chat partners: " + chatPartners);
@@ -121,4 +143,5 @@ public class ChatFragment extends Fragment {
             }
         });
     }
+
 }

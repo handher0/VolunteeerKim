@@ -25,9 +25,18 @@ public class ChatAddFriendFragment extends Fragment {
 
     private EditText editTextFriendName;
     private Button buttonAddFriend;
+    private String user1id; // 현재 로그인한 사용자 닉네임
 
     public ChatAddFriendFragment() {
         // Required empty public constructor
+    }
+
+    public static ChatAddFriendFragment newInstance(String user1id) {
+        ChatAddFriendFragment fragment = new ChatAddFriendFragment();
+        Bundle args = new Bundle();
+        args.putString("user1id", user1id);
+        fragment.setArguments(args);
+        return fragment;
     }
 
     @Nullable
@@ -37,57 +46,72 @@ public class ChatAddFriendFragment extends Fragment {
     }
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            user1id = getArguments().getString("user1id"); // MainActivity에서 전달된 user1id 가져오기
+        }
+    }
+
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         editTextFriendName = view.findViewById(R.id.editTextFriendName);
         buttonAddFriend = view.findViewById(R.id.buttonAddFriend);
 
-        // 현재 로그인한 사용자 ID (임시)
-        String currentUserId = "1234"; // Replace with actual user ID fetching logic
-
         buttonAddFriend.setOnClickListener(v -> {
-            String friendName = editTextFriendName.getText().toString().trim();
-            if (TextUtils.isEmpty(friendName)) {
-                Toast.makeText(getContext(), "Please enter a valid friend name", Toast.LENGTH_SHORT).show();
+            String friendNickname = editTextFriendName.getText().toString().trim();
+            Log.d("ChatAddFriendFragment", "Entered friend nickname: " + friendNickname);
+
+            if (TextUtils.isEmpty(friendNickname)) {
+                Toast.makeText(getContext(), "Please enter a valid friend nickname", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             // 채팅방 생성 호출
-            createChatRoom(currentUserId, friendName);
-
-            // 이전 화면으로 돌아가기
-            getParentFragmentManager().popBackStack();
+            createChatRoom(user1id, friendNickname);
         });
     }
 
-    private void createChatRoom(String user1id, String user2id) {
-        String chatRoomId = ChatHelper.generateChatRoomId(user1id, user2id);
+    /**
+     * 채팅방 생성 메서드
+     */
+    private void createChatRoom(String user1Nickname, String user2Nickname) {
+        Log.d("ChatHelper", "Generating chat room ID with user1: " + user1Nickname + ", user2: " + user2Nickname);
+        String chatRoomId = ChatHelper.generateChatRoomId(user1Nickname, user2Nickname);
+        Log.d("ChatHelper", "Generated chat room ID: " + chatRoomId);
+
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
 
         // 사용자 채팅방 경로 설정
-        database.child("users").child(user1id).child("chats").child(chatRoomId).setValue(user2id)
-                .addOnSuccessListener(aVoid -> Log.d("ChatFragment", "Chat room added for user1id: " + user1id))
-                .addOnFailureListener(e -> Log.e("ChatFragment", "Failed to add chat room for user1id: " + user1id, e));
+        database.child("users").child(user1Nickname).child("chats").child(chatRoomId).setValue(user2Nickname)
+                .addOnSuccessListener(aVoid -> Log.d("ChatFragment", "Chat room added for user1Nickname: " + user1Nickname))
+                .addOnFailureListener(e -> Log.e("ChatFragment", "Failed to add chat room for user1Nickname: " + user1Nickname, e));
 
-        database.child("users").child(user2id).child("chats").child(chatRoomId).setValue(user1id)
-                .addOnSuccessListener(aVoid -> Log.d("ChatFragment", "Chat room added for user2id: " + user2id))
-                .addOnFailureListener(e -> Log.e("ChatFragment", "Failed to add chat room for user2id: " + user2id, e));
+        database.child("users").child(user2Nickname).child("chats").child(chatRoomId).setValue(user1Nickname)
+                .addOnSuccessListener(aVoid -> Log.d("ChatFragment", "Chat room added for user2Nickname: " + user2Nickname))
+                .addOnFailureListener(e -> Log.e("ChatFragment", "Failed to add chat room for user2Nickname: " + user2Nickname, e));
 
         // 채팅방 경로에 기본 데이터 추가
         HashMap<String, Object> chatRoomData = new HashMap<>();
         chatRoomData.put("createdAt", System.currentTimeMillis()); // 생성 시간 추가
         chatRoomData.put("lastMessage", ""); // 기본 메시지 값 추가
 
-// 배열 대신 List로 변환
+        // 멤버 정보 추가
         List<String> members = new ArrayList<>();
-        members.add(user1id);
-        members.add(user2id);
-        chatRoomData.put("members", members); // 멤버 정보 추가
+        members.add(user1Nickname);
+        members.add(user2Nickname);
+        chatRoomData.put("members", members);
 
         database.child("chatRooms").child(chatRoomId).setValue(chatRoomData)
                 .addOnSuccessListener(aVoid -> Log.d("ChatFragment", "Chat room created with ID: " + chatRoomId))
                 .addOnFailureListener(e -> Log.e("ChatFragment", "Failed to create chat room with ID: " + chatRoomId, e));
 
+        // 사용자에게 알림
+        Toast.makeText(getContext(), "Chat room created successfully!", Toast.LENGTH_SHORT).show();
+
+        // 이전 화면으로 돌아가기
+        getParentFragmentManager().popBackStack();
     }
 }
