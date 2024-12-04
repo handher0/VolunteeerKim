@@ -2120,6 +2120,7 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color purple_500
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -3176,7 +3177,7 @@ drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable vms
-drawable vms_svg
+drawable vms1
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -4494,6 +4495,8 @@ style Base_Widget_MaterialComponents_Snackbar
 style Base_Widget_MaterialComponents_TextInputEditText
 style Base_Widget_MaterialComponents_TextInputLayout
 style Base_Widget_MaterialComponents_TextView
+style BottomNav_ActiveText
+style BottomNav_InactiveText
 style CardView
 style CardView_Dark
 style CardView_Light

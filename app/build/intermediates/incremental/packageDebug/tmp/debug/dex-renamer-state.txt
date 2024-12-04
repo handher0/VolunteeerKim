@@ -1,4 +1,4 @@
-#Wed Dec 04 20:00:10 KST 2024
+#Wed Dec 04 20:46:46 KST 2024
 base.0=/Users/dongoh-kim/KimBongsexy/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/Users/dongoh-kim/KimBongsexy/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 base.2=/Users/dongoh-kim/KimBongsexy/app/build/intermediates/dex/debug/mergeProjectDexDebug/12/classes.dex

@@ -37,7 +37,7 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable kimbongsa
 drawable vms
-drawable vms_svg
+drawable vms1
 id bottom_navigation
 id bt_create
 id bt_delete

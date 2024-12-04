@@ -2119,6 +2119,7 @@ int color primary_text_default_material_dark 0x7f05030a
 int color primary_text_default_material_light 0x7f05030b
 int color primary_text_disabled_material_dark 0x7f05030c
 int color primary_text_disabled_material_light 0x7f05030d
+int color purple_500 0x7f050322
 int color ripple_material_dark 0x7f05030e
 int color ripple_material_light 0x7f05030f
 int color secondary_text_default_material_dark 0x7f050310
@@ -3175,7 +3176,7 @@ int drawable test_level_drawable 0x7f07010c
 int drawable tooltip_frame_dark 0x7f07010d
 int drawable tooltip_frame_light 0x7f07010e
 int drawable vms 0x7f07010f
-int drawable vms_svg 0x7f070110
+int drawable vms1 0x7f070111
 int id ALT 0x7f080000
 int id BOTTOM_END 0x7f080001
 int id BOTTOM_START 0x7f080002
@@ -4493,6 +4494,8 @@ int style Base_Widget_MaterialComponents_Snackbar 0x7f12011c
 int style Base_Widget_MaterialComponents_TextInputEditText 0x7f12011d
 int style Base_Widget_MaterialComponents_TextInputLayout 0x7f12011e
 int style Base_Widget_MaterialComponents_TextView 0x7f12011f
+int style BottomNav_ActiveText 0x7f12046a
+int style BottomNav_InactiveText 0x7f12046b
 int style CardView 0x7f120120
 int style CardView_Dark 0x7f120121
 int style CardView_Light 0x7f120122
