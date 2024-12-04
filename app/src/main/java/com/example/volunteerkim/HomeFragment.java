@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -64,6 +65,9 @@ public class HomeFragment extends Fragment {
         // 닉네임 로드
         loadUserName();
 
+        // 버튼 클릭 리스너 설정
+        setupButtonListeners(view);
+
         return view;
     }
 
@@ -92,5 +96,26 @@ public class HomeFragment extends Fragment {
         } else {
             tvUserName.setText("봉사님 반갑습니다");
         }
+    }
+
+    private void setupButtonListeners(View view) {
+        // 총 봉사시간 버튼
+        view.findViewById(R.id.btn_total_time).setOnClickListener(v -> navigateToFragment(new UtilTotalTimeFragment()));
+
+        // 봉사 달력 버튼
+        view.findViewById(R.id.btn_donation).setOnClickListener(v -> navigateToFragment(new UtilCalenderFragment()));
+
+        // 봉사 랭킹 버튼
+        view.findViewById(R.id.btn_ranking).setOnClickListener(v -> navigateToFragment(new UtilRankingFragment()));
+
+        // 봉사 추천 버튼
+        view.findViewById(R.id.btn_recommendation).setOnClickListener(v -> navigateToFragment(new UtilRecomendationFragment()));
+    }
+
+    private void navigateToFragment(Fragment fragment) {
+        FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, fragment);
+        transaction.addToBackStack(null); // 뒤로 가기 스택에 추가
+        transaction.commit();
     }
 }
