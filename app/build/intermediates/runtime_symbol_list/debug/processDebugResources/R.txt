@@ -3023,6 +3023,7 @@ int drawable abc_textfield_search_activated_mtrl_alpha 0x7f070074
 int drawable abc_textfield_search_default_mtrl_alpha 0x7f070075
 int drawable abc_textfield_search_material 0x7f070076
 int drawable abc_vector_test 0x7f070077
+int drawable ad1 0x7f070110
 int drawable avd_hide_password 0x7f070078
 int drawable avd_show_password 0x7f070079
 int drawable baseline_account_circle_24 0x7f07007a
@@ -3458,7 +3459,7 @@ int id ifRoom 0x7f080118
 int id ignore 0x7f080119
 int id ignoreRequest 0x7f08011a
 int id image 0x7f08011b
-int id img_banner 0x7f08011c
+int id img_banner_ad 0x7f080256
 int id immediateStop 0x7f08011d
 int id included 0x7f08011e
 int id indeterminate 0x7f08011f
@@ -3746,6 +3747,8 @@ int id tv_login_title 0x7f080238
 int id tv_mate_title 0x7f080239
 int id tv_name 0x7f08023a
 int id tv_review_title 0x7f08023b
+int id tv_task_1 0x7f080257
+int id tv_task_2 0x7f080258
 int id tv_title 0x7f08023c
 int id tv_user_name 0x7f08023d
 int id unchecked 0x7f08023e

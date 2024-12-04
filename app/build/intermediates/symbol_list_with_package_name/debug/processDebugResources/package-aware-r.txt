@@ -3024,6 +3024,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable ad1
 drawable avd_hide_password
 drawable avd_show_password
 drawable baseline_account_circle_24
@@ -3459,7 +3460,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id img_banner
+id img_banner_ad
 id immediateStop
 id included
 id indeterminate
@@ -3747,6 +3748,8 @@ id tv_login_title
 id tv_mate_title
 id tv_name
 id tv_review_title
+id tv_task_1
+id tv_task_2
 id tv_title
 id tv_user_name
 id unchecked
