@@ -29,6 +29,7 @@ public class ChatFragment extends Fragment {
     private RecyclerView recyclerViewChatList;
     private ChatListAdapter chatListAdapter;
 
+
     public ChatFragment() {
         // Required empty public constructor
     }

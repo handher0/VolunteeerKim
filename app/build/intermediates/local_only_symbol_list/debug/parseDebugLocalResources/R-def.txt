@@ -53,20 +53,19 @@ id btn_category_question
 id btn_check_id
 id btn_detail
 id btn_donation
+id btn_google_login
 id btn_login
 id btn_menu
 id btn_next
 id btn_ranking
 id btn_recommendation
+id btn_save
 id btn_search
 id btn_sign_in
 id btn_submit
-<<<<<<< HEAD
+id btn_total_time
 id buttonAddFriend
 id buttonAddFriends
-=======
-id btn_total_time
->>>>>>> 17a5aed702d74dfc41aadbfeef7f883031375e9b
 id buttonCreateChatRoom
 id buttonSend
 id cb_terms_1
@@ -74,17 +73,13 @@ id cb_terms_2
 id chatListTitle
 id editTextFriendName
 id editTextMessage
-<<<<<<< HEAD
-=======
-id editTextUser1
-id editTextUser2
 id et_address
->>>>>>> 17a5aed702d74dfc41aadbfeef7f883031375e9b
 id et_content
 id et_email
 id et_endTime
 id et_id
 id et_info
+id et_nickname
 id et_password
 id et_password_confirm
 id et_photo
@@ -132,6 +127,7 @@ id tv_user_name
 layout activity_community_crud
 layout activity_intro
 layout activity_main
+layout activity_nickname
 layout activity_post_list
 layout chat_activity_main
 layout chat_activity_room

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:2:1-35:12
-INJECTED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:2:1-35:12
-INJECTED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:2:1-35:12
-INJECTED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:2:1-35:12
+ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:2:1-36:12
+INJECTED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:2:1-36:12
+INJECTED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:2:1-36:12
+INJECTED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:2:1-36:12
 MERGED from [androidx.databinding:viewbinding:8.5.2] /Users/handher0/.gradle/caches/transforms-4/b24f36a2b24fa12159d4530650eb6e60/transformed/jetified-viewbinding-8.5.2/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-auth:23.1.0] /Users/handher0/.gradle/caches/transforms-4/465b18b4b84555e3fe3260826d39d7c3/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:17:1-75:12
 MERGED from [androidx.credentials:credentials:1.2.0-rc01] /Users/handher0/.gradle/caches/transforms-4/32e3aca58f755fdeab35347d18f6030a/transformed/jetified-credentials-1.2.0-rc01/AndroidManifest.xml:2:1-7:12
@@ -99,8 +99,8 @@ MERGED from [com.google.android.recaptcha:recaptcha:18.5.1] /Users/handher0/.gra
 	android:name
 		ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:5:22-95
 application
-ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:8:5-34:19
-INJECTED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:8:5-34:19
+ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:8:5-35:19
+INJECTED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:8:5-35:19
 MERGED from [com.google.firebase:firebase-auth:23.1.0] /Users/handher0/.gradle/caches/transforms-4/465b18b4b84555e3fe3260826d39d7c3/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.firebase:firebase-auth:23.1.0] /Users/handher0/.gradle/caches/transforms-4/465b18b4b84555e3fe3260826d39d7c3/transformed/jetified-firebase-auth-23.1.0/AndroidManifest.xml:28:5-73:19
 MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/handher0/.gradle/caches/transforms-4/c8aab06b0295d63bf2f7e44101bb18d8/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:23:5-42:19
@@ -183,34 +183,38 @@ activity#com.example.volunteerkim.SignupActivity
 ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:23:9-52
 	android:name
 		ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:23:19-49
+activity#com.example.volunteerkim.NicknameActivity
+ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:24:9-54
+	android:name
+		ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:24:19-51
 activity#com.example.volunteerkim.IntroActivity
-ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:24:9-31:20
+ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:25:9-32:20
 	android:exported
-		ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:26:13-36
+		ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:27:13-36
 	android:name
-		ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:25:13-42
+		ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:26:13-42
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:27:13-30:29
+ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:28:13-31:29
 action#android.intent.action.MAIN
-ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:28:17-69
+ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:29:17-69
 	android:name
-		ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:28:25-66
+		ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:29:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:29:17-77
+ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:30:17-77
 	android:name
-		ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:29:27-74
+		ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:30:27-74
 activity#com.example.volunteerkim.CommunityCrudActivity
-ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:32:9-83
+ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:33:9-83
 	android:exported
-		ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:32:57-80
+		ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:33:57-80
 	android:name
-		ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:32:19-56
+		ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:33:19-56
 activity#com.example.volunteerkim.MainActivity
-ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:33:9-74
+ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:34:9-74
 	android:exported
-		ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:33:48-71
+		ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:34:48-71
 	android:name
-		ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:33:19-47
+		ADDED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml:34:19-47
 uses-sdk
 INJECTED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/handher0/AndroidStudioProjects/VolunteerKim/app/src/main/AndroidManifest.xml
