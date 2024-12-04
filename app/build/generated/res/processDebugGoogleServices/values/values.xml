@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="default_web_client_id" translatable="false">939503009350-8vrg66un9ubrk7vu5bcp9bfflbhf7lni.apps.googleusercontent.com</string>
     <string name="firebase_database_url" translatable="false">https://volunteerkim-9ab83-default-rtdb.asia-southeast1.firebasedatabase.app</string>
     <string name="gcm_defaultSenderId" translatable="false">939503009350</string>
     <string name="google_api_key" translatable="false">AIzaSyCi7YoL2mlTaCMff9nE1i0uQ2KzmM4ZbU4</string>

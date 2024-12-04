@@ -33,6 +33,13 @@ public class ChatFragment extends Fragment {
         // Required empty public constructor
     }
 
+    public static ChatRoomFragment newInstance(String chatRoomId, String user1Id) {
+        ChatRoomFragment fragment = new ChatRoomFragment();
+        Bundle args = new Bundle();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

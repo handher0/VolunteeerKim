@@ -58,28 +58,18 @@
                 android:id="@+id/et_search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:drawableEnd="@drawable/baseline_search_24"
-                android:hint="봉사지 검색해서 찾고 싶은 곳 찾기?"
-                android:padding="12dp" />
+                android:hint="네이버지도에서 검색"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:maxLines="1"
+                android:singleLine="true"/>
 
-            <!-- 봉사지 정보 직접 추가하기 -->
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="봉사지 정보 직접 추가하기"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/et_name"
+                android:id="@+id/et_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:hint="네이버지도에서 검색"
-                android:padding="12dp" />
+                android:textSize="14sp" />
 
             <!-- 봉사지 정보 입력 필드들 -->
             <Spinner
@@ -140,7 +130,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="00:00"
-                    android:inputType="time"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:inputType="none"
                     android:padding="12dp" />
 
                 <TextView
@@ -155,7 +147,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="00:00"
-                    android:inputType="time"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:inputType="none"
                     android:padding="12dp" />
             </LinearLayout>
 

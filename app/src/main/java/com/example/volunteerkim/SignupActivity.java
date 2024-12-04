@@ -12,6 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -103,9 +107,12 @@ public class SignupActivity extends AppCompatActivity {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        Toast.makeText(SignupActivity.this, "Registration successful!", Toast.LENGTH_SHORT).show();
-                        // 회원가입 성공 후 추가 처리 (예: 메인 화면 이동)
-                        finish();
+                        // 회원가입 성공, UID 가져오기
+                        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+                        // Firestore에 UID와 닉네임 저장
+                        saveUserToFirestore(uid, id);
+
                     } else {
                         if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                             etEmail.setError("This email is already registered.");
@@ -115,6 +122,27 @@ public class SignupActivity extends AppCompatActivity {
                                     Toast.LENGTH_LONG).show();
                         }
                     }
+                });
+    }
+
+    private void saveUserToFirestore(String uid, String nickname) {
+        // Firestore 초기화
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        // 사용자 데이터를 Map으로 생성
+        Map<String, Object> user = new HashMap<>();
+        user.put("nickname", nickname);
+        user.put("time", 0); // 초기 봉사시간 0으로 설정
+
+        // Firestore에 UID를 키로 사용하여 저장
+        db.collection("users").document(uid)
+                .set(user)
+                .addOnSuccessListener(aVoid -> {
+                    Toast.makeText(SignupActivity.this, "User profile created successfully!", Toast.LENGTH_SHORT).show();
+                    finish(); // 회원가입 성공 후 종료 또는 화면 이동
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(SignupActivity.this, "Failed to save user: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 });
     }
 }
