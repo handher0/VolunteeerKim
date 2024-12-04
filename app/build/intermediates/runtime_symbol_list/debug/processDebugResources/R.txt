@@ -3303,6 +3303,7 @@ int id btn_menu 0x7f08007b
 int id btn_next 0x7f08007c
 int id btn_ranking 0x7f08007d
 int id btn_recommendation 0x7f08007e
+int id btn_retry 0x7f08025f
 int id btn_save 0x7f08007f
 int id btn_search 0x7f080080
 int id btn_submit 0x7f080082
@@ -3605,6 +3606,7 @@ int id postLayout 0x7f0801aa
 int id pressed 0x7f0801ab
 int id progress_circular 0x7f0801ac
 int id progress_horizontal 0x7f0801ad
+int id question_layout 0x7f080260
 int id radio 0x7f0801ae
 int id ratingBar 0x7f0801af
 int id ratio 0x7f0801b0
@@ -3615,7 +3617,9 @@ int id recyclerViewMessages 0x7f0801b4
 int id recycler_mates 0x7f0801b5
 int id recycler_reviews 0x7f0801b6
 int id report_drawn 0x7f0801b7
+int id result_layout 0x7f080261
 int id reverseSawtooth 0x7f0801b8
+int id rg_options 0x7f08025d
 int id right 0x7f0801b9
 int id rightMessageContainer 0x7f0801ba
 int id rightToLeft 0x7f0801bb
@@ -3747,8 +3751,10 @@ int id tv_calendar 0x7f080259
 int id tv_login_title 0x7f080238
 int id tv_mate_title 0x7f080239
 int id tv_name 0x7f08023a
+int id tv_question 0x7f08025e
 int id tv_ranking 0x7f08025a
-int id tv_recommendation 0x7f08025b
+int id tv_result_description 0x7f080262
+int id tv_result_title 0x7f080263
 int id tv_review_title 0x7f08023b
 int id tv_task_1 0x7f080257
 int id tv_task_2 0x7f080258
