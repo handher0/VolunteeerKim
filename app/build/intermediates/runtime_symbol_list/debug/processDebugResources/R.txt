@@ -3743,13 +3743,17 @@ int id transition_transform 0x7f080234
 int id triangle 0x7f080235
 int id tvTitle 0x7f080236
 int id tv_address 0x7f080237
+int id tv_calendar 0x7f080259
 int id tv_login_title 0x7f080238
 int id tv_mate_title 0x7f080239
 int id tv_name 0x7f08023a
+int id tv_ranking 0x7f08025a
+int id tv_recommendation 0x7f08025b
 int id tv_review_title 0x7f08023b
 int id tv_task_1 0x7f080257
 int id tv_task_2 0x7f080258
 int id tv_title 0x7f08023c
+int id tv_total_time 0x7f08025c
 int id tv_user_name 0x7f08023d
 int id unchecked 0x7f08023e
 int id uniform 0x7f08023f
@@ -3918,6 +3922,7 @@ int layout design_navigation_menu 0x7f0b0034
 int layout design_navigation_menu_item 0x7f0b0035
 int layout design_text_input_end_icon 0x7f0b0036
 int layout design_text_input_start_icon 0x7f0b0037
+int layout fragment_calendar 0x7f0b0082
 int layout fragment_chat 0x7f0b0038
 int layout fragment_chat_add_friend 0x7f0b0039
 int layout fragment_chat_room 0x7f0b003a
@@ -3925,6 +3930,9 @@ int layout fragment_community_review 0x7f0b003b
 int layout fragment_community_review_post 0x7f0b003c
 int layout fragment_home 0x7f0b003d
 int layout fragment_my_page 0x7f0b003e
+int layout fragment_ranking 0x7f0b0083
+int layout fragment_recommendation 0x7f0b0084
+int layout fragment_total_time 0x7f0b0085
 int layout ime_base_split_test_activity 0x7f0b003f
 int layout ime_secondary_split_test_activity 0x7f0b0040
 int layout item_post 0x7f0b0041
