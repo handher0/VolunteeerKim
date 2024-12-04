@@ -1,42 +1,36 @@
 package com.example.volunteerkim;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ChatFragment extends Fragment {
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String TAG = "ChatFragment";
+    private String user1id = "1234"; // 현재 로그인한 사용자 ID
 
-    private String param1;
-    private String param2;
-
-    private EditText editTextUser1, editTextUser2;
-    private Button buttonCreateChatRoom;
+    private RecyclerView recyclerViewChatList;
+    private ChatListAdapter chatListAdapter;
 
     public ChatFragment() {
         // Required empty public constructor
-    }
-
-    public static ChatFragment newInstance(String param1, String param2) {
-        ChatFragment fragment = new ChatFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Nullable
@@ -49,40 +43,74 @@ public class ChatFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // XML에서 위젯 참조
-        editTextUser1 = view.findViewById(R.id.editTextUser1);
-        editTextUser2 = view.findViewById(R.id.editTextUser2);
-        buttonCreateChatRoom = view.findViewById(R.id.buttonCreateChatRoom);
+        Button buttonAddFriends = view.findViewById(R.id.buttonAddFriends);
+        if (buttonAddFriends != null) {
+            buttonAddFriends.setOnClickListener(v -> {
+                ChatAddFriendFragment addFriendFragment = new ChatAddFriendFragment();
+                getParentFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, addFriendFragment) // fragment_container는 ChatFragment가 있는 컨테이너 ID
+                        .addToBackStack(null) // 뒤로 가기 지원
+                        .commit();
+            });
+        }
 
-        // 버튼 클릭 이벤트
-        buttonCreateChatRoom.setOnClickListener(v -> {
-            String user1 = editTextUser1.getText().toString().trim();
-            String user2 = editTextUser2.getText().toString().trim();
+        // RecyclerView 설정
+        recyclerViewChatList = view.findViewById(R.id.recyclerViewChatList);
+        recyclerViewChatList.setLayoutManager(new LinearLayoutManager(getContext()));
+        chatListAdapter = new ChatListAdapter(new ArrayList<>(), user1id); // Adapter 생성
+        recyclerViewChatList.setAdapter(chatListAdapter);
 
-            if (TextUtils.isEmpty(user1) || TextUtils.isEmpty(user2)) {
-                Toast.makeText(getContext(), "Both User1 and User2 must be filled!", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            createChatRoom(user1, user2);
+        chatListAdapter.setOnItemClickListener(chatRoomId -> {
+            openChatRoom(chatRoomId);
         });
+
+        loadChatRooms(); // Firebase에서 채팅방 데이터 로드
     }
 
-    private void createChatRoom(String user1, String user2) {
-        // 채팅방 ID 생성
-        String chatRoomId = ChatHelper.generateChatRoomId(user1, user2);
-
-        // Firebase 업데이트
-        DatabaseReference userChatRef = FirebaseDatabase.getInstance().getReference("users");
-        userChatRef.child(user1).child("chats").child(chatRoomId).setValue(true);
-        userChatRef.child(user2).child("chats").child(chatRoomId).setValue(true);
-
-        // ChatRoomFragment로 이동
-        ChatRoomFragment chatRoomFragment = ChatRoomFragment.newInstance(chatRoomId, user1);
-
-        requireActivity().getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container, chatRoomFragment) // MainActivity에 정의된 container ID
+    /**
+     * 채팅방을 열고 Chat RoomFragment로 이동
+     */
+    private void openChatRoom(String user2id) {
+        String chatRoomId = ChatHelper.generateChatRoomId(user1id, user2id);
+        Log.d(TAG, "Opening ChatRoomFragment with ID: " + chatRoomId + " for user: " + user1id);
+        ChatRoomFragment chatRoomFragment = ChatRoomFragment.newInstance(chatRoomId, user1id);
+        getParentFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, chatRoomFragment)
                 .addToBackStack(null)
                 .commit();
+    }
+
+    /**
+     * Firebase에서 채팅방 목록을 가져오고 RecyclerView를 업데이트
+     */
+    private void loadChatRooms() {
+        DatabaseReference userChatRef = FirebaseDatabase.getInstance().getReference("users").child(user1id).child("chats");
+        Log.d(TAG, "Loading chat rooms for user1id: " + user1id);
+
+        userChatRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<String> chatPartners = new ArrayList<>();
+                if (snapshot.exists()) {
+                    for (DataSnapshot chatSnapshot : snapshot.getChildren()) {
+                        String chatRoomId = chatSnapshot.getKey(); // 채팅방 ID 가져오기
+                        if (chatRoomId != null) {
+                            String[] ids = chatRoomId.split("_");
+                            String user2id = ids[0].equals(user1id) ? ids[1] : ids[0]; // 상대방 ID 추출
+                            chatPartners.add(user2id);
+                        }
+                    }
+                    Log.d(TAG, "Loaded chat partners: " + chatPartners);
+                } else {
+                    Log.e(TAG, "No chat rooms exist for user1id: " + user1id);
+                }
+                chatListAdapter.updateData(chatPartners); // RecyclerView 업데이트
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e(TAG, "Failed to load chat rooms", error.toException());
+            }
+        });
     }
 }

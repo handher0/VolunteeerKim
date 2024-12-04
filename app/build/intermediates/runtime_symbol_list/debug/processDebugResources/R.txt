@@ -3420,6 +3420,8 @@ int id btn_next 0x7f090079
 int id btn_search 0x7f09007a
 int id btn_sign_in 0x7f09007b
 int id btn_submit 0x7f09007c
+int id buttonAddFriend 0x7f090263
+int id buttonAddFriends 0x7f090265
 int id buttonCreateChatRoom 0x7f09007d
 int id buttonPanel 0x7f09007e
 int id buttonSend 0x7f09007f
@@ -3437,6 +3439,7 @@ int id center_vertical 0x7f09008a
 int id chain 0x7f09008b
 int id chain2 0x7f09008c
 int id chains 0x7f09008d
+int id chatListTitle 0x7f090266
 int id checkbox 0x7f09008e
 int id checked 0x7f09008f
 int id chronometer 0x7f090090
@@ -3498,9 +3501,8 @@ int id easeInOut 0x7f0900c7
 int id easeOut 0x7f0900c8
 int id east 0x7f0900c9
 int id edge 0x7f0900ca
+int id editTextFriendName 0x7f090264
 int id editTextMessage 0x7f0900cb
-int id editTextUser1 0x7f0900cc
-int id editTextUser2 0x7f0900cd
 int id edit_query 0x7f0900ce
 int id edit_text_id 0x7f0900cf
 int id elastic 0x7f0900d0
@@ -4049,6 +4051,7 @@ int layout design_navigation_menu_item 0x7f0c0034
 int layout design_text_input_end_icon 0x7f0c0035
 int layout design_text_input_start_icon 0x7f0c0036
 int layout fragment_chat 0x7f0c0037
+int layout fragment_chat_add_friend 0x7f0c008b
 int layout fragment_chat_room 0x7f0c0038
 int layout fragment_community_review 0x7f0c0039
 int layout fragment_community_review_post 0x7f0c003a

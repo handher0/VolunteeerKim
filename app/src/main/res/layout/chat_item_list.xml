@@ -1,17 +1,26 @@
-<!-- res/layout/item_chat_list.xml -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="10dp">
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@android:color/white">
 
-    <!-- 채팅방 ID를 표시할 TextView -->
-    <TextView
-        android:id="@+id/textViewChatRoomId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Chat Room ID"
-        android:textSize="16sp"
-        android:textColor="@android:color/black" />
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:padding="12dp">
 
+<!-- 채팅방 ID를 표시할 TextView -->
+<TextView
+    android:id="@+id/textViewChatRoomId"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Chat Room ID"
+    android:textSize="25sp"
+    android:textColor="@android:color/black" />
 </LinearLayout>
+    </androidx.cardview.widget.CardView>
