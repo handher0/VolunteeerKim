@@ -3304,7 +3304,6 @@ int id btn_ranking 0x7f08007d
 int id btn_recommendation 0x7f08007e
 int id btn_save 0x7f08007f
 int id btn_search 0x7f080080
-int id btn_sign_in 0x7f080081
 int id btn_submit 0x7f080082
 int id btn_total_time 0x7f080083
 int id buttonAddFriend 0x7f080084
