@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.volunteerkim.app-mergeDebugResources-38:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.example.volunteerkim.app-mergeDebugResources-39:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
                     "source": "C:\\Users\\cnryw\\.gradle\\caches\\transforms-4\\2ee2cb3ea8052308d9b97eeb444d43cc\\transformed\\jetified-play-services-auth-20.7.0\\res\\values-watch-v20\\values.xml",

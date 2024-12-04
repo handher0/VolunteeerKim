@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.volunteerkim.app-mergeDebugResources-38:/values-ja/values-ja.xml",
+            "outputFile": "com.example.volunteerkim.app-mergeDebugResources-39:/values-ja/values-ja.xml",
             "map": [
                 {
                     "source": "C:\\Users\\cnryw\\.gradle\\caches\\transforms-4\\0cf8352aec4cd2fb9f72893ce9815f8c\\transformed\\jetified-play-services-basement-18.4.0\\res\\values-ja\\values.xml",

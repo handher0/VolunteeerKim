@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.volunteerkim.app-mergeDebugResources-38:/values-land/values-land.xml",
+            "outputFile": "com.example.volunteerkim.app-mergeDebugResources-39:/values-land/values-land.xml",
             "map": [
                 {
                     "source": "C:\\Users\\cnryw\\.gradle\\caches\\transforms-4\\c2fb3dbea87f2f11b0a1f728c4ba3d77\\transformed\\material-1.12.0\\res\\values-land\\values-land.xml",

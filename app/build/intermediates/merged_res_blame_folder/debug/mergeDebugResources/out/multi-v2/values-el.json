@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.volunteerkim.app-mergeDebugResources-38:/values-el/values-el.xml",
+            "outputFile": "com.example.volunteerkim.app-mergeDebugResources-39:/values-el/values-el.xml",
             "map": [
                 {
                     "source": "C:\\Users\\cnryw\\.gradle\\caches\\transforms-4\\6af30e24496bbd721e171af8012a883a\\transformed\\browser-1.4.0\\res\\values-el\\values-el.xml",
