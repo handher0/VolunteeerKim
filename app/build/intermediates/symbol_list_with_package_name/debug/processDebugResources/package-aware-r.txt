@@ -3305,7 +3305,12 @@ id btn_recommendation
 id btn_search
 id btn_sign_in
 id btn_submit
+<<<<<<< HEAD
 id btn_total_time
+=======
+id buttonAddFriend
+id buttonAddFriends
+>>>>>>> feature/sh3
 id buttonCreateChatRoom
 id buttonPanel
 id buttonSend
@@ -3323,6 +3328,7 @@ id center_vertical
 id chain
 id chain2
 id chains
+id chatListTitle
 id checkbox
 id checked
 id chronometer
@@ -3384,9 +3390,8 @@ id easeInOut
 id easeOut
 id east
 id edge
+id editTextFriendName
 id editTextMessage
-id editTextUser1
-id editTextUser2
 id edit_query
 id edit_text_id
 id elastic
@@ -3912,6 +3917,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_chat
+layout fragment_chat_add_friend
 layout fragment_chat_room
 layout fragment_community_review
 layout fragment_community_review_post

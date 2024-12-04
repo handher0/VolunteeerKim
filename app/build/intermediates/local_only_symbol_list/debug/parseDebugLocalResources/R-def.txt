@@ -61,15 +61,25 @@ id btn_recommendation
 id btn_search
 id btn_sign_in
 id btn_submit
+<<<<<<< HEAD
 id btn_total_time
+=======
+id buttonAddFriend
+id buttonAddFriends
+>>>>>>> feature/sh3
 id buttonCreateChatRoom
 id buttonSend
 id cb_terms_1
 id cb_terms_2
+id chatListTitle
+id editTextFriendName
 id editTextMessage
+<<<<<<< HEAD
 id editTextUser1
 id editTextUser2
 id et_address
+=======
+>>>>>>> feature/sh3
 id et_content
 id et_email
 id et_endTime
@@ -129,6 +139,7 @@ layout chat_item_date_header
 layout chat_item_list
 layout chat_item_message
 layout fragment_chat
+layout fragment_chat_add_friend
 layout fragment_chat_room
 layout fragment_community_review
 layout fragment_community_review_post
