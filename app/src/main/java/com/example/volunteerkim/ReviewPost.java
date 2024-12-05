@@ -11,6 +11,7 @@ public class ReviewPost {
     String author;
     String category;
     String content;
+    private String volunteerDate;
     String startTime;
     String endTime;
     List<String> imageUrls;
@@ -21,7 +22,7 @@ public class ReviewPost {
     public ReviewPost() {}
 
     // 모든 필드를 포함한 생성자
-    public ReviewPost(String postId, String place, String address, String author, String category, String content,
+    public ReviewPost(String postId, String place, String address, String author, String category, String content, String volunteerDate,
                       String startTime, String endTime, List<String> imageUrls, boolean hasImages, Timestamp timestamp, float rating) {
         this.postId = postId;
         this.place = place;
@@ -29,6 +30,7 @@ public class ReviewPost {
         this.author = author;
         this.category = category;
         this.content = content;
+        this.volunteerDate = volunteerDate;
         this.startTime = startTime;
         this.endTime = endTime;
         this.imageUrls = imageUrls;
@@ -58,6 +60,9 @@ public class ReviewPost {
     public String getContent() {
         return content;
     }
+
+    public String getVolunteerDate() {return volunteerDate;}
+
 
     public String getStartTime() {
         return startTime;
@@ -102,6 +107,8 @@ public class ReviewPost {
     public void setContent(String content) {
         this.content = content;
     }
+
+    public void setVolunteerDate(String volunteerDate) {this.volunteerDate = volunteerDate;}
 
     public void setStartTime(String startTime) {
         this.startTime = startTime;

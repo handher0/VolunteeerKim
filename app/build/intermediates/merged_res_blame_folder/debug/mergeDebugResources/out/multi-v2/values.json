@@ -461,9 +461,9 @@
                     "from": {
                         "startLines": "1,3",
                         "startColumns": "4,4",
-                        "startOffsets": "17,127",
+                        "startOffsets": "16,124",
                         "endColumns": "49,69",
-                        "endOffsets": "62,192"
+                        "endOffsets": "61,189"
                     },
                     "to": {
                         "startLines": "2009,2064",

@@ -2,6 +2,7 @@ package com.example.volunteerkim;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.ClipData;
 import android.content.Context;
@@ -93,6 +94,8 @@ public class CommunityFragment_review_post extends Fragment {
         binding.ratingBar.setNumStars(5);
         binding.ratingBar.setStepSize(0.5f);
 
+        binding.etVolunteerDate.setOnClickListener(v -> showDatePickerDialog());
+
         binding.etTimeStart.setOnClickListener(v -> showTimePickerDialog(binding.etTimeStart));
         binding.etTimeEnd.setOnClickListener(v -> showTimePickerDialog(binding.etTimeEnd));
 
@@ -119,6 +122,7 @@ public class CommunityFragment_review_post extends Fragment {
                         isEmpty(binding.etContent.getText().toString()) ||
                         isEmpty(binding.etTimeStart.getText().toString()) ||
                         isEmpty(binding.etTimeEnd.getText().toString()) ||
+                        isEmpty(binding.etVolunteerDate.getText().toString()) ||
                         binding.ratingBar.getRating() == 0) {
 
                     Toast.makeText(getContext(), "모든 입력란에 내용을 넣어주세요", Toast.LENGTH_SHORT).show();
@@ -165,6 +169,7 @@ public class CommunityFragment_review_post extends Fragment {
         //author
         post.setCategory(binding.spinnerCategory.getSelectedItem().toString());
         post.setContent(binding.etContent.getText().toString());
+        post.setVolunteerDate(binding.etVolunteerDate.getText().toString());
         post.setStartTime(binding.etTimeStart.getText().toString());
         post.setEndTime(binding.etTimeEnd.getText().toString());
         post.setRating(binding.ratingBar.getRating());
@@ -275,6 +280,24 @@ public class CommunityFragment_review_post extends Fragment {
                 true  // 24시간 형식 사용
         );
         timePickerDialog.show();
+    }
+
+    private void showDatePickerDialog() {
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+                getContext(),
+                (view, selectedYear, selectedMonth, selectedDay) -> {
+                    String date = String.format(Locale.getDefault(), "%d-%02d-%02d",
+                            selectedYear, selectedMonth + 1, selectedDay);
+                    binding.etVolunteerDate.setText(date);
+                },
+                year, month, day
+        );
+        datePickerDialog.show();
     }
 
     private ActivityResultLauncher<Intent> imagePickerLauncher = registerForActivityResult(

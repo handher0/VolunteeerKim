@@ -50,9 +50,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.volunteerkim.CommunityCrudActivity"
-            android:exported="true" />
-        <activity
             android:name="com.example.volunteerkim.MainActivity"
             android:exported="true" />
         <activity

@@ -30,6 +30,7 @@ public class Community_CRUD {
         post.put("author", reviewPost.getAuthor());
         post.put("category", reviewPost.getCategory());
         post.put("content", reviewPost.getContent());
+        post.put("volunteerDate", reviewPost.getVolunteerDate());
         post.put("startTime", reviewPost.getStartTime());
         post.put("endTime", reviewPost.getEndTime());
         post.put("imageUrls", reviewPost.getImageUrls());

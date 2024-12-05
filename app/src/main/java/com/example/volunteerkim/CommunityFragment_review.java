@@ -135,7 +135,32 @@ public class CommunityFragment_review extends Fragment {
 
         @Override
         public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-            holder.bind(list.get(position));
+            ReviewPost post = list.get(position);
+            holder.binding.tvName.setText(post.getPlace());
+            holder.binding.tvAddress.setText(post.getAddress());
+            holder.binding.ratingBar.setRating(post.getRating());
+
+            // 아이템 전체 클릭 리스너 설정
+            holder.itemView.setOnClickListener(v -> {
+                Bundle args = new Bundle();
+                args.putString("postId", post.getPostId());
+
+                CommunityFragment_review_detail detailFragment = new CommunityFragment_review_detail();
+                detailFragment.setArguments(args);
+
+                // Fragment 전환
+                requireActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .setCustomAnimations(
+                                R.anim.slide_in_right,  // 새 화면 들어올 때
+                                R.anim.slide_out_left,   // 현재 화면 나갈 때
+                                R.anim.slide_in_left,    // 뒤로가기 시 들어올 때
+                                R.anim.slide_out_right   // 뒤로가기 시 나갈 때
+                        )
+                        .replace(R.id.fragment_container, detailFragment)
+                        .addToBackStack(null)
+                        .commit();
+            });
         }
 
         @Override
