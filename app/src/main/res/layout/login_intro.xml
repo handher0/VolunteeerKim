@@ -8,63 +8,75 @@
     tools:context=".IntroActivity">
 
     <!-- 상단 제목 -->
-<TextView
-android:id="@+id/tv_title"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:text="김봉사"
-android:textSize="32sp"
-android:textStyle="bold"
-android:textColor="#FFFFFF"
-android:fontFamily="cursive"
-app:layout_constraintTop_toTopOf="parent"
-app:layout_constraintStart_toStartOf="parent"
-app:layout_constraintEnd_toEndOf="parent"
-android:layout_marginTop="24dp" />
-
-<RelativeLayout
-android:layout_width="match_parent"
-android:layout_height="match_parent">
-
-<!-- 이미지 -->
-<ImageView
-    android:layout_width="match_parent"
-    android:layout_height="360dp"
-    android:layout_alignParentBottom="true"
-    android:layout_marginBottom="134dp"
-    android:scaleType="fitXY"
-    android:src="@drawable/kimbongsa" />
-
-<!-- 버튼 레이아웃 -->
-<LinearLayout
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_alignParentBottom="true"
-    android:layout_margin="10dp"
-    android:layout_height="wrap_content">
-
-    <!-- 로그인 버튼 -->
-    <Button
-        android:id="@+id/loginBtn"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_margin="16dp"
-        android:text="로그인"
-        android:backgroundTint="#A8D5A8"
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="김봉사"
+        android:textSize="32sp"
+        android:textStyle="bold"
         android:textColor="#FFFFFF"
-        android:layout_gravity="center_horizontal" />
+        android:fontFamily="cursive"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
 
-    <Button
-        android:id="@+id/joinBtn"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_margin="16dp"
-        android:text="회원가입"
-        android:backgroundTint="#F4A8A8"
-        android:textColor="#FFFFFF"
-        android:layout_gravity="center_horizontal" />
-</LinearLayout>
+        android:layout_height="match_parent">
 
-</RelativeLayout>
+        <!-- 이미지 -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="134dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/kimbongsa" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- 버튼 레이아웃 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content">
+
+            <!-- 로그인 버튼 -->
+            <Button
+                android:id="@+id/loginBtn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="2dp"
+                android:text="로그인"
+                android:backgroundTint="#A8D5A8"
+                android:textColor="#FFFFFF"
+                android:layout_gravity="center_horizontal" />
+
+            <!-- 회원가입 버튼 -->
+            <Button
+                android:id="@+id/joinBtn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="2dp"
+                android:text="회원가입"
+                android:backgroundTint="#F4A8A8"
+                android:textColor="#FFFFFF"
+                android:layout_gravity="center_horizontal" />
+
+            <!-- Google 계정으로 로그인 버튼 -->
+            <Button
+                android:id="@+id/btn_google_login"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="2dp"
+                android:backgroundTint="@color/gray"
+                android:text="Google계정으로 로그인"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = "LoginActivity"; // 로그 태그
+
     private EditText etEmail, etPassword; // 이메일과 비밀번호 필드
     private FirebaseAuth mAuth; // Firebase Authentication 인스턴스
 
@@ -29,12 +30,6 @@ public class LoginActivity extends AppCompatActivity {
 
         // 로그인 버튼 클릭 리스너
         findViewById(R.id.btn_login).setOnClickListener(v -> loginUser());
-
-        // 회원가입 버튼 클릭 리스너
-        findViewById(R.id.btn_sign_in).setOnClickListener(v -> {
-            Intent intent = new Intent(this, SignupActivity.class);
-            startActivity(intent);
-        });
     }
 
     private void loginUser() {

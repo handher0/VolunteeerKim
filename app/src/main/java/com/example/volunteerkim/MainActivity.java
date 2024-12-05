@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,15 +12,30 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity {
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+    private FirebaseFirestore db;
+    private FirebaseAuth auth;
+    private String user1id; // 현재 로그인한 사용자 닉네임
+    private String uid; // 현재 로그인한 사용자 UID
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Firebase 초기화
+        db = FirebaseFirestore.getInstance();
+        auth = FirebaseAuth.getInstance();
+
+        // 현재 로그인한 사용자 UID 가져오기
+        uid = auth.getCurrentUser().getUid();
+
+        // Firestore에서 닉네임 가져오기
+        loadNickname();
 
         // 초기 화면을 HomeFragment로 설정
         if (savedInstanceState == null) { // Activity가 새로 생성된 경우에만 실행
@@ -49,9 +65,31 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
                 if (itemId == R.id.page_4) {
-                    transferTo(ChatFragment.newInstance("param1", "param2"));
+                    if (user1id != null) {
+                        // user1id가 이미 로드된 경우 바로 ChatFragment로 이동
+                        transferTo(ChatFragment.newInstance(user1id));
+                    } else {
+                        // 닉네임이 아직 로드되지 않은 경우 처리
+                        Toast.makeText(MainActivity.this, "Loading user data, please wait...", Toast.LENGTH_SHORT).show();
+                        // 닉네임 로드 후 ChatFragment로 이동
+                        db.collection("users").document(uid).get()
+                                .addOnSuccessListener(documentSnapshot -> {
+                                    if (documentSnapshot.exists()) {
+                                        user1id = documentSnapshot.getString("nickname");
+                                        if (user1id != null) {
+                                            transferTo(ChatFragment.newInstance(user1id));
+                                        } else {
+                                            Toast.makeText(MainActivity.this, "Nickname not found.", Toast.LENGTH_SHORT).show();
+                                        }
+                                    } else {
+                                        Toast.makeText(MainActivity.this, "User data not found.", Toast.LENGTH_SHORT).show();
+                                    }
+                                })
+                                .addOnFailureListener(e -> Toast.makeText(MainActivity.this, "Failed to fetch user data.", Toast.LENGTH_SHORT).show());
+                    }
                     return true;
                 }
+
                 if (itemId == R.id.page_5) {
                     transferTo(MyPageFragment.newInstance("param1", "param2"));
                     return true;
@@ -67,6 +105,24 @@ public class MainActivity extends AppCompatActivity {
                 // 재선택 시 동작 처리 (현재는 아무 동작도 하지 않음)
             }
         });
+    }
+
+    /**
+     * Firestore에서 닉네임 가져오기
+     */
+    private void loadNickname() {
+        db.collection("users").document(uid).get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        user1id = documentSnapshot.getString("nickname");
+                        if (user1id == null) {
+                            Toast.makeText(this, "Nickname not found.", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(this, "User data not found.", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(e -> Toast.makeText(this, "Failed to fetch user data.", Toast.LENGTH_SHORT).show());
     }
 
     // 프래그먼트를 교체하는 메서드
