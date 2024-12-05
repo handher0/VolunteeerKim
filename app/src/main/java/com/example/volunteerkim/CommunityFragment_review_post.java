@@ -1,10 +1,16 @@
 package com.example.volunteerkim;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.TimePickerDialog;
+import android.content.ClipData;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -20,10 +26,19 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.example.volunteerkim.databinding.FragmentCommunityReviewPostBinding;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,6 +48,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CommunityFragment_review_post extends Fragment {
     private FragmentCommunityReviewPostBinding binding;
+    private static final int PICK_IMAGE_REQUEST = 1;
+    private List<Uri> selectedImages = new ArrayList<>();
+    private static final int MAX_IMAGES = 5;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -78,18 +96,36 @@ public class CommunityFragment_review_post extends Fragment {
         binding.etTimeStart.setOnClickListener(v -> showTimePickerDialog(binding.etTimeStart));
         binding.etTimeEnd.setOnClickListener(v -> showTimePickerDialog(binding.etTimeEnd));
 
-
         binding.btnAddPhoto.setOnClickListener(v -> {
-            // 사진 추가 로직 구현
+            Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+            intent.addCategory(Intent.CATEGORY_OPENABLE);
+            intent.setType("image/*");
+            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+            intent.addFlags(Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            imagePickerLauncher.launch(intent);
         });
+        binding.imageCountText.setText("0/5");
 
         binding.btnCancel.setOnClickListener(v -> requireActivity().onBackPressed());
 
         binding.btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // 입력값 검증
+                if (isEmpty(binding.etSearch.getText().toString()) ||
+                        isEmpty(binding.etAddress.getText().toString()) ||
+                        isEmpty(binding.etContent.getText().toString()) ||
+                        isEmpty(binding.etTimeStart.getText().toString()) ||
+                        isEmpty(binding.etTimeEnd.getText().toString()) ||
+                        binding.ratingBar.getRating() == 0) {
+
+                    Toast.makeText(getContext(), "모든 입력란에 내용을 넣어주세요", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 submitPost();
-                requireActivity().onBackPressed();
             }
         });
     }
@@ -118,21 +154,48 @@ public class CommunityFragment_review_post extends Fragment {
     }
 
     private void submitPost() {
+        if (binding == null) return;
+        Log.d("PostDebug", "submitPost 시작");
+
+
+        // 먼저 게시물 생성
         ReviewPost post = new ReviewPost();
         post.setPlace(binding.etSearch.getText().toString());
         post.setAddress(binding.etAddress.getText().toString());
+        //author
         post.setCategory(binding.spinnerCategory.getSelectedItem().toString());
         post.setContent(binding.etContent.getText().toString());
         post.setStartTime(binding.etTimeStart.getText().toString());
         post.setEndTime(binding.etTimeEnd.getText().toString());
         post.setRating(binding.ratingBar.getRating());
 
+        Log.d("PostDebug", "selectedImages 크기: " + selectedImages.size());
+
+        if (selectedImages.isEmpty()) {
+            Log.d("PostDebug", "이미지 없는 게시물 저장");
+            post.setHasImages(false);
+            post.setImageUrls(new ArrayList<>());
+            savePost(post);
+            return;
+        }
+
+        post.setHasImages(true);
+        post.setImageUrls(new ArrayList<>());
+        Log.d("PostDebug", "이미지 있는 게시물 저장 시작");
+
+
+        // 게시물 먼저 저장
         Community_CRUD.saveReviewPost(post, task -> {
             if (task.isSuccessful()) {
-                Toast.makeText(getContext(), "리뷰가 등록되었습니다.", Toast.LENGTH_SHORT).show();
-                requireActivity().onBackPressed();
+                String postId = Community_CRUD.getPostId();
+                Log.d("PostDebug", "게시물 ID: " + postId);
+                if (postId != null && !postId.isEmpty()) {
+                    uploadImages(postId);
+                } else {
+                    Log.e("PostDebug", "게시물 ID가 null 또는 비어있음");
+                }
             } else {
-                Toast.makeText(getContext(), "리뷰 등록에 실패했습니다.", Toast.LENGTH_SHORT).show();
+                Log.e("PostDebug", "게시물 저장 실패", task.getException());
             }
         });
     }
@@ -213,6 +276,121 @@ public class CommunityFragment_review_post extends Fragment {
         );
         timePickerDialog.show();
     }
+
+    private ActivityResultLauncher<Intent> imagePickerLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null) {
+                    Intent data = result.getData();
+                    selectedImages.clear();
+
+                    if (data.getClipData() != null) {
+                        ClipData clipData = data.getClipData();
+                        int count = Math.min(clipData.getItemCount(), MAX_IMAGES);
+                        for (int i = 0; i < count; i++) {
+                            Uri imageUri = clipData.getItemAt(i).getUri();
+                            // URI 영구 권한 요청
+                            requireActivity().getContentResolver().takePersistableUriPermission(
+                                    imageUri,
+                                    Intent.FLAG_GRANT_READ_URI_PERMISSION
+                            );
+                            selectedImages.add(imageUri);
+                        }
+                    } else if (data.getData() != null) {
+                        Uri imageUri = data.getData();
+                        // URI 영구 권한 요청
+                        requireActivity().getContentResolver().takePersistableUriPermission(
+                                imageUri,
+                                Intent.FLAG_GRANT_READ_URI_PERMISSION
+                        );
+                        selectedImages.add(imageUri);
+                    }
+                    if (binding == null) return;
+                    binding.imageCountText.setText(selectedImages.size() + "/5");
+                }
+            }
+    );
+
+    private void savePost(ReviewPost post) {
+        Community_CRUD.saveReviewPost(post, task -> {
+            if (isAdded() && getContext() != null) {  // Fragment 상태 확인
+                if (task.isSuccessful()) {
+                    Toast.makeText(getContext(), "리뷰가 등록되었습니다.", Toast.LENGTH_SHORT).show();
+                    requireActivity().onBackPressed();  // 토스트 메시지 표시 후 화면 종료
+                } else {
+                    Toast.makeText(getContext(), "리뷰 등록에 실패했습니다.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    private void uploadImages(String postId) {
+        if (selectedImages.isEmpty()) return;
+
+        List<String> uploadedUrls = new ArrayList<>();
+        AtomicInteger uploadCount = new AtomicInteger(0);
+
+        for (Uri imageUri : selectedImages) {
+            String fileName = UUID.randomUUID().toString();
+            StorageReference imageRef = FirebaseStorage.getInstance().getReference()
+                    .child("review_images")
+                    .child(postId)
+                    .child(fileName);
+
+            imageRef.putFile(imageUri)
+                    .addOnSuccessListener(taskSnapshot -> {
+                        // 파일 업로드 성공 후 바로 다운로드 URL 요청
+                        imageRef.getDownloadUrl()
+                                .addOnSuccessListener(uri -> {
+                                    uploadedUrls.add(uri.toString());
+                                    Log.d("Storage", "이미지 URL 획득: " + uri.toString());
+
+                                    // 모든 이미지가 업로드되고 URL을 받아왔을 때만 업데이트
+                                    if (uploadCount.incrementAndGet() == selectedImages.size()) {
+                                        Log.d("Storage", "모든 URL 수집 완료, 개수: " + uploadedUrls.size());
+                                        updatePostWithImageUrls(postId, uploadedUrls);
+                                    }
+                                });
+                    })
+                    .addOnFailureListener(e -> {
+                        Log.e("Storage", "이미지 업로드 실패", e);
+                    });
+        }
+    }
+
+    private void updatePostWithImageUrls(String postId, List<String> imageUrls) {
+        // 여러 필드를 동시에 업데이트
+        Map<String, Object> updates = new HashMap<>();
+        updates.put("imageUrls", imageUrls);
+        updates.put("hasImages", true);
+
+        FirebaseFirestore.getInstance()
+                .collection("Boards")
+                .document("Review")
+                .collection("Posts")
+                .document(postId)
+                .update(updates)
+                .addOnSuccessListener(aVoid -> {
+                    if (getContext() != null) {  // Context null 체크 추가
+                        Toast.makeText(getContext(), "리뷰 등록 완료", Toast.LENGTH_SHORT).show();
+                    }
+                    if (getActivity() != null) {
+                        getActivity().onBackPressed();
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    if (isAdded() && getContext() != null) {
+                        Toast.makeText(getContext(), "리뷰 등록 실패", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    // 문자열이 비어있는지 확인하는 헬퍼 메서드
+    private boolean isEmpty(String str) {
+        return str == null || str.trim().isEmpty();
+    }
+
+
 
 }
 

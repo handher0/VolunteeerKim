@@ -93,6 +93,7 @@ id et_time_start
 id et_vplace
 id fabAddPost
 id fragment_container
+id image_count_text
 id img_banner_ad
 id joinBtn
 id leftMessageContainer

@@ -2,7 +2,10 @@ package com.example.volunteerkim;
 
 import com.google.firebase.Timestamp;
 
+import java.util.List;
+
 public class ReviewPost {
+    String postId;
     String place;
     String address;
     String author;
@@ -10,15 +13,17 @@ public class ReviewPost {
     String content;
     String startTime;
     String endTime;
-    String photo;
+    List<String> imageUrls;
+    boolean hasImages = false;
     Timestamp timestamp;
     float rating;
 
     public ReviewPost() {}
 
     // 모든 필드를 포함한 생성자
-    public ReviewPost(String place, String address, String author, String category, String content,
-                      String startTime, String endTime, Timestamp timestamp, float rating) {
+    public ReviewPost(String postId, String place, String address, String author, String category, String content,
+                      String startTime, String endTime, List<String> imageUrls, boolean hasImages, Timestamp timestamp, float rating) {
+        this.postId = postId;
         this.place = place;
         this.address = address;
         this.author = author;
@@ -26,11 +31,16 @@ public class ReviewPost {
         this.content = content;
         this.startTime = startTime;
         this.endTime = endTime;
+        this.imageUrls = imageUrls;
+        this.hasImages = hasImages;
         this.timestamp = timestamp;
         this.rating = rating;
     }
 
     // Getter 메서드들
+
+    public String getPostId() {return postId;}
+
     public String getPlace() {
         return place;
     }
@@ -57,6 +67,12 @@ public class ReviewPost {
         return endTime;
     }
 
+    public List<String> getImageUrls() {return imageUrls;}
+
+    public boolean getHasImages() {
+        return hasImages;
+    }
+
     public Timestamp getTimestamp() {
         return timestamp;
     }
@@ -66,6 +82,9 @@ public class ReviewPost {
     }
 
     // Setter 메서드들
+
+    public void setPostId(String postId) {this.postId = postId;}
+
     public void setPlace(String place) {
         this.place = place;
     }
@@ -90,6 +109,12 @@ public class ReviewPost {
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
+    }
+
+    public void setImageUrls(List<String> imageUrls) {this.imageUrls = imageUrls;}
+
+    public void setHasImages(boolean hasImages) {
+        this.hasImages = hasImages;
     }
 
     public void setTimestamp(Timestamp timestamp) {

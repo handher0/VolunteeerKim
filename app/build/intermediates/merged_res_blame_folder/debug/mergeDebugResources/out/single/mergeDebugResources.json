@@ -1,262 +1,262 @@
 [
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/drawable_kimbongsa.png.flat",
-        "source": "com.example.volunteerkim.app-main-41:/drawable/kimbongsa.png"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_login_intro.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/login_intro.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.volunteerkim.app-main-41:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "com.example.volunteerkim.app-debug-40:/drawable_bg_message_sent.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/drawable/bg_message_sent.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/drawable_bg_message_received.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/drawable/bg_message_received.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/drawable_baseline_account_circle_24.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/drawable/baseline_account_circle_24.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_chat_activity_main.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/chat_activity_main.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/drawable_vms2.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/drawable/vms2.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_fragment_my_page.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/fragment_my_page.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/drawable_baseline_add_24.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/drawable/baseline_add_24.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_chat_item_message.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/chat_item_message.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/drawable_vms1.png.flat",
-        "source": "com.example.volunteerkim.app-main-41:/drawable/vms1.png"
+        "merged": "com.example.volunteerkim.app-debug-40:/drawable_baseline_chat_bubble_24.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/drawable/baseline_chat_bubble_24.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.example.volunteerkim.app-main-41:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "com.example.volunteerkim.app-debug-40:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.volunteerkim.app-main-42:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_chat_item_list.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/chat_item_list.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_fragment_recommendation.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/fragment_recommendation.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_activity_community_crud.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/activity_community_crud.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_fragment_recommendation.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/fragment_recommendation.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/drawable_bg_spinner_category.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/drawable/bg_spinner_category.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_login_activity.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/login_activity.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/drawable_baseline_space_dashboard_24.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/drawable/baseline_space_dashboard_24.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_item_post.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/item_post.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.volunteerkim.app-main-41:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_activity_community_crud.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/activity_community_crud.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.volunteerkim.app-main-42:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.volunteerkim.app-main-41:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "com.example.volunteerkim.app-debug-40:/drawable_baseline_space_dashboard_24.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/drawable/baseline_space_dashboard_24.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_login_signup.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/login_signup.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.volunteerkim.app-main-42:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_fragment_calendar.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/fragment_calendar.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/drawable_baseline_search_24.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/drawable/baseline_search_24.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/anim_slide_out_right.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/anim/slide_out_right.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/drawable_bg_message_received.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/drawable/bg_message_received.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_chat_activity_room.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/chat_activity_room.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/drawable_kimbongsa.png.flat",
+        "source": "com.example.volunteerkim.app-main-42:/drawable/kimbongsa.png"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/xml/data_extraction_rules.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/anim_slide_in_right.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/anim/slide_in_right.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_fragment_community_review.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/fragment_community_review.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_fragment_chat_room.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/fragment_chat_room.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/menu_bottom_navigation_menu.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/menu/bottom_navigation_menu.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_chat_item_date_header.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/chat_item_date_header.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/drawable_bg_spinner_category.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/drawable/bg_spinner_category.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.volunteerkim.app-main-42:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_fragment_chat.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/fragment_chat.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_activity_intro.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/activity_intro.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/drawable_vms.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/drawable/vms.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/drawable_baseline_arrow_drop_down_24.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/drawable/baseline_arrow_drop_down_24.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.volunteerkim.app-main-41:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "com.example.volunteerkim.app-debug-40:/drawable_bg_edit_content.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/drawable/bg_edit_content.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_fragment_ranking.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/fragment_ranking.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/drawable_ad1.png.flat",
+        "source": "com.example.volunteerkim.app-main-42:/drawable/ad1.png"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/drawable_baseline_chat_bubble_24.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/drawable/baseline_chat_bubble_24.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/drawable_baseline_star_rate_24.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/drawable/baseline_star_rate_24.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.example.volunteerkim.app-main-41:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "com.example.volunteerkim.app-debug-40:/drawable_baseline_home_24.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/drawable/baseline_home_24.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/drawable_baseline_account_circle_24.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/drawable/baseline_account_circle_24.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/drawable_baseline_add_photo_alternate_24.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/drawable/baseline_add_photo_alternate_24.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.example.volunteerkim.app-main-41:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_fragment_community_review_post.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/fragment_community_review_post.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_item_post.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/item_post.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_activity_post_list.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/activity_post_list.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_fragment_home.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/fragment_home.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_fragment_calendar.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/fragment_calendar.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/drawable_baseline_home_24.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/drawable/baseline_home_24.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.volunteerkim.app-main-42:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/anim_slide_out_left.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/anim/slide_out_left.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_fragment_total_time.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/fragment_total_time.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/drawable_baseline_add_photo_alternate_24.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/drawable/baseline_add_photo_alternate_24.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.volunteerkim.app-main-42:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_fragment_community_review_post.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/fragment_community_review_post.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_activity_main.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/activity_main.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_activity_intro.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/activity_intro.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/anim_slide_out_right.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/anim/slide_out_right.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/drawable_ad1.png.flat",
-        "source": "com.example.volunteerkim.app-main-41:/drawable/ad1.png"
+        "merged": "com.example.volunteerkim.app-debug-40:/menu_bottom_navigation_menu.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/menu/bottom_navigation_menu.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/drawable/ic_launcher_foreground.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/drawable_baseline_arrow_back_ios_24.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/drawable/baseline_arrow_back_ios_24.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/drawable/ic_launcher_background.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_fragment_ranking.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/fragment_ranking.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/drawable_vms.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/drawable/vms.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/drawable_baseline_add_24.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/drawable/baseline_add_24.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_fragment_chat.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/fragment_chat.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.volunteerkim.app-main-41:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_chat_item_message.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/chat_item_message.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/drawable_bg_edit_content.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/drawable/bg_edit_content.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_login_signup.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/login_signup.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_chat_item_date_header.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/chat_item_date_header.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/anim_slide_in_left.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/anim/slide_in_left.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/drawable_baseline_search_24.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/drawable/baseline_search_24.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_fragment_chat_add_friend.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/fragment_chat_add_friend.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.volunteerkim.app-main-42:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/drawable_bg_message_sent.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/drawable/bg_message_sent.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_chat_item_list.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/chat_item_list.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_activity_post_list.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/activity_post_list.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_fragment_community_review.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/fragment_community_review.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/anim_slide_in_right.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/anim/slide_in_right.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_login_intro.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/login_intro.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_chat_activity_room.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/chat_activity_room.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/anim_slide_in_left.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/anim/slide_in_left.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/anim_slide_out_left.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/anim/slide_out_left.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.volunteerkim.app-main-41:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_chat_activity_main.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/chat_activity_main.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/xml_backup_rules.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/xml/backup_rules.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_fragment_chat_add_friend.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/fragment_chat_add_friend.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_activity_nickname.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/activity_nickname.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.volunteerkim.app-main-42:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.volunteerkim.app-main-41:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_fragment_home.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/fragment_home.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/drawable_baseline_arrow_drop_down_24.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/drawable/baseline_arrow_drop_down_24.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.volunteerkim.app-main-42:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_fragment_total_time.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/fragment_total_time.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_fragment_my_page.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/fragment_my_page.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_activity_main.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/activity_main.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_activity_nickname.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/activity_nickname.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/drawable_baseline_arrow_back_ios_24.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/drawable/baseline_arrow_back_ios_24.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/drawable_vms1.png.flat",
+        "source": "com.example.volunteerkim.app-main-42:/drawable/vms1.png"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/drawable_baseline_star_rate_24.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/drawable/baseline_star_rate_24.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.volunteerkim.app-main-42:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/drawable_vms2.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/drawable/vms2.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_login_activity.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/login_activity.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-39:/layout_fragment_chat_room.xml.flat",
-        "source": "com.example.volunteerkim.app-main-41:/layout/fragment_chat_room.xml"
+        "merged": "com.example.volunteerkim.app-debug-40:/xml_backup_rules.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/xml/backup_rules.xml"
     }
 ]
