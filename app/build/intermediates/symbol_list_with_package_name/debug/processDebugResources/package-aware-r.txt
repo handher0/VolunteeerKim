@@ -3176,8 +3176,8 @@ drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable vms
+drawable vms1
 drawable vms2
-drawable vms_svg
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3305,6 +3305,7 @@ id btn_menu
 id btn_next
 id btn_ranking
 id btn_recommendation
+id btn_retry
 id btn_save
 id btn_search
 id btn_submit
@@ -3607,6 +3608,7 @@ id postLayout
 id pressed
 id progress_circular
 id progress_horizontal
+id question_layout
 id radio
 id ratingBar
 id ratio
@@ -3617,7 +3619,9 @@ id recyclerViewMessages
 id recycler_mates
 id recycler_reviews
 id report_drawn
+id result_layout
 id reverseSawtooth
+id rg_options
 id right
 id rightMessageContainer
 id rightToLeft
@@ -3749,8 +3753,10 @@ id tv_calendar
 id tv_login_title
 id tv_mate_title
 id tv_name
+id tv_question
 id tv_ranking
-id tv_recommendation
+id tv_result_description
+id tv_result_title
 id tv_review_title
 id tv_task_1
 id tv_task_2
