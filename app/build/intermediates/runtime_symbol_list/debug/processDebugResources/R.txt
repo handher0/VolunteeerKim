@@ -3175,6 +3175,7 @@ int drawable test_level_drawable 0x7f07010c
 int drawable tooltip_frame_dark 0x7f07010d
 int drawable tooltip_frame_light 0x7f07010e
 int drawable vms 0x7f07010f
+int drawable vms2 0x7f070112
 int drawable vms_svg 0x7f070110
 int id ALT 0x7f080000
 int id BOTTOM_END 0x7f080001

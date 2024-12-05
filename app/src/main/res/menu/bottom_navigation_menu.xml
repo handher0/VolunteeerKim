@@ -13,8 +13,10 @@
     <item
         android:id="@+id/page_3"
         android:enabled="true"
-        android:icon="@drawable/vms"
-        android:title="VMS"/>
+        android:visible="true"
+        android:icon="@drawable/vms2"
+        android:background="@null"
+    android:title="VMS"/>
     <item
         android:id="@+id/page_4"
         android:enabled="true"
