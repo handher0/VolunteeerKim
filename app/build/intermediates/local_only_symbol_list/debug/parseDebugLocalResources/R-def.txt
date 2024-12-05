@@ -37,7 +37,8 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable kimbongsa
 drawable vms
-drawable vms1
+drawable vms2
+drawable vms_svg
 id bottom_navigation
 id bt_create
 id bt_delete
@@ -60,7 +61,6 @@ id btn_menu
 id btn_next
 id btn_ranking
 id btn_recommendation
-id btn_retry
 id btn_save
 id btn_search
 id btn_submit
@@ -102,15 +102,12 @@ id page_2
 id page_3
 id page_4
 id page_5
-id question_layout
 id ratingBar
 id recyclerView
 id recyclerViewChatList
 id recyclerViewMessages
 id recycler_mates
 id recycler_reviews
-id result_layout
-id rg_options
 id rightMessageContainer
 id spinner_category
 id textViewChatRoomId
@@ -126,10 +123,8 @@ id tv_calendar
 id tv_login_title
 id tv_mate_title
 id tv_name
-id tv_question
 id tv_ranking
-id tv_result_description
-id tv_result_title
+id tv_recommendation
 id tv_review_title
 id tv_task_1
 id tv_task_2
