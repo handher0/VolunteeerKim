@@ -4,18 +4,30 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.volunteerkim.R;
-
-import java.util.ArrayList;
+import java.util.List;
 
 public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHolder> {
-    private ArrayList<String> chatRoomList;
+    private List<String> chatRoomList;
+    private OnItemClickListener listener;
+    private String currentUserId; // 현재 사용자 ID 저장
 
-    public ChatListAdapter(ArrayList<String> chatRoomList) {
+    // 생성자: 채팅방 리스트와 현재 사용자 ID를 받음
+    public ChatListAdapter(List<String> chatRoomList, String currentUserId) {
         this.chatRoomList = chatRoomList;
+        this.currentUserId = currentUserId;
+    }
+
+    // 클릭 리스너 인터페이스 정의
+    public interface OnItemClickListener {
+        void onItemClick(String chatRoomId);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
     }
 
     @NonNull
@@ -27,8 +39,15 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String chatRoomId = chatRoomList.get(position);
-        holder.textViewChatRoomId.setText(chatRoomId);
+        String chatRoomName = chatRoomList.get(position); // 상대방 ID
+        holder.textViewChatRoomId.setText(chatRoomName);
+
+        // 클릭 이벤트 처리
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onItemClick(chatRoomName); // 클릭 시 리스너 호출
+            }
+        });
     }
 
     @Override
@@ -43,5 +62,12 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
             super(itemView);
             textViewChatRoomId = itemView.findViewById(R.id.textViewChatRoomId);
         }
+    }
+
+    // RecyclerView 데이터 갱신 메서드
+    public void updateData(List<String> newChatRooms) {
+        this.chatRoomList.clear();
+        this.chatRoomList.addAll(newChatRooms);
+        notifyDataSetChanged();
     }
 }

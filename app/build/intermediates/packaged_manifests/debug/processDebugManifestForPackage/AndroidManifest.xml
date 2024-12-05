@@ -39,6 +39,7 @@
 
         <activity android:name="com.example.volunteerkim.LoginActivity" />
         <activity android:name="com.example.volunteerkim.SignupActivity" />
+        <activity android:name="com.example.volunteerkim.NicknameActivity" />
         <activity
             android:name="com.example.volunteerkim.IntroActivity"
             android:exported="true" >
