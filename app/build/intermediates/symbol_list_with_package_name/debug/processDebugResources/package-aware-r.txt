@@ -3029,6 +3029,7 @@ drawable ad1
 drawable arrow
 drawable avd_hide_password
 drawable avd_show_password
+drawable background_gradient
 drawable baseline_account_circle_24
 drawable baseline_add_24
 drawable baseline_add_photo_alternate_24
@@ -3053,6 +3054,8 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable button_gradient
+drawable button_shadow
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -3077,6 +3080,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable google_logo
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_arrow_back_black_24
@@ -3102,6 +3106,11 @@ drawable ic_other_sign_in
 drawable ic_passkey
 drawable ic_password
 drawable ic_search_black_24
+drawable img
+drawable img_1
+drawable img_2
+drawable img_3
+drawable img_4
 drawable indeterminate_static
 drawable kimbongsa
 drawable m3_avd_hide_password
@@ -3177,12 +3186,14 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable rounded_background
+drawable rounded_button
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable vms
 drawable vms1
 drawable vms2
+font miwon
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3453,6 +3464,8 @@ id ghost_view
 id ghost_view_holder
 id glide_custom_view_target_tag
 id gone
+id google_login_text
+id google_logo
 id graph
 id graphContainer
 id graphTitle
@@ -3935,7 +3948,6 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_intro
 layout activity_main
 layout activity_nickname
 layout activity_post_list
