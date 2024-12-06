@@ -40,14 +40,10 @@ drawable bg_message_sent
 drawable bg_spinner_category
 drawable button_gradient
 drawable button_shadow
+drawable defalut_img
 drawable google_logo
 drawable ic_launcher_background
 drawable ic_launcher_foreground
-drawable img
-drawable img_1
-drawable img_2
-drawable img_3
-drawable img_4
 drawable kimbongsa
 drawable rounded_background
 drawable rounded_button
@@ -86,6 +82,7 @@ id btn_search
 id btn_send_comment
 id btn_submit
 id btn_total_time
+id btn_upload_photo
 id buttonAddFriend
 id buttonAddFriends
 id buttonCreateChatRoom
@@ -121,6 +118,7 @@ id image_container
 id image_count_text
 id img_banner_ad
 id iv_profile
+id iv_profile_photo
 id joinBtn
 id leftMessageContainer
 id loginBtn
@@ -221,6 +219,7 @@ string google_crash_reporting_api_key
 string google_storage_bucket
 string hello_blank_fragment
 string project_id
+style AppTheme
 style Base.Theme.VolunteerKim
 style Theme.VolunteerKim
 xml backup_rules

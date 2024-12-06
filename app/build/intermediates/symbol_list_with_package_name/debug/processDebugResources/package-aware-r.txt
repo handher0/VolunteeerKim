@@ -3075,6 +3075,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable defalut_img
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -3106,11 +3107,6 @@ drawable ic_other_sign_in
 drawable ic_passkey
 drawable ic_password
 drawable ic_search_black_24
-drawable img
-drawable img_1
-drawable img_2
-drawable img_3
-drawable img_4
 drawable indeterminate_static
 drawable kimbongsa
 drawable m3_avd_hide_password
@@ -3330,6 +3326,7 @@ id btn_search
 id btn_send_comment
 id btn_submit
 id btn_total_time
+id btn_upload_photo
 id buttonAddFriend
 id buttonAddFriends
 id buttonCreateChatRoom
@@ -3499,6 +3496,7 @@ id inward
 id italic
 id item_touch_helper_previous_elevation
 id iv_profile
+id iv_profile_photo
 id joinBtn
 id jumpToEnd
 id jumpToStart
@@ -4271,6 +4269,7 @@ style Animation_Material3_SideSheetDialog
 style Animation_Material3_SideSheetDialog_Left
 style Animation_Material3_SideSheetDialog_Right
 style Animation_MaterialComponents_BottomSheetDialog
+style AppTheme
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog
