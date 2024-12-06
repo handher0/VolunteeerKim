@@ -1,6 +1,6 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.google.gms.google.services) // Firebase 플러그인
+    id("com.android.application")
+    id("com.google.gms.google-services") // Firebase Google Services Plugin
 }
 
 android {
@@ -9,7 +9,6 @@ android {
 
     buildFeatures {
         viewBinding = true
-        buildConfig = true
     }
 
     defaultConfig {
@@ -19,14 +18,8 @@ android {
         versionCode = 1
         versionName = "1.0"
         vectorDrawables.useSupportLibrary = true
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-
         manifestPlaceholders["CLIENT_ID"] = "IFGDQpfj72GnLDrnrcOI"
-
-
-
     }
 
     buildTypes {
@@ -38,6 +31,7 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -45,41 +39,37 @@ android {
 }
 
 dependencies {
-    // Firebase BoM 사용 (버전 관리 통합)
+    // Firebase BoM (Bill of Materials)
     implementation(platform("com.google.firebase:firebase-bom:33.6.0"))
 
-
-    // Firebase 개별 라이브러리 추가
+    // Firebase Core Libraries
     implementation("com.google.firebase:firebase-auth") // Firebase Authentication
-    implementation("com.google.android.gms:play-services-auth:21.2.0")//구글 로그인
-    implementation("com.google.firebase:firebase-database") // Realtime Database
-    implementation("com.google.firebase:firebase-firestore") // Firestore (필요한 경우)
+    implementation("com.google.firebase:firebase-database") // Firebase Realtime Database
+    implementation("com.google.firebase:firebase-firestore") // Firebase Firestore
+    implementation("com.google.firebase:firebase-storage") // Firebase Storage
 
+    // Google Play Services
+    implementation("com.google.android.gms:play-services-auth:21.2.0") // Google Sign-In
 
+    // AndroidX Libraries
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.activity:activity:1.7.2")
 
-    // AndroidX 및 기타 라이브러리
-    implementation(libs.appcompat)
-    implementation(libs.material)
-    implementation(libs.activity)
-    implementation(libs.constraintlayout)
-    implementation(libs.firebase.auth)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.ext.junit)
-    androidTestImplementation(libs.espresso.core)
-    // Import the BoM for the Firebase platform
-    implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
+    // Retrofit for API Calls
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.google.code.gson:gson:2.8.9")
 
-    // Declare the dependency for the Cloud Firestore library
-    // When using the BoM, you don't specify versions in Firebase library dependencies
-    implementation("com.google.firebase:firebase-firestore")
+    // Glide for Image Loading
+    implementation("com.github.bumptech.glide:glide:4.12.0")
 
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation ("com.google.code.gson:gson:2.8.9")
+    // AnyChart Library (for charts)
+    implementation("com.github.AnyChart:AnyChart-Android:1.1.2")
 
-    implementation ("com.github.bumptech.glide:glide:4.12.0")
-    implementation ("com.google.firebase:firebase-storage:20.3.0")
-
-
-
+    // Unit Testing
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }

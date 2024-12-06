@@ -8,6 +8,7 @@ color black
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
+color colorPrimaryWeak
 color dividerColor
 color gray
 color lightGray
@@ -19,6 +20,7 @@ color textSecondary
 color unselectedGray
 color white
 drawable ad1
+drawable arrow
 drawable baseline_account_circle_24
 drawable baseline_add_24
 drawable baseline_add_photo_alternate_24
@@ -36,14 +38,22 @@ drawable bg_spinner_category
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable kimbongsa
+drawable rounded_background
 drawable vms
 drawable vms1
 drawable vms2
+id anyChartView
 id bottom_navigation
 id bt_create
 id bt_delete
 id bt_read
 id bt_update
+id btnAllTime
+id btnBloodDonationCalculator
+id btnMilitaryBonusCalculator
+id btnOneYear
+id btnSixMonths
+id btnThreeMonths
 id btn_add
 id btn_add_photo
 id btn_back
@@ -93,6 +103,8 @@ id et_time_start
 id et_vplace
 id fabAddPost
 id fragment_container
+id graphContainer
+id graphTitle
 id image_count_text
 id img_banner_ad
 id joinBtn
@@ -121,8 +133,11 @@ id textViewLeftMessage
 id textViewLeftTime
 id textViewRightMessage
 id textViewRightTime
+id timeFilterLayout
 id toolbar
+id tvCalculationResult
 id tvTitle
+id tvTotalVolunteerHours
 id tv_address
 id tv_calendar
 id tv_login_title
@@ -136,7 +151,6 @@ id tv_review_title
 id tv_task_1
 id tv_task_2
 id tv_title
-id tv_total_time
 id tv_user_name
 layout activity_community_crud
 layout activity_intro
