@@ -3325,6 +3325,7 @@ id buttonCreateChatRoom
 id buttonPanel
 id buttonSend
 id cache_measures
+id calendarView
 id callMeasure
 id cancel_button
 id carryVelocity
@@ -3424,6 +3425,8 @@ id et_search
 id et_time_end
 id et_time_start
 id et_volunteer_date
+id event_edit_text
+id events_preview
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3643,6 +3646,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id save_event_button
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3665,6 +3669,7 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id selected_date_text_view
 id selection_type
 id sharedValueSet
 id sharedValueUnset
@@ -3767,7 +3772,6 @@ id tvTitle
 id tvTotalVolunteerHours
 id tv_address
 id tv_author
-id tv_calendar
 id tv_category
 id tv_comment_author
 id tv_comment_content

@@ -1,11 +1,11 @@
-#Fri Dec 06 17:03:16 KST 2024
-base.0=C\:\\Users\\cnryw\\AndroidStudioProjects\\VolunteerKim\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\cnryw\\AndroidStudioProjects\\VolunteerKim\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=C\:\\Users\\cnryw\\AndroidStudioProjects\\VolunteerKim\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
-base.3=C\:\\Users\\cnryw\\AndroidStudioProjects\\VolunteerKim\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
-base.4=C\:\\Users\\cnryw\\AndroidStudioProjects\\VolunteerKim\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
-base.5=C\:\\Users\\cnryw\\AndroidStudioProjects\\VolunteerKim\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
-base.6=C\:\\Users\\cnryw\\AndroidStudioProjects\\VolunteerKim\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
+#Fri Dec 06 17:36:00 KST 2024
+base.0=/Users/handher0/AndroidStudioProjects/VolunteerKim/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+base.1=/Users/handher0/AndroidStudioProjects/VolunteerKim/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.2=/Users/handher0/AndroidStudioProjects/VolunteerKim/app/build/intermediates/dex/debug/mergeProjectDexDebug/12/classes.dex
+base.3=/Users/handher0/AndroidStudioProjects/VolunteerKim/app/build/intermediates/dex/debug/mergeProjectDexDebug/3/classes.dex
+base.4=/Users/handher0/AndroidStudioProjects/VolunteerKim/app/build/intermediates/dex/debug/mergeProjectDexDebug/6/classes.dex
+base.5=/Users/handher0/AndroidStudioProjects/VolunteerKim/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
+base.6=/Users/handher0/AndroidStudioProjects/VolunteerKim/app/build/intermediates/dex/debug/mergeExtDexDebug/classes3.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=12/classes.dex
