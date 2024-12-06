@@ -56,8 +56,13 @@ public class IntroActivity extends AppCompatActivity {
     }
 
     private void signInWithGoogle() {
-        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-        startActivityForResult(signInIntent, RC_SIGN_IN);
+        // 이전 Google 세션 무효화
+        mGoogleSignInClient.signOut().addOnCompleteListener(this, task -> {
+            Log.d(TAG, "Previous Google session invalidated. Starting new sign-in.");
+            // 새로운 Google 로그인 세션 요청
+            Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+            startActivityForResult(signInIntent, RC_SIGN_IN);
+        });
     }
 
     @Override
@@ -69,10 +74,11 @@ public class IntroActivity extends AppCompatActivity {
             try {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 if (account != null) {
+                    Log.d(TAG, "Google Sign-In successful. ID Token: " + account.getIdToken());
                     firebaseAuthWithGoogle(account.getIdToken());
                 }
             } catch (ApiException e) {
-                Log.e(TAG, "Google Sign-In failed: " + e.getStatusCode());
+                Log.e(TAG, "Google Sign-In failed: " + e.getStatusCode(), e);
                 Toast.makeText(this, "Google Sign-In failed.", Toast.LENGTH_SHORT).show();
             }
         }
@@ -85,6 +91,7 @@ public class IntroActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         FirebaseUser user = mAuth.getCurrentUser();
                         if (user != null) {
+                            Log.d(TAG, "Firebase authentication successful. UID: " + user.getUid());
                             Intent intent = new Intent(this, NicknameActivity.class);
                             intent.putExtra("uid", user.getUid());
                             intent.putExtra("email", user.getEmail());

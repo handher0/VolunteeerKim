@@ -69,6 +69,7 @@ id buttonAddFriend
 id buttonAddFriends
 id buttonCreateChatRoom
 id buttonSend
+id calendarView
 id cb_terms_1
 id cb_terms_2
 id chatListTitle
@@ -90,6 +91,8 @@ id et_startTime
 id et_time_end
 id et_time_start
 id et_vplace
+id event_edit_text
+id events_preview
 id fabAddPost
 id fragment_container
 id img_banner_ad
@@ -112,6 +115,8 @@ id recycler_reviews
 id result_layout
 id rg_options
 id rightMessageContainer
+id save_event_button
+id selected_date_text_view
 id spinner_category
 id textViewChatRoomId
 id textViewDate
@@ -122,7 +127,6 @@ id textViewRightTime
 id toolbar
 id tvTitle
 id tv_address
-id tv_calendar
 id tv_login_title
 id tv_mate_title
 id tv_name

@@ -55,7 +55,6 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore") // Firestore (필요한 경우)
 
 
-
     // AndroidX 및 기타 라이브러리
     implementation(libs.appcompat)
     implementation(libs.material)
