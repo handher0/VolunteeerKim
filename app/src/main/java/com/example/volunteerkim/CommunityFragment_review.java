@@ -114,15 +114,6 @@ public class CommunityFragment_review extends Fragment {
             this.binding = binding;
         }
 
-        void bind(ReviewPost post) {
-            binding.tvName.setText(post.getPlace());
-            binding.tvAddress.setText(post.getAddress());
-            binding.ratingBar.setRating(post.getRating());
-            binding.btnDetail.setOnClickListener(v -> {
-                // 상세보기 화면으로 이동
-                // TODO: 상세보기 Fragment로 전환
-            });
-        }
     }
 
     private class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {

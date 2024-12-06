@@ -84,6 +84,10 @@
         "source": "com.example.volunteerkim.app-main-42:/drawable/baseline_send_24.xml"
     },
     {
+        "merged": "com.example.volunteerkim.app-debug-40:/drawable_baseline_chat_24.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/drawable/baseline_chat_24.xml"
+    },
+    {
         "merged": "com.example.volunteerkim.app-debug-40:/anim_slide_in_right.xml.flat",
         "source": "com.example.volunteerkim.app-main-42:/anim/slide_in_right.xml"
     },
