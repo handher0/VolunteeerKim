@@ -42,7 +42,6 @@ drawable rounded_background
 drawable vms
 drawable vms1
 drawable vms2
-id anyChartView
 id bottom_navigation
 id bt_create
 id bt_delete
@@ -83,6 +82,7 @@ id buttonSend
 id cb_terms_1
 id cb_terms_2
 id chatListTitle
+id customBarGraphView
 id editTextFriendName
 id editTextMessage
 id et_address
