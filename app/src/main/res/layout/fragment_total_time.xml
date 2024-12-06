@@ -1,17 +1,162 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:background="#FFFFFF">
+    android:padding="16dp"
+    android:background="@android:color/white">
 
+    <!-- 상단 툴바 -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/baseline_arrow_back_ios_24" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="리뷰 쓰기"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- 총 봉사 시간 -->
     <TextView
-        android:id="@+id/tv_total_time"
+        android:id="@+id/tvTotalVolunteerHours"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="총 봉사시간 화면"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="#000000" />
+        android:text="나의 누적 봉사시간: 125시간"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="16dp" />
+
+    <!-- 기간 선택 버튼 -->
+    <LinearLayout
+        android:id="@+id/timeFilterLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/btnAllTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="전체"
+            android:backgroundTint="@color/colorPrimaryWeak"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/btnOneYear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1년"
+            android:backgroundTint="@color/colorPrimaryWeak"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/btnSixMonths"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="6개월"
+            android:backgroundTint="@color/colorPrimaryWeak"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/btnThreeMonths"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="3개월"
+            android:backgroundTint="@color/colorPrimaryWeak"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <!-- 그래프 영역 -->
+    <LinearLayout
+        android:id="@+id/graphContainer"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_background"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/graphTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="차트"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- 기본 Canvas로 그래프를 그릴 CustomView -->
+        <com.example.volunteerkim.views.CustomBarGraphView
+            android:id="@+id/customBarGraphView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            tools:ignore="MissingClass" />
+    </LinearLayout>
+
+    <!-- 계산기 버튼 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/btnMilitaryBonusCalculator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="군가산점 계산기"
+            android:backgroundTint="@color/colorPrimaryWeak"
+            android:textColor="@android:color/black"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnBloodDonationCalculator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="헌혈 계산기"
+            android:backgroundTint="@color/colorPrimaryWeak"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <!-- 계산 결과 -->
+    <TextView
+        android:id="@+id/tvCalculationResult"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="현재 계산된 군가산점은 104점입니다.\n(최근 봉사활동 1년 기준)"
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:background="@drawable/rounded_background"
+        android:padding="16dp" />
 </LinearLayout>

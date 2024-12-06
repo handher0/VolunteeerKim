@@ -1393,6 +1393,7 @@ color cardview_shadow_start_color
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
+color colorPrimaryWeak
 color common_google_signin_btn_text_dark
 color common_google_signin_btn_text_dark_default
 color common_google_signin_btn_text_dark_disabled
@@ -3025,6 +3026,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable ad1
+drawable arrow
 drawable avd_hide_password
 drawable avd_show_password
 drawable baseline_account_circle_24
@@ -3174,6 +3176,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable rounded_background
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3286,6 +3289,12 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id btnAllTime
+id btnBloodDonationCalculator
+id btnMilitaryBonusCalculator
+id btnOneYear
+id btnSixMonths
+id btnThreeMonths
 id btn_add
 id btn_add_photo
 id btn_back
@@ -3303,6 +3312,7 @@ id btn_menu
 id btn_next
 id btn_ranking
 id btn_recommendation
+id btn_reply
 id btn_retry
 id btn_save
 id btn_search
@@ -3353,6 +3363,7 @@ id counterclockwise
 id cradle
 id currentState
 id custom
+id customBarGraphView
 id customPanel
 id cut
 id dark
@@ -3440,6 +3451,8 @@ id ghost_view_holder
 id glide_custom_view_target_tag
 id gone
 id graph
+id graphContainer
+id graphTitle
 id graph_wrap
 id group_divider
 id grouping
@@ -3616,6 +3629,7 @@ id recyclerView
 id recyclerViewChatList
 id recyclerViewMessages
 id recyclerView_comments
+id recyclerView_replies
 id recycler_mates
 id recycler_reviews
 id report_drawn
@@ -3728,6 +3742,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id timeFilterLayout
 id title
 id titleDividerNoCustom
 id title_template
@@ -3747,11 +3762,16 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvCalculationResult
 id tvTitle
+id tvTotalVolunteerHours
 id tv_address
 id tv_author
 id tv_calendar
 id tv_category
+id tv_comment_author
+id tv_comment_content
+id tv_comment_timestamp
 id tv_content
 id tv_login_title
 id tv_mate_title
@@ -3759,6 +3779,9 @@ id tv_name
 id tv_place
 id tv_question
 id tv_ranking
+id tv_reply_author
+id tv_reply_content
+id tv_reply_timestamp
 id tv_result_description
 id tv_result_title
 id tv_review_title
@@ -3766,7 +3789,6 @@ id tv_task_1
 id tv_task_2
 id tv_timestamp
 id tv_title
-id tv_total_time
 id tv_user_name
 id tv_volunteer_date
 id tv_volunteer_time
@@ -3950,7 +3972,9 @@ layout fragment_recommendation
 layout fragment_total_time
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout item_comment
 layout item_post
+layout item_reply
 layout login_activity
 layout login_intro
 layout login_signup

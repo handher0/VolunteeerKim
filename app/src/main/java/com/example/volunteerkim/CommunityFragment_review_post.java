@@ -27,6 +27,8 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.example.volunteerkim.databinding.FragmentCommunityReviewPostBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
@@ -59,9 +61,19 @@ public class CommunityFragment_review_post extends Fragment {
 
         // 카테고리 목록 설정
         String[] categories = new String[]{
-                "상담", "교육", "문화행사", "환경보호", "생활편의",
-                "주거환경", "보건의료", "농어촌봉사", "시설봉사", "기타"
+                "교육지원(학습 지도, 진로 상담, 디지털 교육 등)",
+                "환경보호(환경 정화, 보호 활동 등)",
+                "돌봄서비스(아동 돌봄, 요양원 돌봄, 장애인 보조 등)",
+                "문화행사(예체능 강의, 문화 체험 지원 등)",
+                "재난구호(재난 지원, 긴급 구호 활동 등)",
+                "보건의료(병원 도우미, 의약품 정리 등, 헌혈 제외)",
+                "생활편의(취약 계층 지원, 주거 환경 개선 등)",
+                "농어촌봉사(농어촌 지역 지원 봉사 등)",
+                "시설봉사(고아원 방문, 동물 보호 등)",
+                "헌혈(헌혈 캠페인)",
+                "기타(그 외 기타 봉사활동)"
         };
+
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 requireContext(),
@@ -159,50 +171,66 @@ public class CommunityFragment_review_post extends Fragment {
 
     private void submitPost() {
         if (binding == null) return;
-        Log.d("PostDebug", "submitPost 시작");
 
-
-        // 먼저 게시물 생성
-        ReviewPost post = new ReviewPost();
-        post.setPlace(binding.etSearch.getText().toString());
-        post.setAddress(binding.etAddress.getText().toString());
-        //author
-        post.setCategory(binding.spinnerCategory.getSelectedItem().toString());
-        post.setContent(binding.etContent.getText().toString());
-        post.setVolunteerDate(binding.etVolunteerDate.getText().toString());
-        post.setStartTime(binding.etTimeStart.getText().toString());
-        post.setEndTime(binding.etTimeEnd.getText().toString());
-        post.setRating(binding.ratingBar.getRating());
-
-        Log.d("PostDebug", "selectedImages 크기: " + selectedImages.size());
-
-        if (selectedImages.isEmpty()) {
-            Log.d("PostDebug", "이미지 없는 게시물 저장");
-            post.setHasImages(false);
-            post.setImageUrls(new ArrayList<>());
-            savePost(post);
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser == null) {
+            Toast.makeText(getContext(), "로그인이 필요합니다.", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        post.setHasImages(true);
-        post.setImageUrls(new ArrayList<>());
-        Log.d("PostDebug", "이미지 있는 게시물 저장 시작");
+        FirebaseFirestore.getInstance()
+                .collection("users")
+                .document(currentUser.getUid())
+                .get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        String nickname = documentSnapshot.getString("nickname");
+                        if (nickname == null) nickname = "익명";
 
 
-        // 게시물 먼저 저장
-        Community_CRUD.saveReviewPost(post, task -> {
-            if (task.isSuccessful()) {
-                String postId = Community_CRUD.getPostId();
-                Log.d("PostDebug", "게시물 ID: " + postId);
-                if (postId != null && !postId.isEmpty()) {
-                    uploadImages(postId);
-                } else {
-                    Log.e("PostDebug", "게시물 ID가 null 또는 비어있음");
-                }
-            } else {
-                Log.e("PostDebug", "게시물 저장 실패", task.getException());
-            }
-        });
+                        // 먼저 게시물 생성
+                        ReviewPost post = new ReviewPost();
+                        post.setPlace(binding.etSearch.getText().toString());
+                        post.setAddress(binding.etAddress.getText().toString());
+                        post.setAuthor(nickname);
+                        post.setCategory(binding.spinnerCategory.getSelectedItem().toString());
+                        post.setContent(binding.etContent.getText().toString());
+                        post.setVolunteerDate(binding.etVolunteerDate.getText().toString());
+                        post.setStartTime(binding.etTimeStart.getText().toString());
+                        post.setEndTime(binding.etTimeEnd.getText().toString());
+                        post.setRating(binding.ratingBar.getRating());
+
+                        Log.d("PostDebug", "selectedImages 크기: " + selectedImages.size());
+
+                        if (selectedImages.isEmpty()) {
+                            Log.d("PostDebug", "이미지 없는 게시물 저장");
+                            post.setHasImages(false);
+                            post.setImageUrls(new ArrayList<>());
+                            savePost(post);
+                            return;
+                        }
+
+                        post.setHasImages(true);
+                        post.setImageUrls(new ArrayList<>());
+                        Log.d("PostDebug", "이미지 있는 게시물 저장 시작");
+
+
+                        // 게시물 먼저 저장
+                        Community_CRUD.saveReviewPost(post, task -> {
+                            if (task.isSuccessful()) {
+                                String postId = Community_CRUD.getPostId();
+                                Log.d("PostDebug", "게시물 ID: " + postId);
+                                if (postId != null && !postId.isEmpty()) {
+                                    uploadImages(postId);
+                                } else {
+                                    Log.e("PostDebug", "게시물 ID가 null 또는 비어있음");
+                                }
+                            } else {
+                                Log.e("PostDebug", "게시물 저장 실패", task.getException());
+                            }
+                        });
+                    }
+                });
     }
 
     private void searchPlace(String query) {

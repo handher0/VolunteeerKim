@@ -54,8 +54,9 @@ dependencies {
     implementation("com.google.android.gms:play-services-auth:21.2.0")//구글 로그인
     implementation("com.google.firebase:firebase-database") // Realtime Database
     implementation("com.google.firebase:firebase-firestore") // Firestore (필요한 경우)
-
-
+    implementation("com.google.firebase:firebase-storage")
+    implementation("com.github.bumptech.glide:glide:4.15.1")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.15.1")
 
     // AndroidX 및 기타 라이브러리
     implementation(libs.appcompat)
@@ -66,19 +67,14 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    // Import the BoM for the Firebase platform
-    implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
 
     // Declare the dependency for the Cloud Firestore library
     // When using the BoM, you don't specify versions in Firebase library dependencies
-    implementation("com.google.firebase:firebase-firestore")
+
 
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation ("com.google.code.gson:gson:2.8.9")
-
-    implementation ("com.github.bumptech.glide:glide:4.12.0")
-    implementation ("com.google.firebase:firebase-storage:20.3.0")
 
 
 

@@ -8,6 +8,7 @@ color black
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
+color colorPrimaryWeak
 color dividerColor
 color gray
 color lightGray
@@ -19,6 +20,7 @@ color textSecondary
 color unselectedGray
 color white
 drawable ad1
+drawable arrow
 drawable baseline_account_circle_24
 drawable baseline_add_24
 drawable baseline_add_photo_alternate_24
@@ -38,10 +40,17 @@ drawable bg_spinner_category
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable kimbongsa
+drawable rounded_background
 drawable vms
 drawable vms1
 drawable vms2
 id bottom_navigation
+id btnAllTime
+id btnBloodDonationCalculator
+id btnMilitaryBonusCalculator
+id btnOneYear
+id btnSixMonths
+id btnThreeMonths
 id btn_add
 id btn_add_photo
 id btn_back
@@ -59,6 +68,7 @@ id btn_menu
 id btn_next
 id btn_ranking
 id btn_recommendation
+id btn_reply
 id btn_retry
 id btn_save
 id btn_search
@@ -72,6 +82,7 @@ id buttonSend
 id cb_terms_1
 id cb_terms_2
 id chatListTitle
+id customBarGraphView
 id editTextFriendName
 id editTextMessage
 id et_address
@@ -88,6 +99,8 @@ id et_time_start
 id et_volunteer_date
 id fabAddPost
 id fragment_container
+id graphContainer
+id graphTitle
 id image_container
 id image_count_text
 id img_banner_ad
@@ -107,6 +120,7 @@ id recyclerView
 id recyclerViewChatList
 id recyclerViewMessages
 id recyclerView_comments
+id recyclerView_replies
 id recycler_mates
 id recycler_reviews
 id result_layout
@@ -119,12 +133,18 @@ id textViewLeftMessage
 id textViewLeftTime
 id textViewRightMessage
 id textViewRightTime
+id timeFilterLayout
 id toolbar
+id tvCalculationResult
 id tvTitle
+id tvTotalVolunteerHours
 id tv_address
 id tv_author
 id tv_calendar
 id tv_category
+id tv_comment_author
+id tv_comment_content
+id tv_comment_timestamp
 id tv_content
 id tv_login_title
 id tv_mate_title
@@ -132,6 +152,9 @@ id tv_name
 id tv_place
 id tv_question
 id tv_ranking
+id tv_reply_author
+id tv_reply_content
+id tv_reply_timestamp
 id tv_result_description
 id tv_result_title
 id tv_review_title
@@ -139,7 +162,6 @@ id tv_task_1
 id tv_task_2
 id tv_timestamp
 id tv_title
-id tv_total_time
 id tv_user_name
 id tv_volunteer_date
 id tv_volunteer_time
@@ -164,7 +186,9 @@ layout fragment_my_page
 layout fragment_ranking
 layout fragment_recommendation
 layout fragment_total_time
+layout item_comment
 layout item_post
+layout item_reply
 layout login_activity
 layout login_intro
 layout login_signup

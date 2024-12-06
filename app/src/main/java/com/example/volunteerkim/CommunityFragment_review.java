@@ -12,10 +12,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.volunteerkim.databinding.FragmentCommunityReviewBinding;
 import com.example.volunteerkim.databinding.ItemPostBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
@@ -33,6 +37,8 @@ public class CommunityFragment_review extends Fragment {
     private List<ReviewPost> postList = new ArrayList<>();
     private MyAdapter adapter;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private FirebaseAuth mAuth;
+    private TextView tvAuthor;
 
     public static CommunityFragment_review newInstance(String param1, String param2) {
         CommunityFragment_review fragment = new CommunityFragment_review();
@@ -83,6 +89,7 @@ public class CommunityFragment_review extends Fragment {
                             post.setPostId(doc.getId());
                             post.setPlace(doc.getString("place"));
                             post.setAddress(doc.getString("address"));
+                            post.setAuthor(doc.getString("author"));
                             post.setCategory(doc.getString("category"));
                             post.setContent(doc.getString("content"));
                             post.setStartTime(String.valueOf(doc.get("startTime")));  // Long -> String 변환
@@ -139,6 +146,7 @@ public class CommunityFragment_review extends Fragment {
             holder.binding.tvName.setText(post.getPlace());
             holder.binding.tvAddress.setText(post.getAddress());
             holder.binding.ratingBar.setRating(post.getRating());
+            holder.binding.tvAuthor.setText(post.getAuthor());
 
             // 아이템 전체 클릭 리스너 설정
             holder.itemView.setOnClickListener(v -> {
@@ -191,4 +199,5 @@ public class CommunityFragment_review extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
 }
