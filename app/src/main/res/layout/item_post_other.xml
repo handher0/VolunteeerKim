@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- 모집 상태 -->
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="4dp"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/selectedGreen"/>
+
+    <!-- 제목 -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <!-- 작성자 정보 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/baseline_person_24"/>
+
+        <TextView
+            android:id="@+id/tv_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/gray"/>
+
+        <TextView
+            android:id="@+id/tv_timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="12sp"
+            android:textColor="@color/gray"/>
+    </LinearLayout>
+
+    <!-- 내용 -->
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="14sp"
+        android:maxLines="3"
+        android:ellipsize="end"/>
+
+    <!-- 첫 번째 이미지 -->
+    <ImageView
+        android:id="@+id/iv_thumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerCrop"
+        android:visibility="gone"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/dividerColor"/>
+</LinearLayout>

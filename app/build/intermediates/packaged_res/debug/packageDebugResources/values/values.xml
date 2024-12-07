@@ -14,6 +14,7 @@
     <color name="textPrimary">#212121</color>
     <color name="textSecondary">#757575</color>
     <color name="unselectedGray">#757575</color>
+    <color name="unselectedGreen">#72A674</color>
     <color name="white">#FFFFFF</color>
     <string name="app_name">VolunteerKim</string>
     <string name="default_web_client_id" translatable="false">939503009350-8vrg66un9ubrk7vu5bcp9bfflbhf7lni.apps.googleusercontent.com</string>

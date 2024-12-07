@@ -2140,6 +2140,7 @@ color textSecondary
 color tooltip_background_dark
 color tooltip_background_light
 color unselectedGray
+color unselectedGreen
 color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
@@ -3307,21 +3308,21 @@ id btn_add
 id btn_add_photo
 id btn_back
 id btn_cancel
-id btn_category_all
-id btn_category_free
-id btn_category_notice
-id btn_category_question
 id btn_check_id
 id btn_detail
 id btn_donation
+id btn_free
 id btn_google_login
+id btn_help
 id btn_login
+id btn_mate
 id btn_menu
 id btn_next
 id btn_ranking
 id btn_recommendation
 id btn_reply
 id btn_retry
+id btn_review
 id btn_save
 id btn_search
 id btn_send_comment
@@ -3433,6 +3434,7 @@ id et_password_confirm
 id et_search
 id et_time_end
 id et_time_start
+id et_title
 id et_volunteer_date
 id event_edit_text
 id events_preview
@@ -3498,6 +3500,7 @@ id italic
 id item_touch_helper_previous_elevation
 id iv_profile
 id iv_profile_photo
+id iv_thumbnail
 id joinBtn
 id jumpToEnd
 id jumpToStart
@@ -3787,7 +3790,6 @@ id tv_author
 id tv_category
 id tv_comment_author
 id tv_comment_content
-id tv_comment_count
 id tv_comment_timestamp
 id tv_content
 id tv_login_title
@@ -3802,6 +3804,7 @@ id tv_reply_timestamp
 id tv_result_description
 id tv_result_title
 id tv_review_title
+id tv_status
 id tv_task_1
 id tv_task_2
 id tv_timestamp
@@ -3978,6 +3981,8 @@ layout fragment_calendar
 layout fragment_chat
 layout fragment_chat_add_friend
 layout fragment_chat_room
+layout fragment_community_board
+layout fragment_community_other_post
 layout fragment_community_review
 layout fragment_community_review_detail
 layout fragment_community_review_post
@@ -3990,6 +3995,7 @@ layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout item_comment
 layout item_post
+layout item_post_other
 layout item_reply
 layout login_activity
 layout login_intro

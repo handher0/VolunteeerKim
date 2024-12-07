@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.volunteerkim.databinding.FragmentCommunityReviewBinding;
 import com.example.volunteerkim.databinding.ItemPostBinding;
+import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -34,11 +35,13 @@ public class CommunityFragment_review extends Fragment {
     private String mParam1;
     private String mParam2;
     private FragmentCommunityReviewBinding binding;
-    private List<ReviewPost> postList = new ArrayList<>();
-    private MyAdapter adapter;
+    private List<ReviewPost> reviewList = new ArrayList<>();
+    private List<OtherPost> otherList = new ArrayList<>();
+    private CommunityAdapter otherAdapter;
+    private MyAdapter reviewAdapter;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private FirebaseAuth mAuth;
-    private TextView tvAuthor;
+    private String currentBoardType = "Review";
+
 
     public static CommunityFragment_review newInstance(String param1, String param2) {
         CommunityFragment_review fragment = new CommunityFragment_review();
@@ -62,48 +65,92 @@ public class CommunityFragment_review extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentCommunityReviewBinding.inflate(inflater, container, false);
         setupRecyclerView();
-        loadPosts();
+        setupButtons();
+        loadPosts(currentBoardType);
         return binding.getRoot();
     }
 
     private void setupRecyclerView() {
-        adapter = new MyAdapter(postList);
+        reviewAdapter = new MyAdapter(reviewList);
+        otherAdapter = new CommunityAdapter(otherList);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        binding.recyclerView.setAdapter(adapter);
+        // 현재 게시판 타입에 따라 적절한 어댑터 설정
+        if (currentBoardType.equals("Review")) {
+            binding.recyclerView.setAdapter(reviewAdapter);
+        } else {
+            binding.recyclerView.setAdapter(otherAdapter);
+        }
     }
 
-    private void loadPosts() {
+    private void loadPosts(String boardType) {
+        currentBoardType = boardType;
         db.collection("Boards")
-                .document("Review")
+                .document(boardType)
                 .collection("Posts")
                 .orderBy("timestamp", Query.Direction.DESCENDING)
                 .addSnapshotListener((value, error) -> {
-                    if (error != null) {
-                        Log.e("Firestore", "데이터 로드 실패", error);
-                        return;
-                    }
-                    postList.clear();
-                    for (DocumentSnapshot doc : value.getDocuments()) {
-                        try {
-                            ReviewPost post = new ReviewPost();
-                            post.setPostId(doc.getId());
-                            post.setPlace(doc.getString("place"));
-                            post.setAddress(doc.getString("address"));
-                            post.setAuthor(doc.getString("author"));
-                            post.setCategory(doc.getString("category"));
-                            post.setContent(doc.getString("content"));
-                            post.setStartTime(String.valueOf(doc.get("startTime")));  // Long -> String 변환
-                            post.setEndTime(String.valueOf(doc.get("endTime")));      // Long -> String 변환
-                            post.setRating(doc.getDouble("rating").floatValue());
-                            post.setHasImages(doc.getBoolean("hasImages"));
-                            post.setImageUrls((List<String>) doc.get("imageUrls"));
-                            postList.add(post);
-                        } catch (Exception e) {
-                            Log.e("Firestore", "데이터 변환 실패: " + doc.getId(), e);
+                    if (binding == null || !isAdded()) return;
+
+                    if (error != null || value == null) return;
+
+                    if (boardType.equals("Review")) {
+                        reviewList.clear();
+                        for (DocumentSnapshot doc : value.getDocuments()) {
+                            try {
+                                ReviewPost post = createReviewPost(doc);
+                                reviewList.add(post);
+                            } catch (Exception e) {
+                                Log.e("Firestore", "데이터 변환 실패: " + doc.getId(), e);
+                            }
                         }
+                        binding.recyclerView.setAdapter(reviewAdapter);
+                        reviewAdapter.notifyDataSetChanged();
+                    } else {
+                        otherList.clear();
+                        for (DocumentSnapshot doc : value.getDocuments()) {
+                            try {
+                                OtherPost post = createOtherPost(doc);
+                                otherList.add(post);
+                            } catch (Exception e) {
+                                Log.e("Firestore", "데이터 변환 실패: " + doc.getId(), e);
+                            }
+                        }
+                        binding.recyclerView.setAdapter(otherAdapter);
+                        otherAdapter.notifyDataSetChanged();
                     }
-                    adapter.notifyDataSetChanged();
                 });
+    }
+
+    private ReviewPost createReviewPost(DocumentSnapshot doc) {
+        ReviewPost post = new ReviewPost();
+        post.setPostId(doc.getId());
+        post.setAuthor(doc.getString("author"));
+        post.setContent(doc.getString("content"));
+        post.setHasImages(doc.getBoolean("hasImages"));
+        post.setImageUrls((List<String>) doc.get("imageUrls"));
+        Double rating = doc.getDouble("rating");
+        post.setRating(rating != null ? rating.floatValue() : 0.0f);
+        post.setPlace(doc.getString("place"));
+        post.setAddress(doc.getString("address"));
+        post.setCategory(doc.getString("category"));
+        return post;
+    }
+
+    private OtherPost createOtherPost(DocumentSnapshot doc) {
+        OtherPost post = new OtherPost();
+        post.setPostId(doc.getId());
+        post.setAuthor(doc.getString("author"));
+        post.setContent(doc.getString("content"));
+        post.setHasImages(doc.getBoolean("hasImages"));
+        post.setImageUrls((List<String>) doc.get("imageUrls"));
+        post.setTitle(doc.getString("title"));
+        post.setTimestamp(doc.getTimestamp("timestamp"));
+        Timestamp startTimestamp = doc.getTimestamp("startTime");
+        Timestamp endTimestamp = doc.getTimestamp("endTime");
+        post.setRecruitmentStart(startTimestamp != null ? startTimestamp.toDate() : null);
+        post.setRecruitmentEnd(endTimestamp != null ? endTimestamp.toDate() : null);
+
+        return post;
     }
 
     private class MyViewHolder extends RecyclerView.ViewHolder {
@@ -169,26 +216,70 @@ public class CommunityFragment_review extends Fragment {
     }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        binding.btnAdd.setOnClickListener(v -> {
-            CommunityFragment_review_post reviewPostFragment = new CommunityFragment_review_post();
-            requireActivity().getSupportFragmentManager()
-                    .beginTransaction()
-                    .setCustomAnimations(
-                            R.anim.slide_in_right,  // 새 화면 들어올 때
-                            R.anim.slide_out_left,  // 현재 화면 나갈 때
-                            R.anim.slide_in_left,   // 뒤로가기 시 들어올 때
-                            R.anim.slide_out_right  // 뒤로가기 시 나갈 때
-                    )
-                    .replace(R.id.fragment_container, new CommunityFragment_review_post())
-                    .addToBackStack(null)
-                    .commit();
-        });
+        setupButtons();
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    private void updateButtonStates(View selectedButton) {
+        // 모든 버튼 기본 상태로 초기화
+        binding.btnReview.setBackgroundResource(android.R.color.transparent);
+        binding.btnHelp.setBackgroundResource(android.R.color.transparent);
+        binding.btnMate.setBackgroundResource(android.R.color.transparent);
+        binding.btnFree.setBackgroundResource(android.R.color.transparent);
+
+        // 선택된 버튼만 연두색으로 변경
+        selectedButton.setBackgroundResource(R.color.selectedGreen);  // 연두색 리소스 추가 필요
+    }
+
+    private void setupButtons() {
+        binding.btnAdd.setOnClickListener(v -> {
+            Fragment targetFragment = currentBoardType.equals("Review") ?
+                    new CommunityFragment_review_post() :
+                    new CommunityFragment_other_post();
+
+            if (!currentBoardType.equals("Review")) {
+                Bundle args = new Bundle();
+                args.putString("boardType", currentBoardType);
+                targetFragment.setArguments(args);
+            }
+
+            requireActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .setCustomAnimations(
+                            R.anim.slide_in_right,
+                            R.anim.slide_out_left,
+                            R.anim.slide_in_left,
+                            R.anim.slide_out_right
+                    )
+                    .replace(R.id.fragment_container, targetFragment)
+                    .addToBackStack(null)
+                    .commit();
+        });
+
+        binding.btnReview.setOnClickListener(v -> {
+            updateButtonStates(v);
+            loadPosts("Review");
+        });
+
+        binding.btnHelp.setOnClickListener(v -> {
+            updateButtonStates(v);
+            loadPosts("Help");
+        });
+
+        binding.btnMate.setOnClickListener(v -> {
+            updateButtonStates(v);
+            loadPosts("Mate");
+        });
+
+        binding.btnFree.setOnClickListener(v -> {
+            updateButtonStates(v);
+            loadPosts("Free");
+        });
     }
 
 }

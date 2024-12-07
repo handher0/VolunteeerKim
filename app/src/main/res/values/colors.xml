@@ -14,6 +14,7 @@
 
     <!-- 카테고리 버튼 색상 -->
     <color name="selectedGreen">#4CAF50</color>  <!-- 선택된 '봉사 리뷰' 버튼 색상 -->
+    <color name="unselectedGreen">#72A674</color>
     <color name="unselectedGray">#757575</color> <!-- 선택되지 않은 버튼 텍스트 색상 -->
 
     <!-- 별점 색상 -->

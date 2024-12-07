@@ -62,40 +62,41 @@
             android:padding="8dp">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_category_all"
+                android:id="@+id/btn_review"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:text="봉사 리뷰"
-                android:backgroundTint="@color/selectedGreen"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_category_notice"
+                android:id="@+id/btn_help"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="도와줘! 김봉사"
+                android:textColor="@color/black"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_mate"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:text="봉사 메이트"
-                android:textColor="@color/black"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+                android:textColor="@color/black" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_category_free"
+                android:id="@+id/btn_free"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:text="봉사 QnA"
+                android:text="자유게시판"
                 android:textColor="@color/black"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_category_question"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="봉사 질문"
-                android:textColor="@color/black"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
         </LinearLayout>
     </HorizontalScrollView>
 
