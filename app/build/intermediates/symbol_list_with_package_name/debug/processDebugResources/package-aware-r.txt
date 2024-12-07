@@ -3029,6 +3029,7 @@ drawable ad1
 drawable arrow
 drawable avd_hide_password
 drawable avd_show_password
+drawable background_gradient
 drawable baseline_account_circle_24
 drawable baseline_add_24
 drawable baseline_add_photo_alternate_24
@@ -3054,6 +3055,8 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable button_gradient
+drawable button_shadow
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -3073,11 +3076,13 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable defalut_img
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable google_logo
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_arrow_back_black_24
@@ -3178,12 +3183,14 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable rounded_background
+drawable rounded_button
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable vms
 drawable vms1
 drawable vms2
+font miwon
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3320,12 +3327,14 @@ id btn_search
 id btn_send_comment
 id btn_submit
 id btn_total_time
+id btn_upload_photo
 id buttonAddFriend
 id buttonAddFriends
 id buttonCreateChatRoom
 id buttonPanel
 id buttonSend
 id cache_measures
+id calendarView
 id callMeasure
 id cancel_button
 id carryVelocity
@@ -3425,6 +3434,8 @@ id et_search
 id et_time_end
 id et_time_start
 id et_volunteer_date
+id event_edit_text
+id events_preview
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3451,6 +3462,8 @@ id ghost_view
 id ghost_view_holder
 id glide_custom_view_target_tag
 id gone
+id google_login_text
+id google_logo
 id graph
 id graphContainer
 id graphTitle
@@ -3484,6 +3497,7 @@ id inward
 id italic
 id item_touch_helper_previous_elevation
 id iv_profile
+id iv_profile_photo
 id joinBtn
 id jumpToEnd
 id jumpToStart
@@ -3644,6 +3658,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id save_event_button
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3666,6 +3681,7 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id selected_date_text_view
 id selection_type
 id sharedValueSet
 id sharedValueUnset
@@ -3768,7 +3784,6 @@ id tvTitle
 id tvTotalVolunteerHours
 id tv_address
 id tv_author
-id tv_calendar
 id tv_category
 id tv_comment_author
 id tv_comment_content
@@ -3933,7 +3948,6 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_intro
 layout activity_main
 layout activity_nickname
 layout activity_post_list
@@ -4257,6 +4271,7 @@ style Animation_Material3_SideSheetDialog
 style Animation_Material3_SideSheetDialog_Left
 style Animation_Material3_SideSheetDialog_Right
 style Animation_MaterialComponents_BottomSheetDialog
+style AppTheme
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog

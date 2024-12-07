@@ -1,0 +1,9 @@
+<resources>
+    <!-- 기존 앱 테마 -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- 상단바(툴바)의 색상 -->
+        <item name="colorPrimary">#83B98D</item> <!-- 상단바의 배경색 -->
+        <item name="colorPrimaryDark">#6BD5AE</item> <!-- 상태바의 배경색 -->
+        <item name="colorAccent">#FFFFFF</item> <!-- 강조 색상 (버튼 등) -->
+    </style>
+</resources>
