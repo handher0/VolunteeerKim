@@ -20,10 +20,6 @@
         "source": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-main-42:\\layout\\fragment_chat_add_friend.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-40:/layout_fragment_community_other_detail.xml.flat",
-        "source": "com.example.volunteerkim.app-main-42:/layout/fragment_community_other_detail.xml"
-    },
-    {
         "merged": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-debug-40:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-main-42:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
@@ -58,10 +54,6 @@
     {
         "merged": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-debug-40:\\drawable_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-main-42:\\drawable\\ic_launcher_foreground.xml"
-    },
-    {
-        "merged": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-debug-40:\\layout_fragment_community_board.xml.flat",
-        "source": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-main-42:\\layout\\fragment_community_board.xml"
     },
     {
         "merged": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-debug-40:\\drawable_ic_launcher_background.xml.flat",
@@ -204,10 +196,6 @@
         "source": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-main-42:\\layout\\activity_nickname.xml"
     },
     {
-        "merged": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-debug-40:\\layout_fragment_community_mate.xml.flat",
-        "source": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-main-42:\\layout\\fragment_community_mate.xml"
-    },
-    {
         "merged": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-debug-40:\\xml_backup_rules.xml.flat",
         "source": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-main-42:\\xml\\backup_rules.xml"
     },
@@ -246,6 +234,10 @@
     {
         "merged": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-debug-40:\\layout_fragment_calendar.xml.flat",
         "source": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-main-42:\\layout\\fragment_calendar.xml"
+    },
+    {
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_item_post_other.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/item_post_other.xml"
     },
     {
         "merged": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-debug-40:\\layout_fragment_home.xml.flat",

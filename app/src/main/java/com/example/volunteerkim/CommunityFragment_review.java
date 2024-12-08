@@ -149,8 +149,8 @@ public class CommunityFragment_review extends Fragment {
         post.setImageUrls((List<String>) doc.get("imageUrls"));
         post.setTitle(doc.getString("title"));
         post.setTimestamp(doc.getTimestamp("timestamp"));
-        Timestamp startTimestamp = doc.getTimestamp("startTime");
-        Timestamp endTimestamp = doc.getTimestamp("endTime");
+        Timestamp startTimestamp = doc.getTimestamp("recruitmentStart");
+        Timestamp endTimestamp = doc.getTimestamp("recruitmentEnd");
         post.setRecruitmentStart(startTimestamp != null ? startTimestamp.toDate() : null);
         post.setRecruitmentEnd(endTimestamp != null ? endTimestamp.toDate() : null);
 

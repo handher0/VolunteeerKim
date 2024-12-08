@@ -85,13 +85,13 @@ public class CommunityFragment_other_detail extends Fragment {
 
                         // 모집 상태 체크 및 표시
                         Date currentDate = new Date();
-                        Timestamp endTimestamp = document.getTimestamp("endTime");
+                        Timestamp endTimestamp = document.getTimestamp("recruitmentEnd");
                         if (endTimestamp != null && currentDate.before(endTimestamp.toDate())) {
                             binding.tvStatus.setText("모집중");
                             binding.tvStatus.setBackgroundResource(R.color.selectedGreen);
                         } else {
                             binding.tvStatus.setText("마감");
-                            binding.tvStatus.setBackgroundResource(R.color.unselectedGreen);
+                            binding.tvStatus.setBackgroundResource(R.color.unselectedGray);
                         }
 
                         // 제목과 내용
@@ -99,7 +99,7 @@ public class CommunityFragment_other_detail extends Fragment {
                         binding.tvContent.setText(document.getString("content"));
 
                         // 모집 기간
-                        Timestamp startTimestamp = document.getTimestamp("startTime");
+                        Timestamp startTimestamp = document.getTimestamp("recruitmentStart");
                         if (startTimestamp != null && endTimestamp != null) {
                             String period = String.format("모집기간: %s ~ %s",
                                     formatDate(startTimestamp),

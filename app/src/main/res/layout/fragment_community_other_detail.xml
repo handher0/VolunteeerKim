@@ -5,26 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white">
-    <!-- 기존 레이아웃의 최상위 LinearLayout 바로 아래에 추가 -->
-<!--    <FrameLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent">-->
-
-<!--        <ProgressBar-->
-<!--            android:id="@+id/progress_bar"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center"/>-->
-
-<!--        <ScrollView-->
-<!--            android:id="@+id/content_layout"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:visibility="gone">-->
-<!--            &lt;!&ndash; 기존 ScrollView 내용 &ndash;&gt;-->
-<!--        </ScrollView>-->
-<!--    </FrameLayout>-->
-
 
     <!-- 상단 툴바 -->
     <androidx.appcompat.widget.Toolbar
@@ -90,6 +70,11 @@
                 </LinearLayout>
             </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
             <!-- 모집 상태 -->
             <TextView
                 android:id="@+id/tv_status"
@@ -99,6 +84,18 @@
                 android:padding="8dp"
                 android:textColor="@color/white"
                 android:background="@color/selectedGreen"/>
+
+            <!-- 모집 기간 -->
+            <TextView
+                android:id="@+id/tv_recruitment_period"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_gravity="center_vertical"
+                android:textSize="16sp"
+                android:textColor="@color/gray"/>
+        </LinearLayout>
 
             <!-- 제목 -->
             <TextView
@@ -110,14 +107,6 @@
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
 
-            <!-- 모집 기간 -->
-            <TextView
-                android:id="@+id/tv_recruitment_period"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textSize="14sp"
-                android:textColor="@color/gray"/>
 
             <!-- 게시글 내용 -->
             <TextView

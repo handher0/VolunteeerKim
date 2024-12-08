@@ -6,15 +6,30 @@
     android:padding="16dp">
 
     <!-- 모집 상태 -->
-    <TextView
-        android:id="@+id/tv_status"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="8dp"
-        android:paddingVertical="4dp"
-        android:textSize="12sp"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/selectedGreen"/>
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/selectedGreen"
+            android:padding="8dp"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_recruitment_period"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_gravity="center_vertical"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
 
     <!-- 제목 -->
     <TextView

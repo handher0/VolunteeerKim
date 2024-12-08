@@ -28,7 +28,7 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.Othe
     }
 
     static class OtherViewHolder extends RecyclerView.ViewHolder {
-        TextView tvStatus, tvTitle, tvAuthor, tvTimestamp, tvContent;
+        TextView tvStatus, tvTitle, tvAuthor, tvTimestamp, tvContent, tvRecruitmentPeriod;
         ImageView ivThumbnail;
 
         OtherViewHolder(View view) {
@@ -39,6 +39,7 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.Othe
             tvTimestamp = view.findViewById(R.id.tv_timestamp);
             tvContent = view.findViewById(R.id.tv_content);
             ivThumbnail = view.findViewById(R.id.iv_thumbnail);
+            tvRecruitmentPeriod = view.findViewById(R.id.tv_recruitment_period);
         }
     }
 
@@ -56,12 +57,24 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.Othe
 
         // 모집 상태 체크 및 표시
         Date currentDate = new Date();
-        if (post.getRecruitmentEnd() != null && currentDate.before(post.getRecruitmentEnd())) {
-            holder.tvStatus.setText("모집중");
-            holder.tvStatus.setBackgroundResource(R.color.selectedGreen);
-        } else {
-            holder.tvStatus.setText("마감");
-            holder.tvStatus.setBackgroundResource(R.color.unselectedGreen);
+        if (post.getRecruitmentStart() != null && post.getRecruitmentEnd() != null) {
+            // 모집 기간 표시
+            SimpleDateFormat sdf = new SimpleDateFormat("MM/dd", Locale.getDefault());
+            String period = String.format("%s~%s",
+                    sdf.format(post.getRecruitmentStart()),
+                    sdf.format(post.getRecruitmentEnd()));
+            holder.tvRecruitmentPeriod.setText(period);
+
+
+            // 모집 상태 체크
+            if (currentDate.after(post.getRecruitmentStart()) &&
+                    currentDate.before(post.getRecruitmentEnd())) {
+                holder.tvStatus.setText("모집중");
+                holder.tvStatus.setBackgroundResource(R.color.selectedGreen);
+            } else {
+                holder.tvStatus.setText("마감");
+                holder.tvStatus.setBackgroundResource(R.color.unselectedGray);
+            }
         }
 
         holder.tvTitle.setText(post.getTitle());
