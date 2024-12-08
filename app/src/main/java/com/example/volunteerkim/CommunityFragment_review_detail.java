@@ -204,52 +204,26 @@ public class CommunityFragment_review_detail extends Fragment {
 
 
     private void setupReplyInput(String commentId, String parentAuthor) {
-        // 답글 입력 UI 표시 (예: EditText와 전송 버튼)
+        // 답글 입력 UI 표시
         binding.etComment.setHint(parentAuthor + "님에게 답글 작성");
 
-        binding.btnSendComment.setOnClickListener(v -> {
-            String replyText = binding.etComment.getText().toString().trim();
-            if (replyText.isEmpty()) {
-                Toast.makeText(getContext(), "답글을 입력해주세요", Toast.LENGTH_SHORT).show();
-                return;
+        // 기존 클릭 리스너 제거하고 새로운 one-time 리스너 설정
+        binding.btnSendComment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String replyText = binding.etComment.getText().toString().trim();
+                if (replyText.isEmpty()) {
+                    Toast.makeText(getContext(), "답글을 입력해주세요", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // 답글 저장 로직...
+                saveReply(commentId, replyText);
+
+                // 답글 작성 완료 후 일반 댓글 모드로 복귀
+                binding.etComment.setHint("댓글을 입력하세요");
+                setupCommentInput();  // 일반 댓글 입력 리스너로 복귀
             }
-
-            FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-            if (currentUser == null) {
-                Toast.makeText(getContext(), "로그인이 필요합니다", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            FirebaseFirestore.getInstance()
-                    .collection("users")
-                    .document(currentUser.getUid())
-                    .get()
-                    .addOnSuccessListener(documentSnapshot -> {
-                        String nickname = documentSnapshot.getString("nickname");
-                        if (nickname == null) nickname = "익명";
-
-                        Map<String, Object> reply = new HashMap<>();
-                        reply.put("content", replyText);
-                        reply.put("author", nickname);
-                        reply.put("timestamp", FieldValue.serverTimestamp());
-
-                        db.collection("Boards")
-                                .document("Review")
-                                .collection("Posts")
-                                .document(postId)
-                                .collection("Comments")
-                                .document(commentId)
-                                .collection("Replies")
-                                .add(reply)
-                                .addOnSuccessListener(documentReference -> {
-                                    binding.etComment.setText("");
-                                    binding.etComment.setHint("댓글을 입력하세요");
-                                    Toast.makeText(getContext(), "답글이 등록되었습니다", Toast.LENGTH_SHORT).show();
-                                })
-                                .addOnFailureListener(e -> {
-                                    Toast.makeText(getContext(), "답글 등록에 실패했습니다", Toast.LENGTH_SHORT).show();
-                                });
-                    });
         });
     }
 
@@ -282,6 +256,42 @@ public class CommunityFragment_review_detail extends Fragment {
                         }
                     }
                     commentAdapter.notifyDataSetChanged();
+                });
+    }
+
+    // 답글 저장을 위한 별도 메서드
+    private void saveReply(String commentId, String replyText) {
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser == null) {
+            Toast.makeText(getContext(), "로그인이 필요합니다", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        FirebaseFirestore.getInstance()
+                .collection("users")
+                .document(currentUser.getUid())
+                .get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    String nickname = documentSnapshot.getString("nickname");
+                    if (nickname == null) nickname = "익명";
+
+                    Map<String, Object> reply = new HashMap<>();
+                    reply.put("content", replyText);
+                    reply.put("author", nickname);
+                    reply.put("timestamp", FieldValue.serverTimestamp());
+
+                    db.collection("Boards")
+                            .document("Review")
+                            .collection("Posts")
+                            .document(postId)
+                            .collection("Comments")
+                            .document(commentId)
+                            .collection("Replies")
+                            .add(reply)
+                            .addOnSuccessListener(documentReference -> {
+                                binding.etComment.setText("");
+                                Toast.makeText(getContext(), "답글이 등록되었습니다", Toast.LENGTH_SHORT).show();
+                            });
                 });
     }
 
