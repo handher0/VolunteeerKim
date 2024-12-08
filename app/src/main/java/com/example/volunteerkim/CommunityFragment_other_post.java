@@ -54,6 +54,14 @@ public class CommunityFragment_other_post extends Fragment {
         if (getArguments() != null) {
             boardType = getArguments().getString("boardType");
         }
+        // Free 게시판일 경우 모집 기간 입력 UI 숨기기
+        if (boardType.equals("Free")) {
+            binding.etTimeStart.setVisibility(View.GONE);
+            binding.etTimeEnd.setVisibility(View.GONE);
+            // 관련 레이블도 숨기기
+            binding.goneForFree1.setVisibility(View.GONE);
+            binding.goneForFree2.setVisibility(View.GONE);
+        }
 
         setupButtons();
         return binding.getRoot();
@@ -78,13 +86,15 @@ public class CommunityFragment_other_post extends Fragment {
         binding.imageCountText.setText("0/5");
         binding.btnCancel.setOnClickListener(v -> requireActivity().onBackPressed());
         binding.btnSubmit.setOnClickListener(v -> {
-            if (isEmpty(binding.etTitle.getText().toString()) ||
-                    isEmpty(binding.etContent.getText().toString()) ||
-                    isEmpty(binding.etTimeStart.getText().toString()) ||
-                    isEmpty(binding.etTimeEnd.getText().toString())) {
-                Toast.makeText(getContext(), "모든 입력란에 내용을 넣어주세요", Toast.LENGTH_SHORT).show();
+            String title = binding.etTitle.getText().toString().trim();
+            String content = binding.etContent.getText().toString().trim();
+
+            // 제목과 내용이 비어있는지만 체크
+            if (title.isEmpty() || content.isEmpty()) {
+                Toast.makeText(getContext(), "제목과 내용을 입력해주세요", Toast.LENGTH_SHORT).show();
                 return;
             }
+
             submitPost();
         });
     }
@@ -109,19 +119,22 @@ public class CommunityFragment_other_post extends Fragment {
                         post.setTitle(binding.etTitle.getText().toString());
                         post.setContent(binding.etContent.getText().toString());
                         post.setAuthor(nickname);
-                        // Convert String dates to Date objects
-                        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-                        try {
-                            Date startDate = dateFormat.parse(binding.etTimeStart.getText().toString());
-                            Date endDate = dateFormat.parse(binding.etTimeEnd.getText().toString());
-                            post.setRecruitmentStart(startDate);
-                            post.setRecruitmentEnd(endDate);
-                        } catch (ParseException e) {
-                            Log.e("DateParse", "Date parsing failed", e);
-                            Toast.makeText(getContext(), "날짜 형식이 올바르지 않습니다.", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
                         post.setTimestamp(new Timestamp(new Date()));
+
+                        // Free 게시판이 아닐 때만 모집 기간 설정
+                        if (!boardType.equals("Free")) {
+                            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+                            try {
+                                Date startDate = dateFormat.parse(binding.etTimeStart.getText().toString());
+                                Date endDate = dateFormat.parse(binding.etTimeEnd.getText().toString());
+                                post.setRecruitmentStart(startDate);
+                                post.setRecruitmentEnd(endDate);
+                            } catch (ParseException e) {
+                                Log.e("DateParse", "Date parsing failed", e);
+                                Toast.makeText(getContext(), "날짜 형식이 올바르지 않습니다.", Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+                        }
 
                         if (selectedImages.isEmpty()) {
                             post.setHasImages(false);
@@ -132,7 +145,6 @@ public class CommunityFragment_other_post extends Fragment {
 
                         post.setHasImages(true);
                         post.setImageUrls(new ArrayList<>());
-
                         savePostWithImages(post);
                     }
                 });

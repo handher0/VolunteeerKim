@@ -73,6 +73,13 @@ public class CommunityFragment_other_detail extends Fragment {
                 .addOnSuccessListener(document -> {
                     if (document.exists()) {
                         Log.d("CommunityOtherDetail", "Post document loaded successfully");
+                        if (boardType.equals("Free")) {
+                            binding.tvStatus.setVisibility(View.GONE);
+                            binding.tvRecruitmentPeriod.setVisibility(View.GONE);
+                        } else {
+                            binding.tvStatus.setVisibility(View.VISIBLE);
+                            binding.tvRecruitmentPeriod.setVisibility(View.VISIBLE);
+                        }
                         // 작성자 정보
                         String author = document.getString("author");
                         binding.tvAuthor.setText(author != null ? author : "익명");

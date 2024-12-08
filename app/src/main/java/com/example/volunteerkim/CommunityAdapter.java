@@ -55,27 +55,36 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.Othe
     public void onBindViewHolder(@NonNull OtherViewHolder holder, int position) {
         OtherPost post = posts.get(position);
 
-        // 모집 상태 체크 및 표시
-        Date currentDate = new Date();
-        if (post.getRecruitmentStart() != null && post.getRecruitmentEnd() != null) {
-            // 모집 기간 표시
-            SimpleDateFormat sdf = new SimpleDateFormat("MM/dd", Locale.getDefault());
-            String period = String.format("%s~%s",
-                    sdf.format(post.getRecruitmentStart()),
-                    sdf.format(post.getRecruitmentEnd()));
-            holder.tvRecruitmentPeriod.setText(period);
+        // Free 게시판일 경우 모집 상태와 기간 숨기기
+        if (boardType.equals("Free")) {
+            holder.tvStatus.setVisibility(View.GONE);
+            holder.tvRecruitmentPeriod.setVisibility(View.GONE);
+        } else {
+            holder.tvStatus.setVisibility(View.VISIBLE);
+            holder.tvRecruitmentPeriod.setVisibility(View.VISIBLE);
+
+            // 모집 상태 체크 및 표시
+            Date currentDate = new Date();
+            if (post.getRecruitmentStart() != null && post.getRecruitmentEnd() != null) {
+                // 모집 기간 표시
+                SimpleDateFormat sdf = new SimpleDateFormat("MM/dd", Locale.getDefault());
+                String period = String.format("%s~%s",
+                        sdf.format(post.getRecruitmentStart()),
+                        sdf.format(post.getRecruitmentEnd()));
+                holder.tvRecruitmentPeriod.setText(period);
 
 
-            // 모집 상태 체크
-            if (currentDate.after(post.getRecruitmentStart()) &&
-                    currentDate.before(post.getRecruitmentEnd())) {
-                holder.tvStatus.setText("모집중");
-                holder.tvStatus.setBackgroundResource(R.color.selectedGreen);
-            } else {
-                holder.tvStatus.setText("마감");
-                holder.tvStatus.setBackgroundResource(R.color.unselectedGray);
+                // 모집 상태 체크 - 마감일만 체크하도록 수정
+                if (currentDate.before(post.getRecruitmentEnd())) {
+                    holder.tvStatus.setText("모집중");
+                    holder.tvStatus.setBackgroundResource(R.color.selectedGreen);
+                } else {
+                    holder.tvStatus.setText("마감");
+                    holder.tvStatus.setBackgroundResource(R.color.unselectedGray);
+                }
             }
         }
+
 
         holder.tvTitle.setText(post.getTitle());
         holder.tvAuthor.setText(post.getAuthor());

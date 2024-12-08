@@ -64,6 +64,7 @@
 
             <!-- 모집 기간 -->
             <TextView
+                android:id="@+id/gone_for_free1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
@@ -73,6 +74,7 @@
                 android:textStyle="bold" />
 
             <LinearLayout
+                android:id="@+id/gone_for_free2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"

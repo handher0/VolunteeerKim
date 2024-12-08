@@ -113,6 +113,8 @@ id event_edit_text
 id events_preview
 id fabAddPost
 id fragment_container
+id gone_for_free1
+id gone_for_free2
 id google_login_text
 id google_logo
 id graphContainer
