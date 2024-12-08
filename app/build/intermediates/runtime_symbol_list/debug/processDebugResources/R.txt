@@ -2120,6 +2120,7 @@ int color primary_text_default_material_dark 0x7f05030b
 int color primary_text_default_material_light 0x7f05030c
 int color primary_text_disabled_material_dark 0x7f05030d
 int color primary_text_disabled_material_light 0x7f05030e
+int color red 0x7f050324
 int color ripple_material_dark 0x7f05030f
 int color ripple_material_light 0x7f050310
 int color secondary_text_default_material_dark 0x7f050311
@@ -3037,6 +3038,7 @@ int drawable baseline_arrow_back_ios_24 0x7f070080
 int drawable baseline_arrow_drop_down_24 0x7f070081
 int drawable baseline_chat_24 0x7f070082
 int drawable baseline_chat_bubble_24 0x7f070083
+int drawable baseline_delete_24 0x7f07011d
 int drawable baseline_home_24 0x7f070084
 int drawable baseline_person_24 0x7f070085
 int drawable baseline_search_24 0x7f070086
@@ -3308,6 +3310,7 @@ int id btn_add_photo 0x7f090071
 int id btn_back 0x7f090072
 int id btn_cancel 0x7f090073
 int id btn_check_id 0x7f090074
+int id btn_delete 0x7f090287
 int id btn_detail 0x7f090075
 int id btn_donation 0x7f090076
 int id btn_free 0x7f090077

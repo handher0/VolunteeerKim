@@ -36,6 +36,10 @@
         "source": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-main-42:\\drawable\\baseline_person_24.xml"
     },
     {
+        "merged": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-debug-40:\\drawable_baseline_delete_24.xml.flat",
+        "source": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-main-42:\\drawable\\baseline_delete_24.xml"
+    },
+    {
         "merged": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-debug-40:\\drawable_baseline_search_24.xml.flat",
         "source": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-main-42:\\drawable\\baseline_search_24.xml"
     },
@@ -142,6 +146,10 @@
     {
         "merged": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-debug-40:\\layout_chat_item_list.xml.flat",
         "source": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-main-42:\\layout\\chat_item_list.xml"
+    },
+    {
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_fragment_community_review_detail.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/fragment_community_review_detail.xml"
     },
     {
         "merged": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-debug-40:\\layout_fragment_recommendation.xml.flat",
@@ -274,10 +282,6 @@
     {
         "merged": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-debug-40:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-main-42:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
-    },
-    {
-        "merged": "com.example.volunteerkim.app-debug-40:/layout_fragment_community_review.xml.flat",
-        "source": "com.example.volunteerkim.app-main-42:/layout/fragment_community_review.xml"
     },
     {
         "merged": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-debug-40:\\drawable_vms1.png.flat",

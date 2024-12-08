@@ -1,6 +1,9 @@
 package com.example.volunteerkim;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -21,6 +24,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.storage.FirebaseStorage;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -56,6 +60,7 @@ public class CommunityFragment_other_detail extends Fragment {
         loadComments();
         setupUI();
 
+
         return binding.getRoot();
     }
 
@@ -64,7 +69,6 @@ public class CommunityFragment_other_detail extends Fragment {
     }
 
     private void loadPostDetails() {
-        Log.d("CommunityOtherDetail", "Loading post details for postId: " + postId + ", boardType: " + boardType);
         db.collection("Boards")
                 .document(boardType)
                 .collection("Posts")
@@ -83,6 +87,25 @@ public class CommunityFragment_other_detail extends Fragment {
                         // 작성자 정보
                         String author = document.getString("author");
                         binding.tvAuthor.setText(author != null ? author : "익명");
+
+                        // 현재 로그인한 사용자의 닉네임 가져오기
+                        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+                        if (currentUser != null) {
+                            db.collection("users")
+                                    .document(currentUser.getUid())
+                                    .get()
+                                    .addOnSuccessListener(userDoc -> {
+                                        String userNickname = userDoc.getString("nickname");
+                                        // 게시글 작성자와 현재 사용자의 닉네임 비교
+                                        if (userNickname != null && userNickname.equals(author)) {
+                                            binding.btnDelete.setVisibility(View.VISIBLE);
+                                            binding.btnDelete.setOnClickListener(v -> showDeleteConfirmDialog());
+                                        } else {
+                                            binding.btnDelete.setVisibility(View.GONE);
+                                        }
+                                    });
+                        }
+
 
                         // 작성 시간
                         Timestamp timestamp = document.getTimestamp("timestamp");
@@ -350,4 +373,57 @@ public class CommunityFragment_other_detail extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
+    private void showDeleteConfirmDialog() {
+        new AlertDialog.Builder(requireContext())
+                .setTitle("게시글 삭제")
+                .setMessage("정말 삭제하시겠습니까?")
+                .setPositiveButton("삭제", (dialog, which) -> deletePost())
+                .setNegativeButton("취소", null)
+                .show();
+    }
+
+    private void deletePost() {
+        String deletedPostId = postId;  // 삭제할 게시글 ID 저장
+
+        db.collection("Boards")
+                .document(boardType)
+                .collection("Posts")
+                .document(deletedPostId)
+                .get()
+                .addOnSuccessListener(document -> {
+                    if (document.exists()) {
+                        // 이미지 URL 목록 가져오기
+                        List<String> imageUrls = (List<String>) document.get("imageUrls");
+
+                        // 게시글 문서 삭제
+                        document.getReference().delete()
+                                .addOnSuccessListener(aVoid -> {
+                                    // 게시글 삭제 성공 후 Storage의 이미지도 삭제
+                                    if (imageUrls != null && !imageUrls.isEmpty()) {
+                                        for (String imageUrl : imageUrls) {
+                                            FirebaseStorage.getInstance().getReferenceFromUrl(imageUrl).delete();
+                                        }
+                                    }
+
+                                    // Posts 컬렉션에서 해당 게시글 ID 문서도 삭제
+                                    db.collection("Posts")
+                                            .document(deletedPostId)
+                                            .delete()
+                                            .addOnSuccessListener(unused -> {
+                                                Toast.makeText(getContext(), "게시글이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
+                                                requireActivity().onBackPressed();
+                                            })
+                                            .addOnFailureListener(e -> {
+                                                Log.e("DeletePost", "Posts 문서 삭제 실패", e);
+                                            });
+                                })
+                                .addOnFailureListener(e -> {
+                                    Toast.makeText(getContext(), "게시글 삭제에 실패했습니다.", Toast.LENGTH_SHORT).show();
+                                });
+                    }
+                });
+    }
+
+
 }

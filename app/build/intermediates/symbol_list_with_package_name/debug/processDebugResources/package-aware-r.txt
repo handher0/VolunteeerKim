@@ -2121,6 +2121,7 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color red
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -3038,6 +3039,7 @@ drawable baseline_arrow_back_ios_24
 drawable baseline_arrow_drop_down_24
 drawable baseline_chat_24
 drawable baseline_chat_bubble_24
+drawable baseline_delete_24
 drawable baseline_home_24
 drawable baseline_person_24
 drawable baseline_search_24
@@ -3309,6 +3311,7 @@ id btn_add_photo
 id btn_back
 id btn_cancel
 id btn_check_id
+id btn_delete
 id btn_detail
 id btn_donation
 id btn_free
