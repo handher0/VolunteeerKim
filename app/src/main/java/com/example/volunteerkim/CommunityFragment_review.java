@@ -25,8 +25,10 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
 public class CommunityFragment_review extends Fragment {
@@ -72,7 +74,7 @@ public class CommunityFragment_review extends Fragment {
 
     private void setupRecyclerView() {
         reviewAdapter = new MyAdapter(reviewList);
-        otherAdapter = new CommunityAdapter(otherList);
+        otherAdapter = new CommunityAdapter(otherList, currentBoardType);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         // 현재 게시판 타입에 따라 적절한 어댑터 설정
         if (currentBoardType.equals("Review")) {
@@ -84,6 +86,7 @@ public class CommunityFragment_review extends Fragment {
 
     private void loadPosts(String boardType) {
         currentBoardType = boardType;
+        otherAdapter = new CommunityAdapter(otherList, currentBoardType);
         db.collection("Boards")
                 .document(boardType)
                 .collection("Posts")
@@ -133,6 +136,7 @@ public class CommunityFragment_review extends Fragment {
         post.setPlace(doc.getString("place"));
         post.setAddress(doc.getString("address"));
         post.setCategory(doc.getString("category"));
+        post.setTimestamp(doc.getTimestamp("timestamp"));
         return post;
     }
 
@@ -185,6 +189,11 @@ public class CommunityFragment_review extends Fragment {
             holder.binding.tvAddress.setText(post.getAddress());
             holder.binding.ratingBar.setRating(post.getRating());
             holder.binding.tvAuthor.setText(post.getAuthor());
+            // 타임스탬프 포맷팅 및 표시
+            if (post.getTimestamp() != null) {
+                SimpleDateFormat sdf = new SimpleDateFormat("MM/dd HH:mm", Locale.getDefault());
+                holder.binding.tvTimestamp.setText(sdf.format(post.getTimestamp().toDate()));
+            }
 
             // 아이템 전체 클릭 리스너 설정
             holder.itemView.setOnClickListener(v -> {

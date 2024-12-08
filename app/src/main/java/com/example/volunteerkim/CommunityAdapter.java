@@ -1,5 +1,6 @@
 package com.example.volunteerkim;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -18,9 +20,11 @@ import java.util.Locale;
 
 public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.OtherViewHolder> {
     private List<OtherPost> posts;
+    private String boardType;
 
-    public CommunityAdapter(List<OtherPost> posts) {
+    public CommunityAdapter(List<OtherPost> posts, String boardType) {
         this.posts = posts;
+        this.boardType = boardType;
     }
 
     static class OtherViewHolder extends RecyclerView.ViewHolder {
@@ -78,6 +82,29 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.Othe
         } else {
             holder.ivThumbnail.setVisibility(View.GONE);
         }
+
+        // 아이템 클릭 리스너 추가
+        holder.itemView.setOnClickListener(v -> {
+            Bundle args = new Bundle();
+            args.putString("postId", post.getPostId());
+            args.putString("boardType", boardType);
+
+            CommunityFragment_other_detail detailFragment = new CommunityFragment_other_detail();
+            detailFragment.setArguments(args);
+
+            // Fragment 전환
+            ((FragmentActivity) v.getContext()).getSupportFragmentManager()
+                    .beginTransaction()
+                    .setCustomAnimations(
+                            R.anim.slide_in_right,  // 새 화면 들어올 때
+                            R.anim.slide_out_left,   // 현재 화면 나갈 때
+                            R.anim.slide_in_left,    // 뒤로가기 시 들어올 때
+                            R.anim.slide_out_right   // 뒤로가기 시 나갈 때
+                    )
+                    .replace(R.id.fragment_container, detailFragment)
+                    .addToBackStack(null)
+                    .commit();
+        });
     }
 
     @Override

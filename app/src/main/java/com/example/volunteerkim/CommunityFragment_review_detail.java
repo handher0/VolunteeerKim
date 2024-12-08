@@ -65,7 +65,7 @@ public class CommunityFragment_review_detail extends Fragment {
 
     private void loadPostDetails() {
         db.collection("Boards")
-                .document("Review")
+                    .document("Review")
                 .collection("Posts")
                 .document(postId)
                 .get()

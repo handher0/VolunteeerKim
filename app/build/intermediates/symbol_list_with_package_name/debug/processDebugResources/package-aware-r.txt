@@ -3798,6 +3798,7 @@ id tv_name
 id tv_place
 id tv_question
 id tv_ranking
+id tv_recruitment_period
 id tv_reply_author
 id tv_reply_content
 id tv_reply_timestamp
@@ -3981,7 +3982,7 @@ layout fragment_calendar
 layout fragment_chat
 layout fragment_chat_add_friend
 layout fragment_chat_room
-layout fragment_community_board
+layout fragment_community_other_detail
 layout fragment_community_other_post
 layout fragment_community_review
 layout fragment_community_review_detail

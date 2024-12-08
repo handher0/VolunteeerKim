@@ -3797,6 +3797,7 @@ int id tv_name 0x7f090258
 int id tv_place 0x7f090259
 int id tv_question 0x7f09025a
 int id tv_ranking 0x7f09025b
+int id tv_recruitment_period 0x7f090289
 int id tv_reply_author 0x7f09025c
 int id tv_reply_content 0x7f09025d
 int id tv_reply_timestamp 0x7f09025e
@@ -3980,7 +3981,7 @@ int layout fragment_calendar 0x7f0c0036
 int layout fragment_chat 0x7f0c0037
 int layout fragment_chat_add_friend 0x7f0c0038
 int layout fragment_chat_room 0x7f0c0039
-int layout fragment_community_board 0x7f0c0088
+int layout fragment_community_other_detail 0x7f0c008b
 int layout fragment_community_other_post 0x7f0c008a
 int layout fragment_community_review 0x7f0c003a
 int layout fragment_community_review_detail 0x7f0c003b
