@@ -1,9 +1,11 @@
 package com.example.volunteerkim;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -87,6 +89,22 @@ public class CommunityFragment_review extends Fragment {
     private void loadPosts(String boardType) {
         currentBoardType = boardType;
         otherAdapter = new CommunityAdapter(otherList, currentBoardType);
+
+        switch (boardType) {
+            case "Review":
+                updateButtonStates(binding.btnReview);
+                break;
+            case "Help":
+                updateButtonStates(binding.btnHelp);
+                break;
+            case "Mate":
+                updateButtonStates(binding.btnMate);
+                break;
+            case "Free":
+                updateButtonStates(binding.btnFree);
+                break;
+        }
+
         db.collection("Boards")
                 .document(boardType)
                 .collection("Posts")
@@ -236,13 +254,21 @@ public class CommunityFragment_review extends Fragment {
 
     private void updateButtonStates(View selectedButton) {
         // 모든 버튼 기본 상태로 초기화
-        binding.btnReview.setBackgroundResource(android.R.color.transparent);
-        binding.btnHelp.setBackgroundResource(android.R.color.transparent);
-        binding.btnMate.setBackgroundResource(android.R.color.transparent);
-        binding.btnFree.setBackgroundResource(android.R.color.transparent);
+        binding.btnReview.setBackgroundColor(Color.TRANSPARENT);
+        binding.btnReview.setTextColor(getResources().getColor(R.color.black));
 
-        // 선택된 버튼만 연두색으로 변경
-        selectedButton.setBackgroundResource(R.color.selectedGreen);  // 연두색 리소스 추가 필요
+        binding.btnHelp.setBackgroundColor(Color.TRANSPARENT);
+        binding.btnHelp.setTextColor(getResources().getColor(R.color.black));
+
+        binding.btnMate.setBackgroundColor(Color.TRANSPARENT);
+        binding.btnMate.setTextColor(getResources().getColor(R.color.black));
+
+        binding.btnFree.setBackgroundColor(Color.TRANSPARENT);
+        binding.btnFree.setTextColor(getResources().getColor(R.color.black));
+
+        // 선택된 버튼만 연두색 배경과 흰색 텍스트로 변경
+        selectedButton.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.selectedGreen));
+        ((TextView) selectedButton).setTextColor(Color.WHITE);
     }
 
     private void setupButtons() {

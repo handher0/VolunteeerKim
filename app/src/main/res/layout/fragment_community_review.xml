@@ -90,12 +90,12 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_free"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:text="자유게시판"
-                android:textColor="@color/black"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+                android:textColor="@color/black" />
 
         </LinearLayout>
     </HorizontalScrollView>
