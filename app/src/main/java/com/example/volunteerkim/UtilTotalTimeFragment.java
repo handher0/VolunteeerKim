@@ -192,7 +192,11 @@ public class UtilTotalTimeFragment extends Fragment {
                         Long bonusScore = documentSnapshot.getLong("Summary.militaryBonusScore");
                         Log.d("DebugLog", "Fetched military bonus score: " + bonusScore);
                         if (bonusScore != null) {
-                            tvCalculationResult.setText("현재 계산된 군가산점은 " + bonusScore + "점입니다.\n(최근 봉사활동 1년 기준)");
+                            if(bonusScore>=8){
+                                tvCalculationResult.setText("현재 계산된 군가산점은 최대 점수인" + 8 + "점입니다.\n(최근 봉사활동 1년 기준)");
+                            }else {
+                                tvCalculationResult.setText("현재 계산된 군가산점은 " + bonusScore + "점입니다.\n(최근 봉사활동 1년 기준)");
+                            }
                         } else {
                             tvCalculationResult.setText("현재 계산된 군가산점이 없습니다.\n(봉사시간을 입력해주세요)");
                         }

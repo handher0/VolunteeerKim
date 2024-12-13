@@ -81,7 +81,10 @@ public class CustomBarGraphView extends View {
 
             float left = i * (barWidth + spacing) + spacing+50;
             float right = left + barWidth;
-            float top = (350-percentageHeight*7/2);
+            float top = (350-percentageHeight*7/2)-10;
+            if(top==-10){
+                top=40;
+            }
 
             float bottom = 350; // 하단 여백을 고려한 bottom 값
 

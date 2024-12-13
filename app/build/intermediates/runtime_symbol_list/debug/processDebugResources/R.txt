@@ -3592,6 +3592,7 @@ int id navigation_header_container 0x7f09018b
 int id never 0x7f09018c
 int id neverCompleteToEnd 0x7f09018d
 int id neverCompleteToStart 0x7f09018e
+int id nickname 0x7f090288
 int id noScroll 0x7f09018f
 int id noState 0x7f090190
 int id none 0x7f090191
@@ -3644,6 +3645,7 @@ int id progress_circular 0x7f0901bf
 int id progress_horizontal 0x7f0901c0
 int id question_layout 0x7f0901c1
 int id radio 0x7f0901c2
+int id rank 0x7f090289
 int id ratingBar 0x7f0901c3
 int id ratio 0x7f0901c4
 int id rectangles 0x7f0901c5
@@ -3654,6 +3656,7 @@ int id recyclerView_comments 0x7f0901c9
 int id recyclerView_replies 0x7f0901ca
 int id recycler_mates 0x7f0901cb
 int id recycler_reviews 0x7f0901cc
+int id recycler_view 0x7f09028a
 int id report_drawn 0x7f0901cd
 int id result_layout 0x7f0901ce
 int id reverseSawtooth 0x7f0901cf
@@ -3670,6 +3673,7 @@ int id save_non_transition_alpha 0x7f0901d9
 int id save_overlay_view 0x7f0901da
 int id sawtooth 0x7f0901db
 int id scale 0x7f0901dc
+int id score 0x7f09028b
 int id screen 0x7f0901dd
 int id scroll 0x7f0901de
 int id scrollIndicatorDown 0x7f0901df
@@ -3801,7 +3805,6 @@ int id tv_mate_title 0x7f09025c
 int id tv_name 0x7f09025d
 int id tv_place 0x7f09025e
 int id tv_question 0x7f09025f
-int id tv_ranking 0x7f090260
 int id tv_recruitment_period 0x7f090261
 int id tv_reply_author 0x7f090262
 int id tv_reply_content 0x7f090263
@@ -4062,6 +4065,7 @@ int layout notification_template_custom_big 0x7f0c0082
 int layout notification_template_icon_group 0x7f0c0083
 int layout notification_template_part_chronometer 0x7f0c0084
 int layout notification_template_part_time 0x7f0c0085
+int layout rankings_item 0x7f0c008b
 int layout select_dialog_item_material 0x7f0c0086
 int layout select_dialog_multichoice_material 0x7f0c0087
 int layout select_dialog_singlechoice_material 0x7f0c0088

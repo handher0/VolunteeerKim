@@ -3593,6 +3593,7 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id nickname
 id noScroll
 id noState
 id none
@@ -3645,6 +3646,7 @@ id progress_circular
 id progress_horizontal
 id question_layout
 id radio
+id rank
 id ratingBar
 id ratio
 id rectangles
@@ -3655,6 +3657,7 @@ id recyclerView_comments
 id recyclerView_replies
 id recycler_mates
 id recycler_reviews
+id recycler_view
 id report_drawn
 id result_layout
 id reverseSawtooth
@@ -3671,6 +3674,7 @@ id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
+id score
 id screen
 id scroll
 id scrollIndicatorDown
@@ -3802,7 +3806,6 @@ id tv_mate_title
 id tv_name
 id tv_place
 id tv_question
-id tv_ranking
 id tv_recruitment_period
 id tv_reply_author
 id tv_reply_content
@@ -4063,6 +4066,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout rankings_item
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

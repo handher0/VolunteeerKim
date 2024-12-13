@@ -132,12 +132,14 @@ id joinBtn
 id leftMessageContainer
 id loginBtn
 id main
+id nickname
 id page_1
 id page_2
 id page_3
 id page_4
 id page_5
 id question_layout
+id rank
 id ratingBar
 id recyclerView
 id recyclerViewChatList
@@ -146,10 +148,12 @@ id recyclerView_comments
 id recyclerView_replies
 id recycler_mates
 id recycler_reviews
+id recycler_view
 id result_layout
 id rg_options
 id rightMessageContainer
 id save_event_button
+id score
 id selected_date_text_view
 id spinner_category
 id textViewChatRoomId
@@ -175,7 +179,6 @@ id tv_mate_title
 id tv_name
 id tv_place
 id tv_question
-id tv_ranking
 id tv_recruitment_period
 id tv_reply_author
 id tv_reply_content
@@ -220,6 +223,7 @@ layout item_reply
 layout login_activity
 layout login_intro
 layout login_signup
+layout rankings_item
 menu bottom_navigation_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
