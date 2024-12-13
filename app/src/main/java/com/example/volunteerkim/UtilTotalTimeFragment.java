@@ -193,7 +193,7 @@ public class UtilTotalTimeFragment extends Fragment {
                         Log.d("DebugLog", "Fetched military bonus score: " + bonusScore);
                         if (bonusScore != null) {
                             if(bonusScore>=8){
-                                tvCalculationResult.setText("현재 계산된 군가산점은 최대 점수인" + 8 + "점입니다.\n(최근 봉사활동 1년 기준)");
+                                tvCalculationResult.setText("현재 계산된 군가산점은 최대 점수" + 8 + "점입니다.\n(최근 봉사활동 1년 기준)");
                             }else {
                                 tvCalculationResult.setText("현재 계산된 군가산점은 " + bonusScore + "점입니다.\n(최근 봉사활동 1년 기준)");
                             }

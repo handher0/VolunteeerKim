@@ -79,7 +79,7 @@ public class CustomBarGraphView extends View {
             float percentageHeight = (data[i] / totalValue) * 100;
             float scaledHeight = percentageHeight / 100 * (height - bottomMargin - topMargin);
 
-            float left = i * (barWidth + spacing) + spacing+50;
+            float left = width/4*i+50;
             float right = left + barWidth;
             float top = (350-percentageHeight*7/2)-10;
             if(top==-10){

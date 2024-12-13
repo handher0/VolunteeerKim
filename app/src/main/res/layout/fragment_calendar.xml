@@ -4,6 +4,8 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
+
+
     <!-- 기본 CalendarView -->
     <CalendarView
         android:id="@+id/calendarView"

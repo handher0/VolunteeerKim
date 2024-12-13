@@ -200,6 +200,10 @@
         "source": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-main-42:/layout/activity_nickname.xml"
     },
     {
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_fragment_total_time.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/fragment_total_time.xml"
+    },
+    {
         "merged": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-40:/drawable_baseline_arrow_drop_down_24.xml.flat",
         "source": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-main-42:/drawable/baseline_arrow_drop_down_24.xml"
     },
@@ -242,10 +246,6 @@
     {
         "merged": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-40:/drawable_vms.xml.flat",
         "source": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-main-42:/drawable/vms.xml"
-    },
-    {
-        "merged": "com.example.volunteerkim.app-debug-40:/layout_fragment_ranking.xml.flat",
-        "source": "com.example.volunteerkim.app-main-42:/layout/fragment_ranking.xml"
     },
     {
         "merged": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-40:/layout_item_comment.xml.flat",
