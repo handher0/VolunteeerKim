@@ -84,8 +84,17 @@ public class UtilTotalTimeFragment extends Fragment {
 
         setupListeners();
 
+        // 뒤로 가기 버튼 클릭 리스너 추가
+        view.findViewById(R.id.btn_back).setOnClickListener(v -> {
+            requireActivity().getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new HomeFragment())
+                    .addToBackStack(null)
+                    .commit();
+        });
+
         return view;
     }
+
 
     private void setupListeners() {
         btnAllTime.setOnClickListener(v -> {

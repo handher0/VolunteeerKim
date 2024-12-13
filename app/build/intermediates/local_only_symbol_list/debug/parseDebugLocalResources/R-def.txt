@@ -55,6 +55,7 @@ drawable vms
 drawable vms1
 drawable vms2
 font miwon
+id barGraphView
 id bottom_navigation
 id btnAllTime
 id btnBloodDonationCalculator
@@ -96,7 +97,6 @@ id calendarView
 id cb_terms_1
 id cb_terms_2
 id chatListTitle
-id customBarGraphView
 id editTextFriendName
 id editTextMessage
 id et_address
