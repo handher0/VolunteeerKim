@@ -27,6 +27,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.example.volunteerkim.databinding.FragmentCommunityReviewPostBinding;
+import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -36,6 +37,7 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -197,6 +199,7 @@ public class CommunityFragment_review_post extends Fragment {
                         post.setStartTime(binding.etTimeStart.getText().toString());
                         post.setEndTime(binding.etTimeEnd.getText().toString());
                         post.setRating(binding.ratingBar.getRating());
+                        post.setTimestamp(new Timestamp(new Date()));
 
                         Log.d("PostDebug", "selectedImages 크기: " + selectedImages.size());
 

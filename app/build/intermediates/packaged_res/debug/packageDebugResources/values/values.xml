@@ -9,11 +9,13 @@
     <color name="gray">#757575</color>
     <color name="lightGray">#EEEEEE</color>
     <color name="linkColor">#2196F3</color>
+    <color name="red">#F80606</color>
     <color name="selectedGreen">#4CAF50</color>
     <color name="starYellow">#FFC107</color>
     <color name="textPrimary">#212121</color>
     <color name="textSecondary">#757575</color>
     <color name="unselectedGray">#757575</color>
+    <color name="unselectedGreen">#72A674</color>
     <color name="white">#FFFFFF</color>
     <string name="app_name">VolunteerKim</string>
     <string name="default_web_client_id" translatable="false">939503009350-8vrg66un9ubrk7vu5bcp9bfflbhf7lni.apps.googleusercontent.com</string>
@@ -25,6 +27,12 @@
     <string name="google_storage_bucket" translatable="false">volunteerkim-9ab83.firebasestorage.app</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="project_id" translatable="false">volunteerkim-9ab83</string>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        
+        <item name="colorPrimary">#83B98D</item> 
+        <item name="colorPrimaryDark">#6BD5AE</item> 
+        <item name="colorAccent">#FFFFFF</item> 
+    </style>
     <style name="Base.Theme.VolunteerKim" parent="Theme.Material3.DayNight.NoActionBar">
         
         

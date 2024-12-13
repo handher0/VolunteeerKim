@@ -16,9 +16,29 @@
         android:padding="8dp"
         android:layout_marginBottom="8dp" />
 
+    <ImageView
+        android:id="@+id/iv_profile_photo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/defalut_img"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="16dp" />
+
+    <!-- 사진 업로드 버튼 -->
+    <Button
+        android:id="@+id/btn_upload_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Upload Photo"
+        android:layout_marginTop="16dp" />
+
     <Button
         android:id="@+id/btn_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Save" />
+
+
 </LinearLayout>
+
