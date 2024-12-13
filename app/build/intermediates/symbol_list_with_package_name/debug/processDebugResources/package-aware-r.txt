@@ -3272,6 +3272,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id barGraphView
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3364,7 +3365,6 @@ id counterclockwise
 id cradle
 id currentState
 id custom
-id customBarGraphView
 id customPanel
 id cut
 id dark

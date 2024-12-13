@@ -3271,6 +3271,7 @@ int id auto 0x7f080055
 int id autoComplete 0x7f080056
 int id autoCompleteToEnd 0x7f080057
 int id autoCompleteToStart 0x7f080058
+int id barGraphView 0x7f080282
 int id barrier 0x7f080059
 int id baseline 0x7f08005a
 int id beginOnFirstDraw 0x7f08005b
@@ -3363,7 +3364,6 @@ int id counterclockwise 0x7f0800b1
 int id cradle 0x7f0800b2
 int id currentState 0x7f0800b3
 int id custom 0x7f0800b4
-int id customBarGraphView 0x7f0800b5
 int id customPanel 0x7f0800b6
 int id cut 0x7f0800b7
 int id dark 0x7f0800b8

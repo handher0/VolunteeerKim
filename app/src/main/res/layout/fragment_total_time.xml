@@ -114,11 +114,11 @@
 
         <!-- 기본 Canvas로 그래프를 그릴 CustomView -->
         <com.example.volunteerkim.views.CustomBarGraphView
-            android:id="@+id/customBarGraphView"
+            android:id="@+id/barGraphView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="8dp"
-            tools:ignore="MissingClass" />
+            android:layout_height="300dp"
+            android:layout_marginTop="20dp"/>
+
     </LinearLayout>
 
     <!-- 계산기 버튼 -->
