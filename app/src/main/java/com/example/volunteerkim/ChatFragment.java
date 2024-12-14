@@ -73,14 +73,21 @@ public class ChatFragment extends Fragment {
 
         Button buttonAddFriends = view.findViewById(R.id.buttonAddFriends);
         if (buttonAddFriends != null) {
+            // 친구 추가 버튼 클릭 시
             buttonAddFriends.setOnClickListener(v -> {
-                ChatAddFriendFragment addFriendFragment = ChatAddFriendFragment.newInstance(user1id);
-                getParentFragmentManager().beginTransaction()
+                ChatAddFriendFragment addFriendFragment = new ChatAddFriendFragment();
+                requireActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .setCustomAnimations(
+                                R.anim.slide_in_right,  // 새 화면 들어올 때
+                                R.anim.slide_out_left,  // 현재 화면 나갈 때
+                                R.anim.slide_in_left,   // 뒤로 가기 시 들어올 때
+                                R.anim.slide_out_right  // 뒤로 가기 시 나갈 때
+                        )
                         .replace(R.id.fragment_container, addFriendFragment)
                         .addToBackStack(null)
                         .commit();
             });
-
         }
 
         // RecyclerView 설정
@@ -89,12 +96,14 @@ public class ChatFragment extends Fragment {
         chatListAdapter = new ChatListAdapter(new ArrayList<>(), user1id); // Adapter 생성
         recyclerViewChatList.setAdapter(chatListAdapter);
 
+        // 채팅방 항목 클릭 시
         chatListAdapter.setOnItemClickListener(chatRoomId -> {
             openChatRoom(chatRoomId);
         });
 
         loadChatRooms(); // Firebase에서 채팅방 데이터 로드
     }
+
 
     /**
      * 채팅방을 열고 ChatRoomFragment로 이동
@@ -103,9 +112,16 @@ public class ChatFragment extends Fragment {
         String chatRoomId = ChatHelper.generateChatRoomId(user1id, user2id);
         Log.d(TAG, "Opening ChatRoomFragment with ID: " + chatRoomId + " for user: " + user1id);
         ChatRoomFragment chatRoomFragment = ChatRoomFragment.newInstance(chatRoomId, user1id);
-        getParentFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container, chatRoomFragment)
-                .addToBackStack(null)
+
+        // 프래그먼트 전환 시 애니메이션 적용
+        requireActivity().getSupportFragmentManager()
+                .beginTransaction()
+                .setCustomAnimations(
+                        R.anim.slide_in_right,  // 뒤로가기 시 들어올 때
+                        R.anim.slide_out_left   // 뒤로가기 시 나갈 때
+                )
+                .replace(R.id.fragment_container, chatRoomFragment) // 새 프래그먼트로 교체
+                .addToBackStack(null) // 뒤로 가기 스택에 추가
                 .commit();
     }
 

@@ -80,11 +80,26 @@ public class MyPageFragment extends Fragment {
         btnCustomerService.setOnClickListener(v -> showCustomerServiceInfo());
 
         // 버그 문의 버튼 클릭
-        btnBugReport.setOnClickListener(v -> openBugReportFragment());
+        btnBugReport.setOnClickListener(v -> {
+            BugReportFragment bugReportFragment = new BugReportFragment();
+
+            // 프래그먼트 전환 시 애니메이션 적용
+            requireActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .setCustomAnimations(
+                            R.anim.slide_in_right,  // 새 화면 들어올 때
+                            R.anim.slide_out_left,  // 현재 화면 나갈 때
+                            R.anim.slide_in_left,   // 뒤로 가기 시 들어올 때
+                            R.anim.slide_out_right  // 뒤로 가기 시 나갈 때
+                    )
+                    .replace(R.id.fragment_container, bugReportFragment)
+                    .addToBackStack(null)
+                    .commit();
+        });
+
 
         return view;
     }
-
 
     private void changeUserPassword(String newPassword) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

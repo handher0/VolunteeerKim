@@ -240,6 +240,10 @@
         "source": "com.example.volunteerkim.app-main-42:/layout/item_post_other.xml"
     },
     {
+        "merged": "com.example.volunteerkim.app-debug-40:/font_regular2.ttf.flat",
+        "source": "com.example.volunteerkim.app-main-42:/font/regular2.ttf"
+    },
+    {
         "merged": "com.example.volunteerkim.app-debug-40:/layout_fragment_ranking.xml.flat",
         "source": "com.example.volunteerkim.app-main-42:/layout/fragment_ranking.xml"
     },

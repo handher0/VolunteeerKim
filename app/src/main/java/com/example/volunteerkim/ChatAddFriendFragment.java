@@ -71,7 +71,18 @@ public class ChatAddFriendFragment extends Fragment {
 
             // 채팅방 생성 호출
             createChatRoom(user1id, friendNickname);
+            requireActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .setCustomAnimations(
+                            R.anim.slide_in_left,   // 새 화면 들어올 때
+                            R.anim.slide_out_right, // 현재 화면 나갈 때
+                            R.anim.slide_in_right,  // 뒤로가기 시 들어올 때
+                            R.anim.slide_out_left   // 뒤로가기 시 나갈 때
+                    )
+                    .remove(this) // 현재 프래그먼트 제거
+                    .commit();
         });
+
     }
 
     /**
