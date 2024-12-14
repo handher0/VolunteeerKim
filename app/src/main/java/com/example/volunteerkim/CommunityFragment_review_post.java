@@ -377,6 +377,7 @@ public class CommunityFragment_review_post extends Fragment {
         Community_CRUD.saveReviewPost(post, task -> {
             if (isAdded() && getContext() != null) {  // Fragment 상태 확인
                 if (task.isSuccessful()) {
+                    hideLoadingDialog();
                     Toast.makeText(getContext(), "리뷰가 등록되었습니다.", Toast.LENGTH_SHORT).show();
                     requireActivity().onBackPressed();  // 토스트 메시지 표시 후 화면 종료
                 } else {

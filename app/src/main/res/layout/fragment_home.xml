@@ -88,17 +88,6 @@
                     android:lineSpacingExtra="4dp"
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp" />
-
-                <!-- 추가 버튼 -->
-                <Button
-                    android:id="@+id/btn_add_todo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:backgroundTint="@color/colorPrimaryDark"
-                    android:text="일정 추가"
-                    android:textColor="@color/white"
-                    android:layout_gravity="end" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
