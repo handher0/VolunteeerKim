@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResultLauncher;ㅈ
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -163,6 +163,7 @@ public class CommunityFragment_other_post extends Fragment {
                 .collection("Posts")
                 .add(post)
                 .addOnSuccessListener(documentReference -> {
+                    hideLoadingDialog();
                     Toast.makeText(getContext(), "게시글이 등록되었습니다.", Toast.LENGTH_SHORT).show();
                     requireActivity().onBackPressed();
                 })
