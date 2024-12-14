@@ -26,13 +26,17 @@
     <string name="google_storage_bucket" translatable="false">volunteerkim-9ab83.firebasestorage.app</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="project_id" translatable="false">volunteerkim-9ab83</string>
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         
-        <item name="colorPrimary">#83B98D</item> 
-        <item name="colorPrimaryDark">#6BD5AE</item> 
-        <item name="colorAccent">#FFFFFF</item> 
-        <item name="android:fontFamily">@font/regular</item>
+        <item name="colorPrimary">#83B98D</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
 
+        
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">true</item>  
     </style>
     <style name="Base.Theme.VolunteerKim" parent="Theme.Material3.DayNight.NoActionBar">
         

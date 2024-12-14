@@ -1,11 +1,15 @@
 <resources>
-    <!-- 기존 앱 테마 -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- 상단바(툴바)의 색상 -->
-        <item name="colorPrimary">#83B98D</item> <!-- 상단바의 배경색 -->
-        <item name="colorPrimaryDark">#6BD5AE</item> <!-- 상태바의 배경색 -->
-        <item name="colorAccent">#FFFFFF</item> <!-- 강조 색상 (버튼 등) -->
-        <item name="android:fontFamily">@font/regular</item>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- 기존 설정들 -->
+        <item name="colorPrimary">#83B98D</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
 
+        <!-- ActionBar 라벨 숨기기 -->
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">true</item>  <!-- 타이틀을 숨김 -->
     </style>
 </resources>
+

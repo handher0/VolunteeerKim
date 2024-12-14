@@ -56,6 +56,8 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore") // Firestore (필요한 경우)
     implementation("com.google.firebase:firebase-storage")
     implementation("com.github.bumptech.glide:glide:4.15.1")
+    implementation("com.google.android.material:material:1.5.0")
+
     annotationProcessor("com.github.bumptech.glide:compiler:4.15.1")
 
     // AndroidX 및 기타 라이브러리
