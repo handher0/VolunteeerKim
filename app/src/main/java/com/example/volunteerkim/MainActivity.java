@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if (itemId == R.id.page_5) {
-                    transferTo(MyPageFragment.newInstance("param1", "param2"));
+                    transferTo(MyPageFragment.newInstance(uid));
                     return true;
                 }
                 return false;
@@ -116,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Firestore에서 닉네임 가져오기
      */
+
     private void loadNickname() {
         db.collection("users").document(uid).get()
                 .addOnSuccessListener(documentSnapshot -> {

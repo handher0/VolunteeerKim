@@ -55,6 +55,7 @@ drawable vms
 drawable vms1
 drawable vms2
 font miwon
+id barGraphView
 id bottom_navigation
 id btnAllTime
 id btnBloodDonationCalculator
@@ -65,8 +66,11 @@ id btnThreeMonths
 id btn_add
 id btn_add_photo
 id btn_back
+id btn_bug_report
 id btn_cancel
+id btn_change_password
 id btn_check_id
+id btn_customer_service
 id btn_delete
 id btn_detail
 id btn_donation
@@ -74,6 +78,7 @@ id btn_free
 id btn_google_login
 id btn_help
 id btn_login
+id btn_logout
 id btn_mate
 id btn_menu
 id btn_next
@@ -86,6 +91,7 @@ id btn_save
 id btn_search
 id btn_send_comment
 id btn_submit
+id btn_submit_bug_report
 id btn_total_time
 id btn_upload_photo
 id buttonAddFriend
@@ -96,14 +102,17 @@ id calendarView
 id cb_terms_1
 id cb_terms_2
 id chatListTitle
-id customBarGraphView
 id editTextFriendName
 id editTextMessage
 id et_address
+id et_bug_description
 id et_comment
+id et_confirm_password
 id et_content
+id et_current_password
 id et_email
 id et_id
+id et_new_password
 id et_nickname
 id et_password
 id et_password_confirm
@@ -132,12 +141,14 @@ id joinBtn
 id leftMessageContainer
 id loginBtn
 id main
+id nickname
 id page_1
 id page_2
 id page_3
 id page_4
 id page_5
 id question_layout
+id rank
 id ratingBar
 id recyclerView
 id recyclerViewChatList
@@ -146,10 +157,12 @@ id recyclerView_comments
 id recyclerView_replies
 id recycler_mates
 id recycler_reviews
+id recycler_view
 id result_layout
 id rg_options
 id rightMessageContainer
 id save_event_button
+id score
 id selected_date_text_view
 id spinner_category
 id textViewChatRoomId
@@ -175,7 +188,6 @@ id tv_mate_title
 id tv_name
 id tv_place
 id tv_question
-id tv_ranking
 id tv_recruitment_period
 id tv_reply_author
 id tv_reply_content
@@ -188,6 +200,7 @@ id tv_task_1
 id tv_task_2
 id tv_timestamp
 id tv_title
+id tv_user_info
 id tv_user_name
 id tv_volunteer_date
 id tv_volunteer_time
@@ -199,6 +212,7 @@ layout chat_activity_room
 layout chat_item_date_header
 layout chat_item_list
 layout chat_item_message
+layout fragment_bug_report
 layout fragment_calendar
 layout fragment_chat
 layout fragment_chat_add_friend
@@ -210,6 +224,7 @@ layout fragment_community_review_detail
 layout fragment_community_review_post
 layout fragment_home
 layout fragment_my_page
+layout fragment_password_change
 layout fragment_ranking
 layout fragment_recommendation
 layout fragment_total_time
@@ -220,6 +235,7 @@ layout item_reply
 layout login_activity
 layout login_intro
 layout login_signup
+layout rankings_item
 menu bottom_navigation_menu
 mipmap ic_launcher
 mipmap ic_launcher_round

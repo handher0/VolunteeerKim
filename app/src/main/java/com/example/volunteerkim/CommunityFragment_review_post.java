@@ -73,7 +73,6 @@ public class CommunityFragment_review_post extends Fragment {
                 "농어촌봉사(농어촌 지역 지원 봉사 등)",
                 "시설봉사(고아원 방문, 동물 보호 등)",
                 "헌혈(헌혈 캠페인)",
-                "기타(그 외 기타 봉사활동)"
         };
 
 
@@ -189,7 +188,6 @@ public class CommunityFragment_review_post extends Fragment {
                         String nickname = documentSnapshot.getString("nickname");
                         if (nickname == null) nickname = "익명";
 
-
                         // 먼저 게시물 생성
                         ReviewPost post = new ReviewPost();
                         post.setPlace(binding.etSearch.getText().toString());
@@ -205,6 +203,10 @@ public class CommunityFragment_review_post extends Fragment {
 
                         Log.d("PostDebug", "selectedImages 크기: " + selectedImages.size());
 
+                        // `VolunteerCalendar` 업데이트 추가
+                        DataMigration.updateVolunteerCalendar(FirebaseFirestore.getInstance(), nickname, post);
+                        UserDataManager.updateUserSummary(FirebaseFirestore.getInstance(), nickname, post);
+                        // 이미지 처리 로직은 기존대로
                         if (selectedImages.isEmpty()) {
                             Log.d("PostDebug", "이미지 없는 게시물 저장");
                             post.setHasImages(false);
@@ -216,7 +218,6 @@ public class CommunityFragment_review_post extends Fragment {
                         post.setHasImages(true);
                         post.setImageUrls(new ArrayList<>());
                         Log.d("PostDebug", "이미지 있는 게시물 저장 시작");
-
 
                         // 게시물 먼저 저장
                         Community_CRUD.saveReviewPost(post, task -> {
@@ -235,6 +236,7 @@ public class CommunityFragment_review_post extends Fragment {
                     }
                 });
     }
+
 
     private void searchPlace(String query) {
         Retrofit retrofit = new Retrofit.Builder()
