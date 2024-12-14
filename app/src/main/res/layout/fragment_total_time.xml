@@ -41,7 +41,7 @@
         android:id="@+id/tvTotalVolunteerHours"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="나의 누적 봉사시간: 125시간"
+        android:text="나의 누적 봉사시간: 0시간"
         android:textSize="16sp"
         android:textColor="@android:color/black"
         android:layout_marginBottom="16dp" />

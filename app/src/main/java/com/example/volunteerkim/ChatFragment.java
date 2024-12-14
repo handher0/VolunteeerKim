@@ -75,7 +75,7 @@ public class ChatFragment extends Fragment {
         if (buttonAddFriends != null) {
             // 친구 추가 버튼 클릭 시
             buttonAddFriends.setOnClickListener(v -> {
-                ChatAddFriendFragment addFriendFragment = new ChatAddFriendFragment();
+                ChatAddFriendFragment addFriendFragment = ChatAddFriendFragment.newInstance(user1id);
                 requireActivity().getSupportFragmentManager()
                         .beginTransaction()
                         .setCustomAnimations(
@@ -87,6 +87,7 @@ public class ChatFragment extends Fragment {
                         .replace(R.id.fragment_container, addFriendFragment)
                         .addToBackStack(null)
                         .commit();
+
             });
         }
 

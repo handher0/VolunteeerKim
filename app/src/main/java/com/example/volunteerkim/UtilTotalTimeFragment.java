@@ -200,6 +200,7 @@ public class UtilTotalTimeFragment extends Fragment {
                         }
                     } else {
                         Log.d("DebugLog", "Document does not exist for user: " + userNickname);
+                        tvCalculationResult.setText("현재 계산된 군가산점이 없습니다.\n(봉사시간을 입력해주세요)");
                     }
                 })
                 .addOnFailureListener(e -> {
@@ -238,6 +239,8 @@ public class UtilTotalTimeFragment extends Fragment {
                         } else {
                             tvCalculationResult.setText("헌혈 기록이 없습니다.");
                         }
+                    }else{
+                        tvCalculationResult.setText("헌혈 기록이 없습니다.");
                     }
                 })
                 .addOnFailureListener(e -> {
