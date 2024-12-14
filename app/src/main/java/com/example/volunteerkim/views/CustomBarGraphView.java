@@ -8,6 +8,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
+import com.example.volunteerkim.R;
+
 import java.util.Arrays;
 
 public class CustomBarGraphView extends View {

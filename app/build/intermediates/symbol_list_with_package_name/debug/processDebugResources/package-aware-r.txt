@@ -3193,6 +3193,7 @@ drawable vms
 drawable vms1
 drawable vms2
 font miwon
+font regular
 id ALT
 id BOTTOM_END
 id BOTTOM_START

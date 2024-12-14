@@ -54,6 +54,7 @@ drawable vms
 drawable vms1
 drawable vms2
 font miwon
+font regular
 id barGraphView
 id bottom_navigation
 id btnAllTime

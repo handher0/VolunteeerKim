@@ -3192,6 +3192,7 @@ int drawable vms 0x7f07011b
 int drawable vms1 0x7f07011c
 int drawable vms2 0x7f07011d
 int font miwon 0x7f080000
+int font regular 0x7f080001
 int id ALT 0x7f090000
 int id BOTTOM_END 0x7f090001
 int id BOTTOM_START 0x7f090002
