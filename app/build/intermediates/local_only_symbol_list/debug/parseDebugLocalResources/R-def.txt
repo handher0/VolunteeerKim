@@ -107,7 +107,6 @@ id buttonSend
 id calendarView
 id card_todo_list
 id cb_terms_1
-id cb_terms_2
 id chatListTitle
 id editTextFriendName
 id editTextMessage

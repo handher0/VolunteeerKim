@@ -75,19 +75,33 @@
             android:textSize="14sp"
             android:layout_marginTop="16dp" />
 
+
+
         <!-- 약관 동의 -->
         <CheckBox
             android:id="@+id/cb_terms_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="약관 동의"
+            android:text="개인정보 수집 및 이용 동의"
+            android:layout_marginTop="16dp" />
+        <ImageView
+            android:id="@+id/iv_profile_photo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/defalut_img"
+            android:scaleType="centerCrop"
             android:layout_marginTop="16dp" />
 
-        <CheckBox
-            android:id="@+id/cb_terms_2"
-            android:layout_width="wrap_content"
+        <!-- 사진 업로드 버튼 -->
+        <Button
+            android:id="@+id/btn_upload_photo"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="약관 동의" />
+            android:text="Upload Photo"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:textColor="@android:color/black"/>
 
         <!-- Next 버튼 -->
         <Button
