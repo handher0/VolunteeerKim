@@ -16,12 +16,6 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -33,9 +27,6 @@ import java.util.Map;
 
 public class SignupActivity extends AppCompatActivity {
 
-    private static final int REQUEST_CODE_SIGN_IN = 1;
-    private static final int PICK_DRIVE_FILE = 2;
-
     private EditText etId, etPassword, etPasswordConfirm, etEmail;
     private CheckBox cbTerms1;
     private Button btnCheckId, btnNext, btnUploadPhoto;
@@ -45,7 +36,6 @@ public class SignupActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private FirebaseStorage storage;
     private StorageReference storageRef;
-    private GoogleSignInClient googleSignInClient;
 
     private Uri selectedImageUri;
     private String uid;
@@ -61,13 +51,6 @@ public class SignupActivity extends AppCompatActivity {
         storage = FirebaseStorage.getInstance();
         storageRef = storage.getReference("profile_photos");
 
-        // Google Sign-In 클라이언트 초기화
-        GoogleSignInOptions signInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .requestScopes(new com.google.android.gms.common.api.Scope("https://www.googleapis.com/auth/drive.readonly"))
-                .build();
-        googleSignInClient = GoogleSignIn.getClient(this, signInOptions);
-
         // UI 요소 초기화
         etId = findViewById(R.id.et_id);
         etPassword = findViewById(R.id.et_password);
@@ -82,54 +65,34 @@ public class SignupActivity extends AppCompatActivity {
         // ID 중복 확인 버튼
         btnCheckId.setOnClickListener(v -> checkDuplicateId());
 
-        // 구글 드라이브에서 사진 업로드 버튼
-        btnUploadPhoto.setOnClickListener(v -> signInToGoogleDrive());
+        // 로컬 파일(갤러리 등)에서 사진 업로드 버튼
+        btnUploadPhoto.setOnClickListener(v -> selectPhotoFromDevice());
 
         // 회원가입 버튼
         btnNext.setOnClickListener(v -> registerUser());
     }
 
-    private void signInToGoogleDrive() {
-        Intent signInIntent = googleSignInClient.getSignInIntent();
-        startActivityForResult(signInIntent, REQUEST_CODE_SIGN_IN);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == REQUEST_CODE_SIGN_IN) {
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            handleSignInResult(task);
-        } else if (requestCode == PICK_DRIVE_FILE && resultCode == RESULT_OK && data != null && data.getData() != null) {
-            selectedImageUri = data.getData();
-            ivProfilePhoto.setImageURI(selectedImageUri); // 이미지 미리보기 설정
-            Toast.makeText(this, "File selected from Google Drive!", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
-        try {
-            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-            if (account != null) {
-                openDrivePicker();
-            }
-        } catch (ApiException e) {
-            Toast.makeText(this, "Google Sign-In failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    private void openDrivePicker() {
-        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-        intent.addCategory(Intent.CATEGORY_OPENABLE);
+    private void selectPhotoFromDevice() {
+        Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType("image/*");
-        startActivityForResult(intent, PICK_DRIVE_FILE);
+        photoPickerLauncher.launch(intent);
     }
+
+    private final ActivityResultLauncher<Intent> photoPickerLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                    selectedImageUri = result.getData().getData();
+                    ivProfilePhoto.setImageURI(selectedImageUri); // 이미지 미리보기 설정
+                    Toast.makeText(this, "사진이 선택되었습니다.", Toast.LENGTH_SHORT).show();
+                }
+            }
+    );
 
     private void checkDuplicateId() {
         String id = etId.getText().toString().trim();
         if (TextUtils.isEmpty(id)) {
-            etId.setError("ID is required.");
+            etId.setError("ID를 입력해주세요.");
             return;
         }
 
@@ -139,13 +102,13 @@ public class SignupActivity extends AppCompatActivity {
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         if (!task.getResult().isEmpty()) {
-                            etId.setError("This ID is already taken.");
-                            Toast.makeText(this, "This ID is already taken. Please choose another one.", Toast.LENGTH_SHORT).show();
+                            etId.setError("이미 존재하는 ID입니다.");
+                            Toast.makeText(this, "이미 존재하는 ID입니다. 다른 ID를 선택해주세요.", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(this, "ID is available.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "사용 가능한 ID입니다.", Toast.LENGTH_SHORT).show();
                         }
                     } else {
-                        Toast.makeText(this, "Failed to check ID: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "ID 확인 중 오류가 발생했습니다: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -157,37 +120,37 @@ public class SignupActivity extends AppCompatActivity {
         String email = etEmail.getText().toString().trim();
 
         if (TextUtils.isEmpty(id)) {
-            etId.setError("ID is required.");
+            etId.setError("ID를 입력해주세요.");
             etId.requestFocus();
             return;
         }
         if (TextUtils.isEmpty(email)) {
-            etEmail.setError("Email is required.");
+            etEmail.setError("이메일을 입력해주세요.");
             etEmail.requestFocus();
             return;
         }
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            etEmail.setError("Enter a valid email.");
+            etEmail.setError("올바른 이메일을 입력해주세요.");
             etEmail.requestFocus();
             return;
         }
         if (TextUtils.isEmpty(password)) {
-            etPassword.setError("Password is required.");
+            etPassword.setError("비밀번호를 입력해주세요.");
             etPassword.requestFocus();
             return;
         }
         if (password.length() < 6) {
-            etPassword.setError("Password must be at least 6 characters.");
+            etPassword.setError("비밀번호는 최소 6자 이상이어야 합니다.");
             etPassword.requestFocus();
             return;
         }
         if (!password.equals(passwordConfirm)) {
-            etPasswordConfirm.setError("Passwords do not match.");
+            etPasswordConfirm.setError("비밀번호가 일치하지 않습니다.");
             etPasswordConfirm.requestFocus();
             return;
         }
         if (!cbTerms1.isChecked()) {
-            Toast.makeText(this, "Please agree to the terms.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "약관에 동의해주세요.", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -203,10 +166,10 @@ public class SignupActivity extends AppCompatActivity {
                         }
                     } else {
                         if (task.getException() instanceof FirebaseAuthUserCollisionException) {
-                            etEmail.setError("This email is already registered.");
+                            etEmail.setError("이미 등록된 이메일입니다.");
                             etEmail.requestFocus();
                         } else {
-                            Toast.makeText(SignupActivity.this, "Registration failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(SignupActivity.this, "회원가입 실패: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                         }
                     }
                 });
@@ -218,10 +181,10 @@ public class SignupActivity extends AppCompatActivity {
                 .addOnSuccessListener(taskSnapshot -> fileRef.getDownloadUrl()
                         .addOnSuccessListener(uri -> saveUserToFirestore(nickname, email, uri.toString()))
                         .addOnFailureListener(e -> {
-                            Toast.makeText(this, "Failed to upload photo: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "사진 업로드 실패: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                         }))
                 .addOnFailureListener(e -> {
-                    Toast.makeText(this, "Failed to upload photo: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "사진 업로드 실패: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 });
     }
 
@@ -235,13 +198,13 @@ public class SignupActivity extends AppCompatActivity {
         db.collection("users").document(uid)
                 .set(user)
                 .addOnSuccessListener(aVoid -> {
-                    Toast.makeText(this, "User profile created successfully!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "회원가입 성공!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(this, MainActivity.class);
                     startActivity(intent);
                     finish();
                 })
                 .addOnFailureListener(e -> {
-                    Toast.makeText(this, "Failed to save user: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "사용자 정보 저장 실패: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 });
     }
 }
