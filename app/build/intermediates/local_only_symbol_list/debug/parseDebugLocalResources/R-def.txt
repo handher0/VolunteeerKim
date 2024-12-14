@@ -141,6 +141,8 @@ id graphTitle
 id imageViewBanner
 id image_container
 id image_count_text
+id img_result_icon
+id img_start_icon
 id iv_profile
 id iv_profile_photo
 id iv_thumbnail

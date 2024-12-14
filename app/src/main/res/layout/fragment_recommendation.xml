@@ -42,6 +42,14 @@
         android:background="#FFFFFF"
         android:padding="16dp">
 
+        <ImageView
+            android:id="@+id/img_start_icon"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="결과 이미지"
+            android:src="@drawable/kimbongsa" />
+
         <TextView
             android:id="@+id/tv_start_title"
             android:layout_width="wrap_content"
@@ -111,6 +119,13 @@
         android:visibility="gone"
         android:background="#FFFFFF"
         android:padding="16dp">
+        <ImageView
+            android:id="@+id/img_result_icon"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="@drawable/kimbongsa"
+        android:contentDescription="결과 이미지"
+        android:layout_marginBottom="16dp" />
 
         <TextView
             android:id="@+id/tv_result_title"

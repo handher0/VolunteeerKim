@@ -3510,6 +3510,8 @@ int id image 0x7f090132
 int id imageViewBanner 0x7f090133
 int id image_container 0x7f090134
 int id image_count_text 0x7f090135
+int id img_result_icon 0x7f09029d
+int id img_start_icon 0x7f09029e
 int id immediateStop 0x7f090136
 int id included 0x7f090137
 int id indeterminate 0x7f090138
