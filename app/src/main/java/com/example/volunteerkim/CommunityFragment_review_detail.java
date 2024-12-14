@@ -138,6 +138,7 @@ public class CommunityFragment_review_detail extends Fragment {
     }
 
     private void setupImageScrollView(List<String> imageUrls) {
+        if (!isAdded()) return;
         LinearLayout imageContainer = binding.imageContainer;
         imageContainer.removeAllViews();
 
