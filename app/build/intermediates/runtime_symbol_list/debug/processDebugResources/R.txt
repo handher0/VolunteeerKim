@@ -3355,7 +3355,6 @@ int id cancel_button 0x7f090099
 int id card_todo_list 0x7f09009a
 int id carryVelocity 0x7f09009b
 int id cb_terms_1 0x7f09009c
-int id cb_terms_2 0x7f09009d
 int id center 0x7f09009e
 int id centerCrop 0x7f09009f
 int id centerInside 0x7f0900a0

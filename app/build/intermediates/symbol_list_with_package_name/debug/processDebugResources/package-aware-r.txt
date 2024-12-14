@@ -3356,7 +3356,6 @@ id cancel_button
 id card_todo_list
 id carryVelocity
 id cb_terms_1
-id cb_terms_2
 id center
 id centerCrop
 id centerInside
