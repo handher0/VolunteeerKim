@@ -88,6 +88,10 @@
         "source": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-main-42:/layout/item_post_other.xml"
     },
     {
+        "merged": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-40:/font_regular2.ttf.flat",
+        "source": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-main-42:/font/regular2.ttf"
+    },
+    {
         "merged": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-40:/mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-main-42:/mipmap-anydpi-v26/ic_launcher.xml"
     },
@@ -252,10 +256,6 @@
         "source": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-main-42:/layout/fragment_chat_room.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-40:/font_regular2.ttf.flat",
-        "source": "com.example.volunteerkim.app-main-42:/font/regular2.ttf"
-    },
-    {
         "merged": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-40:/drawable_baseline_star_rate_24.xml.flat",
         "source": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-main-42:/drawable/baseline_star_rate_24.xml"
     },
@@ -294,6 +294,10 @@
     {
         "merged": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-40:/mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-main-42:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_chat_item_list.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/chat_item_list.xml"
     },
     {
         "merged": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-40:/layout_activity_post_list.xml.flat",
@@ -336,16 +340,12 @@
         "source": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-main-42:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-40:/layout_fragment_home.xml.flat",
-        "source": "com.example.volunteerkim.app-main-42:/layout/fragment_home.xml"
+        "merged": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-40:/layout_fragment_home.xml.flat",
+        "source": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-main-42:/layout/fragment_home.xml"
     },
     {
         "merged": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-40:/layout_chat_item_list.xml.flat",
         "source": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-main-42:/layout/chat_item_list.xml"
-    },
-    {
-        "merged": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-40:/layout_fragment_home.xml.flat",
-        "source": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-main-42:/layout/fragment_home.xml"
     },
     {
         "merged": "/Users/dongoh-kim/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-40:/mipmap-xhdpi_ic_launcher_round.webp.flat",

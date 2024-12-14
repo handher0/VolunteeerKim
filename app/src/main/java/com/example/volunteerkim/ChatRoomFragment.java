@@ -92,10 +92,12 @@ public class ChatRoomFragment extends Fragment {
             return;
         }
 
+
         chatRoomRef = FirebaseDatabase.getInstance().getReference("chatRooms").child(chatRoomId).child("messages");
 
         buttonSend.setOnClickListener(v -> sendMessage());
         loadMessages();
+
     }
 
     private void sendMessage() {
@@ -122,6 +124,7 @@ public class ChatRoomFragment extends Fragment {
                         Log.e("ChatRoomFragment", "Failed to send message.", e);
                         Toast.makeText(getContext(), "Failed to send message.", Toast.LENGTH_SHORT).show();
                     });
+
         }
     }
 
