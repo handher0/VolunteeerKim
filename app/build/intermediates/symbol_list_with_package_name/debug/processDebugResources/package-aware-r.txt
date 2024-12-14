@@ -3028,6 +3028,10 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable ad1
+drawable ad2
+drawable ad3
+drawable ad4
+drawable ad5
 drawable arrow
 drawable avd_hide_password
 drawable avd_show_password
@@ -3492,9 +3496,9 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageViewBanner
 id image_container
 id image_count_text
-id img_banner_ad
 id immediateStop
 id included
 id indeterminate
@@ -3827,6 +3831,7 @@ id unlabeled
 id up
 id useLogo
 id vertical_only
+id viewPagerBanner
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
@@ -4002,6 +4007,7 @@ layout fragment_recommendation
 layout fragment_total_time
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout item_banner
 layout item_comment
 layout item_post
 layout item_post_other

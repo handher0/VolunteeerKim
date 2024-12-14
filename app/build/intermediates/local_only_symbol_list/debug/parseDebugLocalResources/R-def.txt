@@ -22,6 +22,10 @@ color unselectedGray
 color unselectedGreen
 color white
 drawable ad1
+drawable ad2
+drawable ad3
+drawable ad4
+drawable ad5
 drawable arrow
 drawable background_gradient
 drawable baseline_account_circle_24
@@ -122,9 +126,9 @@ id google_login_text
 id google_logo
 id graphContainer
 id graphTitle
+id imageViewBanner
 id image_container
 id image_count_text
-id img_banner_ad
 id iv_profile
 id iv_profile_photo
 id iv_thumbnail
@@ -194,6 +198,7 @@ id tv_title
 id tv_user_name
 id tv_volunteer_date
 id tv_volunteer_time
+id viewPagerBanner
 layout activity_main
 layout activity_nickname
 layout activity_post_list
@@ -216,6 +221,7 @@ layout fragment_my_page
 layout fragment_ranking
 layout fragment_recommendation
 layout fragment_total_time
+layout item_banner
 layout item_comment
 layout item_post
 layout item_post_other

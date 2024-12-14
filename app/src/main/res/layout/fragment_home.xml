@@ -83,16 +83,13 @@
                 android:textColor="#757575" />
         </LinearLayout>
 
-        <!-- 광고 이미지 -->
-        <ImageView
-            android:id="@+id/img_banner_ad"
+        <!-- 광고 슬라이드 -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPagerBanner"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.3"
-            android:layout_marginStart="16dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ad1"
-            android:contentDescription="광고 이미지" />
+            android:layout_marginStart="16dp" />
     </LinearLayout>
 
     <!-- 버튼 그룹 -->
