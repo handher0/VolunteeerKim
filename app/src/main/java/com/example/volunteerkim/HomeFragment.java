@@ -139,6 +139,15 @@ public class HomeFragment extends Fragment {
 
     private void navigateToFragment(Fragment fragment) {
         FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
+
+        // 애니메이션 설정
+        transaction.setCustomAnimations(
+                R.anim.slide_in_right,  // 새로운 Fragment 들어올 때
+                R.anim.slide_out_left,  // 현재 Fragment 나갈 때
+                R.anim.slide_in_left,   // 뒤로가기할 때 들어오는 애니메이션
+                R.anim.slide_out_right  // 뒤로가기할 때 나가는 애니메이션
+        );
+
         transaction.replace(R.id.fragment_container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
@@ -310,11 +319,6 @@ public class HomeFragment extends Fragment {
         }
     }
 
-
-
-
-
-
     private void setupBannerSlider() {
         int[] bannerImages = {R.drawable.ad1, R.drawable.ad2, R.drawable.ad3, R.drawable.ad4, R.drawable.ad5};
         BannerAdapter bannerAdapter = new BannerAdapter(requireContext(), bannerImages);
@@ -346,4 +350,5 @@ public class HomeFragment extends Fragment {
         super.onDestroyView();
         sliderHandler.removeCallbacks(sliderRunnable);
     }
+
 }

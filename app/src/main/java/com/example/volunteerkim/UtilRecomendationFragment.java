@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 public class UtilRecomendationFragment extends Fragment {
 
@@ -144,5 +145,21 @@ public class UtilRecomendationFragment extends Fragment {
         currentQuestionIndex = 0;
         scores = new int[]{0, 0, 0, 0};
         loadQuestion();
+    }
+
+    private void navigateToFragment(Fragment fragment) {
+        FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
+
+        // 애니메이션 설정
+        transaction.setCustomAnimations(
+//                R.anim.slide_in_right,  // 새로운 Fragment 들어올 때
+//                R.anim.slide_out_left,  // 현재 Fragment 나갈 때
+                R.anim.slide_in_left,   // 뒤로가기할 때 들어오는 애니메이션
+                R.anim.slide_out_right  // 뒤로가기할 때 나가는 애니메이션
+        );
+
+        transaction.replace(R.id.fragment_container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }

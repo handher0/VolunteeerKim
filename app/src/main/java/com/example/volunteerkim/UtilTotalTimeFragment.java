@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.volunteerkim.views.CustomBarGraphView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -86,10 +87,7 @@ public class UtilTotalTimeFragment extends Fragment {
 
         // 뒤로 가기 버튼 클릭 리스너 추가
         view.findViewById(R.id.btn_back).setOnClickListener(v -> {
-            requireActivity().getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, new HomeFragment())
-                    .addToBackStack(null)
-                    .commit();
+            navigateToFragment(new HomeFragment());
         });
 
         return view;
@@ -245,5 +243,20 @@ public class UtilTotalTimeFragment extends Fragment {
                 .addOnFailureListener(e -> {
                     tvCalculationResult.setText("데이터를 불러오지 못했습니다.");
                 });
+    }
+    private void navigateToFragment(Fragment fragment) {
+        FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
+
+        // 애니메이션 설정
+        transaction.setCustomAnimations(
+//                R.anim.slide_in_right,  // 새로운 Fragment 들어올 때
+//                R.anim.slide_out_left,  // 현재 Fragment 나갈 때
+                R.anim.slide_in_left,   // 뒤로가기할 때 들어오는 애니메이션
+                R.anim.slide_out_right  // 뒤로가기할 때 나가는 애니메이션
+        );
+
+        transaction.replace(R.id.fragment_container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }
