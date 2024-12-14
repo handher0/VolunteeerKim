@@ -7,7 +7,6 @@ build/
 # Local configuration file (sdk path, keystore passwords, etc.)
 local.properties
 
-<<<<<<< HEAD
 # Log files
 *.log
 
@@ -15,54 +14,30 @@ local.properties
 .idea/
 *.iml
 *.hprof
+misc.xml
+deploymentTargetDropDown.xml
+render.experimental.xml
 
 # Generated files
 /captures/
 /output/
-
-# Firebase
-google-services.json
-
-# IntelliJ
-out/
-
-# Others
-*.keystore
-*.jks
-.DS_Store
-
-=======
-# Gradle files
-.gradle/
-build/
-
-# Local configuration file (sdk path, etc)
-local.properties
-
-# Log/OS Files
-*.log
-
-# Android Studio generated files and folders
-captures/
 .externalNativeBuild/
 .cxx/
 *.apk
 output.json
 
 # IntelliJ
-*.iml
-.idea/
-misc.xml
-deploymentTargetDropDown.xml
-render.experimental.xml
+out/
 
 # Keystore files
-*.jks
 *.keystore
+*.jks
 
-# Google Services (e.g. APIs or Firebase)
+# Firebase
 google-services.json
 
 # Android Profiling
 *.hprof
->>>>>>> origin/feature/kj
+
+# OS-specific files
+.DS_Store
