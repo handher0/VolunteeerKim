@@ -40,7 +40,7 @@ public class CustomBarGraphView extends View {
         paint.setStyle(Paint.Style.FILL);
         paint.setAntiAlias(true);
         paint.setTextSize(36); // 텍스트 크기 설정
-        paint.setColor(Color.GREEN); // 모든 막대 색상을 초록색으로 설정
+        paint.setColor(getResources().getColor(R.color.colorPrimaryDark, null));
     }
 
     // 그래프에 데이터를 설정하고 다시 그리기
