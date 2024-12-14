@@ -3309,8 +3309,11 @@ int id btnThreeMonths 0x7f090070
 int id btn_add 0x7f090071
 int id btn_add_photo 0x7f090072
 int id btn_back 0x7f090073
+int id btn_bug_report 0x7f09028c
 int id btn_cancel 0x7f090074
+int id btn_change_password 0x7f09028e
 int id btn_check_id 0x7f090075
+int id btn_customer_service 0x7f090290
 int id btn_delete 0x7f090076
 int id btn_detail 0x7f090077
 int id btn_donation 0x7f090078
@@ -3318,6 +3321,7 @@ int id btn_free 0x7f090079
 int id btn_google_login 0x7f09007a
 int id btn_help 0x7f09007b
 int id btn_login 0x7f09007c
+int id btn_logout 0x7f090291
 int id btn_mate 0x7f09007d
 int id btn_menu 0x7f09007e
 int id btn_next 0x7f09007f
@@ -3330,6 +3334,7 @@ int id btn_save 0x7f090085
 int id btn_search 0x7f090086
 int id btn_send_comment 0x7f090087
 int id btn_submit 0x7f090088
+int id btn_submit_bug_report 0x7f090292
 int id btn_total_time 0x7f090089
 int id btn_upload_photo 0x7f09008a
 int id buttonAddFriend 0x7f09008b
@@ -3426,10 +3431,14 @@ int id enterAlways 0x7f0900e5
 int id enterAlwaysCollapsed 0x7f0900e6
 int id escape 0x7f0900e7
 int id et_address 0x7f0900e8
+int id et_bug_description 0x7f090293
 int id et_comment 0x7f0900e9
+int id et_confirm_password 0x7f090294
 int id et_content 0x7f0900ea
+int id et_current_password 0x7f090295
 int id et_email 0x7f0900eb
 int id et_id 0x7f0900ec
+int id et_new_password 0x7f090297
 int id et_nickname 0x7f0900ed
 int id et_password 0x7f0900ee
 int id et_password_confirm 0x7f0900ef
@@ -3817,6 +3826,7 @@ int id tv_task_1 0x7f090269
 int id tv_task_2 0x7f09026a
 int id tv_timestamp 0x7f09026b
 int id tv_title 0x7f09026c
+int id tv_user_info 0x7f090298
 int id tv_user_name 0x7f09026d
 int id tv_volunteer_date 0x7f09026e
 int id tv_volunteer_time 0x7f09026f
@@ -3985,6 +3995,7 @@ int layout design_navigation_menu 0x7f0c0032
 int layout design_navigation_menu_item 0x7f0c0033
 int layout design_text_input_end_icon 0x7f0c0034
 int layout design_text_input_start_icon 0x7f0c0035
+int layout fragment_bug_report 0x7f0c008d
 int layout fragment_calendar 0x7f0c0036
 int layout fragment_chat 0x7f0c0037
 int layout fragment_chat_add_friend 0x7f0c0038
@@ -3996,6 +4007,7 @@ int layout fragment_community_review_detail 0x7f0c003d
 int layout fragment_community_review_post 0x7f0c003e
 int layout fragment_home 0x7f0c003f
 int layout fragment_my_page 0x7f0c0040
+int layout fragment_password_change 0x7f0c008e
 int layout fragment_ranking 0x7f0c0041
 int layout fragment_recommendation 0x7f0c0042
 int layout fragment_total_time 0x7f0c0043
