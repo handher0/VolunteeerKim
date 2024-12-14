@@ -3313,7 +3313,6 @@ id btnSixMonths
 id btnThreeMonths
 id btn_add
 id btn_add_photo
-id btn_add_todo
 id btn_back
 id btn_bug_report
 id btn_cancel
