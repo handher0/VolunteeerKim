@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_VISIBLE
         );
+
         // Firebase 초기화
         db = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         // 초기 화면을 HomeFragment로 설정
         if (savedInstanceState == null) { // Activity가 새로 생성된 경우에만 실행
-            transferTo(HomeFragment.newInstance("param1", "param2"));
+            transferTo(new HomeFragment());
         }
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -57,11 +58,11 @@ public class MainActivity extends AppCompatActivity {
                 int itemId = item.getItemId();
 
                 if (itemId == R.id.page_1) {
-                    transferTo(HomeFragment.newInstance("param1", "param2"));
+                    transferTo(new HomeFragment());
                     return true;
                 }
                 if (itemId == R.id.page_2) {
-                    transferTo(CommunityFragment_review.newInstance("param1", "param2"));
+                    transferTo(new CommunityFragment_review());
                     return true;
                 }
                 if (itemId == R.id.page_3) {
@@ -116,7 +117,6 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Firestore에서 닉네임 가져오기
      */
-
     private void loadNickname() {
         db.collection("users").document(uid).get()
                 .addOnSuccessListener(documentSnapshot -> {

@@ -2,6 +2,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <!-- 툴바 -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -30,6 +32,44 @@
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 
+    <!-- 시작 화면 -->
+    <LinearLayout
+        android:id="@+id/start_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/img_start_icon"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="결과 이미지"
+            android:src="@drawable/kimbongsa" />
+
+        <TextView
+            android:id="@+id/tv_start_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="봉사 활동 추천 테스트"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="시작하기"
+            android:textSize="16sp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
     <!-- 질문 화면 -->
     <LinearLayout
         android:id="@+id/question_layout"
@@ -38,7 +78,8 @@
         android:orientation="vertical"
         android:padding="16dp"
         android:gravity="center"
-        android:background="#FFFFFF">
+        android:background="#FFFFFF"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/tv_question"
@@ -64,7 +105,7 @@
             android:text="다음"
             android:textSize="16sp"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:layout_gravity="center" />
     </LinearLayout>
 
@@ -78,6 +119,13 @@
         android:visibility="gone"
         android:background="#FFFFFF"
         android:padding="16dp">
+        <ImageView
+            android:id="@+id/img_result_icon"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="@drawable/kimbongsa"
+        android:contentDescription="결과 이미지"
+        android:layout_marginBottom="16dp" />
 
         <TextView
             android:id="@+id/tv_result_title"
@@ -103,6 +151,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="다시 테스트하기"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:textColor="@color/white" />
     </LinearLayout>
 </FrameLayout>

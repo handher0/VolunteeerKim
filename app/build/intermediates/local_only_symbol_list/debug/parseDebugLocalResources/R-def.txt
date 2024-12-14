@@ -95,6 +95,7 @@ id btn_review
 id btn_save
 id btn_search
 id btn_send_comment
+id btn_start
 id btn_submit
 id btn_submit_bug_report
 id btn_total_time
@@ -104,6 +105,7 @@ id buttonAddFriends
 id buttonCreateChatRoom
 id buttonSend
 id calendarView
+id card_todo_list
 id cb_terms_1
 id cb_terms_2
 id chatListTitle
@@ -139,6 +141,8 @@ id graphTitle
 id imageViewBanner
 id image_container
 id image_count_text
+id img_result_icon
+id img_start_icon
 id iv_profile
 id iv_profile_photo
 id iv_thumbnail
@@ -170,6 +174,7 @@ id save_event_button
 id score
 id selected_date_text_view
 id spinner_category
+id start_layout
 id textViewChatRoomId
 id textViewDate
 id textViewLeftMessage
@@ -200,11 +205,12 @@ id tv_reply_timestamp
 id tv_result_description
 id tv_result_title
 id tv_review_title
+id tv_start_title
 id tv_status
-id tv_task_1
-id tv_task_2
 id tv_timestamp
 id tv_title
+id tv_todo_list
+id tv_todo_title
 id tv_user_info
 id tv_user_name
 id tv_volunteer_date
