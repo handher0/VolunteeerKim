@@ -16,18 +16,22 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 public class HomeFragment extends Fragment {
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    private String mParam1;
-    private String mParam2;
-
     private TextView tvUserName;
+    private TextView tvTodoList;
     private FirebaseFirestore db;
     private FirebaseAuth mAuth;
     private ViewPager2 viewPagerBanner;
@@ -35,24 +39,6 @@ public class HomeFragment extends Fragment {
 
     public HomeFragment() {
         // Required empty public constructor
-    }
-
-    public static HomeFragment newInstance(String param1, String param2) {
-        HomeFragment fragment = new HomeFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -65,12 +51,16 @@ public class HomeFragment extends Fragment {
 
         // TextView 초기화
         tvUserName = view.findViewById(R.id.tv_user_name);
+        tvTodoList = view.findViewById(R.id.tv_todo_list);
 
         // ViewPager2 초기화
         viewPagerBanner = view.findViewById(R.id.viewPagerBanner);
 
         // 닉네임 로드
         loadUserName();
+
+        // 할일 목록 로드
+        loadTodoList();
 
         // 버튼 클릭 리스너 설정
         setupButtonListeners(view);
@@ -82,27 +72,77 @@ public class HomeFragment extends Fragment {
     }
 
     private void loadUserName() {
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
-            String uid = currentUser.getUid();
-
-            db.collection("users").document(uid).get()
-                    .addOnSuccessListener(documentSnapshot -> {
-                        if (documentSnapshot.exists()) {
-                            String nickname = documentSnapshot.getString("nickname");
-                            tvUserName.setText(nickname != null ? nickname + " 봉사님 반갑습니다" : "봉사님 반갑습니다");
-                        } else {
-                            tvUserName.setText("봉사님 반갑습니다");
-                            Toast.makeText(getContext(), "User data not found.", Toast.LENGTH_SHORT).show();
-                        }
-                    })
-                    .addOnFailureListener(e -> {
+        String userId = mAuth.getCurrentUser().getUid();
+        db.collection("users").document(userId).get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        String nickname = documentSnapshot.getString("nickname");
+                        tvUserName.setText(nickname != null ? nickname + " 봉사님 반갑습니다" : "봉사님 반갑습니다");
+                    } else {
                         tvUserName.setText("봉사님 반갑습니다");
-                        Toast.makeText(getContext(), "Failed to load user data.", Toast.LENGTH_SHORT).show();
-                    });
-        } else {
-            tvUserName.setText("봉사님 반갑습니다");
+                        Toast.makeText(getContext(), "사용자 정보를 찾을 수 없습니다.", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    tvUserName.setText("봉사님 반갑습니다");
+                    Toast.makeText(getContext(), "사용자 정보를 불러오는 데 실패했습니다.", Toast.LENGTH_SHORT).show();
+                });
+    }
+
+    private void loadTodoList() {
+        String userId = mAuth.getCurrentUser().getUid();
+        db.collection("users").document(userId).collection("events").get()
+                .addOnSuccessListener(querySnapshot -> {
+                    if (!querySnapshot.isEmpty()) {
+                        List<Event> eventsList = new ArrayList<>();
+                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+                        String today = sdf.format(new Date());
+
+                        for (DocumentSnapshot document : querySnapshot.getDocuments()) {
+                            String date = document.getId();
+                            String event = document.getString("event");
+
+                            try {
+                                if (sdf.parse(date).compareTo(sdf.parse(today)) >= 0) {
+                                    eventsList.add(new Event(date, event));
+                                }
+                            } catch (ParseException e) {
+                                e.printStackTrace();
+                            }
+                        }
+
+                        // 날짜순 정렬
+                        Collections.sort(eventsList, Comparator.comparing(event -> {
+                            try {
+                                return sdf.parse(event.getDate());
+                            } catch (ParseException e) {
+                                e.printStackTrace();
+                                return null;
+                            }
+                        }));
+
+                        updateTodoList(eventsList);
+                    } else {
+                        tvTodoList.setText("등록된 일정이 없습니다.");
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    tvTodoList.setText("일정을 불러오는 데 실패했습니다.");
+                    Toast.makeText(getContext(), "일정을 불러오는 데 실패했습니다.", Toast.LENGTH_SHORT).show();
+                });
+    }
+
+    private void updateTodoList(List<Event> eventsList) {
+        if (eventsList.isEmpty()) {
+            tvTodoList.setText("등록된 일정이 없습니다.");
+            return;
         }
+
+        StringBuilder todoText = new StringBuilder("할일 목록:\n");
+        for (Event event : eventsList) {
+            todoText.append(event.getDate()).append(": ").append(event.getEvent()).append("\n");
+        }
+        tvTodoList.setText(todoText.toString());
     }
 
     private void setupButtonListeners(View view) {
@@ -149,5 +189,24 @@ public class HomeFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         sliderHandler.removeCallbacks(sliderRunnable);
+    }
+
+    // Event 클래스 정의
+    private static class Event {
+        private final String date;
+        private final String event;
+
+        public Event(String date, String event) {
+            this.date = date;
+            this.event = event;
+        }
+
+        public String getDate() {
+            return date;
+        }
+
+        public String getEvent() {
+            return event;
+        }
     }
 }
