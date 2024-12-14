@@ -32,10 +32,6 @@
         "source": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-main-42:/anim/slide_in_right.xml"
     },
     {
-        "merged": "com.example.volunteerkim.app-debug-40:/layout_fragment_recommendation.xml.flat",
-        "source": "com.example.volunteerkim.app-main-42:/layout/fragment_recommendation.xml"
-    },
-    {
         "merged": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-debug-40:/layout_item_post.xml.flat",
         "source": "/Users/handher0/.gradle/daemon/8.7/com.example.volunteerkim.app-main-42:/layout/item_post.xml"
     },

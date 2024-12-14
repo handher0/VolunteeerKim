@@ -3313,6 +3313,7 @@ id btnSixMonths
 id btnThreeMonths
 id btn_add
 id btn_add_photo
+id btn_add_todo
 id btn_back
 id btn_bug_report
 id btn_cancel
@@ -3352,6 +3353,7 @@ id cache_measures
 id calendarView
 id callMeasure
 id cancel_button
+id card_todo_list
 id carryVelocity
 id cb_terms_1
 id cb_terms_2
@@ -3833,6 +3835,7 @@ id tv_status
 id tv_timestamp
 id tv_title
 id tv_todo_list
+id tv_todo_title
 id tv_user_info
 id tv_user_name
 id tv_volunteer_date

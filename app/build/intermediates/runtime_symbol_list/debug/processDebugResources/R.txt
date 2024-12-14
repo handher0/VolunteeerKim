@@ -3312,6 +3312,7 @@ int id btnSixMonths 0x7f09006f
 int id btnThreeMonths 0x7f090070
 int id btn_add 0x7f090071
 int id btn_add_photo 0x7f090072
+int id btn_add_todo 0x7f09029a
 int id btn_back 0x7f090073
 int id btn_bug_report 0x7f090074
 int id btn_cancel 0x7f090075
@@ -3351,6 +3352,7 @@ int id cache_measures 0x7f090095
 int id calendarView 0x7f090096
 int id callMeasure 0x7f090097
 int id cancel_button 0x7f090098
+int id card_todo_list 0x7f09029b
 int id carryVelocity 0x7f090099
 int id cb_terms_1 0x7f09009a
 int id cb_terms_2 0x7f09009b
@@ -3832,6 +3834,7 @@ int id tv_status 0x7f090274
 int id tv_timestamp 0x7f090277
 int id tv_title 0x7f090278
 int id tv_todo_list 0x7f090299
+int id tv_todo_title 0x7f09029c
 int id tv_user_info 0x7f090279
 int id tv_user_name 0x7f09027a
 int id tv_volunteer_date 0x7f09027b

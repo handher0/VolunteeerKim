@@ -49,24 +49,56 @@
         android:padding="8dp">
 
         <!-- 할 일 목록 -->
-        <LinearLayout
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_todo_list"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:background="#E8F5E9">
+            android:layout_margin="8dp"
+            android:elevation="4dp"
+            app:cardCornerRadius="12dp"
+            app:cardBackgroundColor="#FFFFFF">
 
-            <TextView
-                android:id="@+id/tv_todo_list"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="할일 목록:"
-                android:textSize="16sp"
-                android:textColor="#000"
-                android:padding="8dp" />
-        </LinearLayout>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tv_todo_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="할일 목록"
+                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/tv_todo_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="등록된 일정이 없습니다."
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:lineSpacingExtra="4dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp" />
+
+                <!-- 추가 버튼 -->
+                <Button
+                    android:id="@+id/btn_add_todo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:text="일정 추가"
+                    android:textColor="@color/white"
+                    android:layout_gravity="end" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
 
         <!-- 광고 슬라이드 -->
         <androidx.viewpager2.widget.ViewPager2

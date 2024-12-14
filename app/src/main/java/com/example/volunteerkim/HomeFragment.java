@@ -138,7 +138,7 @@ public class HomeFragment extends Fragment {
             return;
         }
 
-        StringBuilder todoText = new StringBuilder("할일 목록:\n");
+        StringBuilder todoText = new StringBuilder("");
         for (Event event : eventsList) {
             todoText.append(event.getDate()).append(": ").append(event.getEvent()).append("\n");
         }
