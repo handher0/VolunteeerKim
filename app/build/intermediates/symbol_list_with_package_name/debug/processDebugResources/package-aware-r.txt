@@ -1391,7 +1391,6 @@ color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
 color colorAccent
-color colorPrimary
 color colorPrimaryDark
 color colorPrimaryWeak
 color common_google_signin_btn_text_dark
@@ -3198,6 +3197,7 @@ drawable vms
 drawable vms1
 drawable vms2
 font miwon
+font regular
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3314,8 +3314,11 @@ id btnThreeMonths
 id btn_add
 id btn_add_photo
 id btn_back
+id btn_bug_report
 id btn_cancel
+id btn_change_password
 id btn_check_id
+id btn_customer_service
 id btn_delete
 id btn_detail
 id btn_donation
@@ -3323,6 +3326,7 @@ id btn_free
 id btn_google_login
 id btn_help
 id btn_login
+id btn_logout
 id btn_mate
 id btn_menu
 id btn_next
@@ -3335,6 +3339,7 @@ id btn_save
 id btn_search
 id btn_send_comment
 id btn_submit
+id btn_submit_bug_report
 id btn_total_time
 id btn_upload_photo
 id buttonAddFriend
@@ -3431,10 +3436,14 @@ id enterAlways
 id enterAlwaysCollapsed
 id escape
 id et_address
+id et_bug_description
 id et_comment
+id et_confirm_password
 id et_content
+id et_current_password
 id et_email
 id et_id
+id et_new_password
 id et_nickname
 id et_password
 id et_password_confirm
@@ -3822,6 +3831,7 @@ id tv_task_1
 id tv_task_2
 id tv_timestamp
 id tv_title
+id tv_user_info
 id tv_user_name
 id tv_volunteer_date
 id tv_volunteer_time
@@ -3991,6 +4001,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_bug_report
 layout fragment_calendar
 layout fragment_chat
 layout fragment_chat_add_friend
@@ -4002,6 +4013,7 @@ layout fragment_community_review_detail
 layout fragment_community_review_post
 layout fragment_home
 layout fragment_my_page
+layout fragment_password_change
 layout fragment_ranking
 layout fragment_recommendation
 layout fragment_total_time

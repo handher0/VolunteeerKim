@@ -2,8 +2,7 @@
 <resources>
     <color name="black">#000000</color>
     <color name="colorAccent">#8BC34A</color>
-    <color name="colorPrimary">#8CE577</color>
-    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="colorPrimaryDark">#7ECC6C</color>
     <color name="colorPrimaryWeak">#EAF8E4</color>
     <color name="dividerColor">#EEEEEE</color>
     <color name="gray">#757575</color>
@@ -32,6 +31,8 @@
         <item name="colorPrimary">#83B98D</item> 
         <item name="colorPrimaryDark">#6BD5AE</item> 
         <item name="colorAccent">#FFFFFF</item> 
+        <item name="android:fontFamily">@font/regular</item>
+
     </style>
     <style name="Base.Theme.VolunteerKim" parent="Theme.Material3.DayNight.NoActionBar">
         

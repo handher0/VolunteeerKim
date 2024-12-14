@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if (itemId == R.id.page_5) {
-                    transferTo(MyPageFragment.newInstance("param1", "param2"));
+                    transferTo(MyPageFragment.newInstance(uid));
                     return true;
                 }
                 return false;

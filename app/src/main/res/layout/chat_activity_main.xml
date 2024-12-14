@@ -10,6 +10,7 @@
         android:id="@+id/chatListTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:text="채팅방 목록"
         android:textSize="20sp"
         android:gravity="center"
@@ -30,5 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:text="Add Friends" />
 </LinearLayout>

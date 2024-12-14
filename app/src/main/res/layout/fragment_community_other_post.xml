@@ -182,8 +182,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/selectedGreen"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:text="등록"
-            android:textColor="@color/white" />
+            android:textColor="@color/black" />
     </LinearLayout>
 </LinearLayout>

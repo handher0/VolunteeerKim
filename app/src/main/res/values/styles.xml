@@ -5,5 +5,7 @@
         <item name="colorPrimary">#83B98D</item> <!-- 상단바의 배경색 -->
         <item name="colorPrimaryDark">#6BD5AE</item> <!-- 상태바의 배경색 -->
         <item name="colorAccent">#FFFFFF</item> <!-- 강조 색상 (버튼 등) -->
+        <item name="android:fontFamily">@font/regular</item>
+
     </style>
 </resources>

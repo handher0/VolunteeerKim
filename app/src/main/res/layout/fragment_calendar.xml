@@ -41,6 +41,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/event_edit_text"
         android:layout_marginTop="16dp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:text="일정 저장" />
 
     <!-- 일정 미리보기 리스트 -->
