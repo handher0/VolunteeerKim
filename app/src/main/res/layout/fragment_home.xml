@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#FFFFFF">
 
-    <!-- 상단 유저 정보 및 검색 -->
     <LinearLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
+        android:orientation="vertical">
 
-        android:background="#F5F5F5">
+        <!-- 상단 유저 정보 및 검색 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="#F5F5F5">
 
         <TextView
             android:id="@+id/tv_user_name"
@@ -158,36 +161,37 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <!-- 봉사 정보/리뷰 리스트 -->
-    <TextView
-        android:id="@+id/tv_review_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="봉사 정보/리뷰"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        <!-- 봉사 정보/리뷰 리스트 -->
+        <TextView
+            android:id="@+id/tv_review_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="봉사 정보/리뷰"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-    <!-- 봉사 메이트 섹션 -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_reviews"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_reviews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
 
-    <TextView
-        android:id="@+id/tv_mate_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="봉사 메이트 구해요"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        <!-- 봉사 메이트 섹션 -->
+        <TextView
+            android:id="@+id/tv_mate_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="봉사 메이트 구해요"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_mates"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_mates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
 
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

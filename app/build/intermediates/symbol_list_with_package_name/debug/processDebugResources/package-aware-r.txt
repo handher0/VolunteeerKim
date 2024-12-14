@@ -4008,6 +4008,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dialog_loading
 layout fragment_bug_report
 layout fragment_calendar
 layout fragment_chat

@@ -1,6 +1,7 @@
 package com.example.volunteerkim;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.ClipData;
 import android.content.Intent;
@@ -46,6 +47,7 @@ public class CommunityFragment_other_post extends Fragment {
     private List<Uri> selectedImages = new ArrayList<>();
     private static final int MAX_IMAGES = 5;
     private String boardType;
+    private AlertDialog loadingDialog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -100,9 +102,12 @@ public class CommunityFragment_other_post extends Fragment {
     }
 
     private void submitPost() {
+        showLoadingDialog();
+
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser == null) {
             Toast.makeText(getContext(), "로그인이 필요합니다.", Toast.LENGTH_SHORT).show();
+            hideLoadingDialog();
             return;
         }
 
@@ -132,6 +137,7 @@ public class CommunityFragment_other_post extends Fragment {
                             } catch (ParseException e) {
                                 Log.e("DateParse", "Date parsing failed", e);
                                 Toast.makeText(getContext(), "날짜 형식이 올바르지 않습니다.", Toast.LENGTH_SHORT).show();
+                                hideLoadingDialog();
                                 return;
                             }
                         }
@@ -162,6 +168,7 @@ public class CommunityFragment_other_post extends Fragment {
                 })
                 .addOnFailureListener(e -> {
                     Toast.makeText(getContext(), "게시글 등록에 실패했습니다.", Toast.LENGTH_SHORT).show();
+                    hideLoadingDialog();
                 });
     }
 
@@ -213,6 +220,7 @@ public class CommunityFragment_other_post extends Fragment {
                 .document(postId)
                 .update(updates)
                 .addOnSuccessListener(aVoid -> {
+                    hideLoadingDialog();
                     Toast.makeText(getContext(), "게시글 등록 완료", Toast.LENGTH_SHORT).show();
                     requireActivity().onBackPressed();
                 })
@@ -274,5 +282,20 @@ public class CommunityFragment_other_post extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    private void showLoadingDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+        View dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_loading, null);
+        builder.setView(dialogView);
+        builder.setCancelable(false);  // 뒤로가기 버튼으로 닫을 수 없게 설정
+        loadingDialog = builder.create();
+        loadingDialog.show();
+    }
+
+    private void hideLoadingDialog() {
+        if (loadingDialog != null && loadingDialog.isShowing()) {
+            loadingDialog.dismiss();
+        }
     }
 }
