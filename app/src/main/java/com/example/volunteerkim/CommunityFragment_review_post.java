@@ -56,6 +56,7 @@ public class CommunityFragment_review_post extends Fragment {
     private static final int PICK_IMAGE_REQUEST = 1;
     private List<Uri> selectedImages = new ArrayList<>();
     private static final int MAX_IMAGES = 5;
+    private AlertDialog loadingDialog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -173,9 +174,12 @@ public class CommunityFragment_review_post extends Fragment {
     private void submitPost() {
         if (binding == null) return;
 
+        showLoadingDialog();
+
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser == null) {
             Toast.makeText(getContext(), "로그인이 필요합니다.", Toast.LENGTH_SHORT).show();
+            hideLoadingDialog();
             return;
         }
 
@@ -228,9 +232,11 @@ public class CommunityFragment_review_post extends Fragment {
                                     uploadImages(postId);
                                 } else {
                                     Log.e("PostDebug", "게시물 ID가 null 또는 비어있음");
+                                    hideLoadingDialog();
                                 }
                             } else {
                                 Log.e("PostDebug", "게시물 저장 실패", task.getException());
+                                hideLoadingDialog();
                             }
                         });
                     }
@@ -427,6 +433,7 @@ public class CommunityFragment_review_post extends Fragment {
                 .document(postId)
                 .update(updates)
                 .addOnSuccessListener(aVoid -> {
+                    hideLoadingDialog();
                     if (getContext() != null) {  // Context null 체크 추가
                         Toast.makeText(getContext(), "리뷰 등록 완료", Toast.LENGTH_SHORT).show();
                     }
@@ -446,7 +453,20 @@ public class CommunityFragment_review_post extends Fragment {
         return str == null || str.trim().isEmpty();
     }
 
+    private void showLoadingDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+        View dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_loading, null);
+        builder.setView(dialogView);
+        builder.setCancelable(false);  // 뒤로가기 버튼으로 닫을 수 없게 설정
+        loadingDialog = builder.create();
+        loadingDialog.show();
+    }
 
+    private void hideLoadingDialog() {
+        if (loadingDialog != null && loadingDialog.isShowing()) {
+            loadingDialog.dismiss();
+        }
+    }
 
 }
 

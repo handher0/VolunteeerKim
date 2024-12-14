@@ -192,6 +192,10 @@
         "source": "com.example.volunteerkim.app-main-42:/layout/activity_post_list.xml"
     },
     {
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_dialog_loading.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/dialog_loading.xml"
+    },
+    {
         "merged": "com.example.volunteerkim.app-debug-40:/layout_fragment_calendar.xml.flat",
         "source": "com.example.volunteerkim.app-main-42:/layout/fragment_calendar.xml"
     },
