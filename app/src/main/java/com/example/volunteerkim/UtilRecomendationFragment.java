@@ -5,12 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class UtilRecomendationFragment extends Fragment {
@@ -18,14 +18,18 @@ public class UtilRecomendationFragment extends Fragment {
     private int currentQuestionIndex = 0; // 현재 질문 인덱스
     private int[] scores = {0, 0, 0, 0}; // 선택지 점수 저장 (4개의 유형)
 
-    private TextView tvQuestion;
-    private RadioGroup rgOptions;
-    private Button btnNext;
+    private View startLayout;
     private View questionLayout;
     private View resultLayout;
+
+    private TextView tvQuestion;
+    private RadioGroup rgOptions;
+    private Button btnStart;
+    private Button btnNext;
     private TextView tvResultTitle;
     private TextView tvResultDescription;
     private Button btnRetry;
+    private ImageButton btnBack;
 
     private final String[] questions = {
             "Q1. 어떤 봉사 활동이 가장 흥미롭게 들리나요?",
@@ -70,6 +74,10 @@ public class UtilRecomendationFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_recommendation, container, false);
 
+        // 시작 레이아웃
+        startLayout = view.findViewById(R.id.start_layout);
+        btnStart = view.findViewById(R.id.btn_start);
+
         // 질문 레이아웃
         questionLayout = view.findViewById(R.id.question_layout);
         tvQuestion = view.findViewById(R.id.tv_question);
@@ -82,15 +90,24 @@ public class UtilRecomendationFragment extends Fragment {
         tvResultDescription = view.findViewById(R.id.tv_result_description);
         btnRetry = view.findViewById(R.id.btn_retry);
 
-        // 첫 번째 질문 로드
-        loadQuestion();
+        // 뒤로가기 버튼
+        btnBack = view.findViewById(R.id.btn_back);
+        btnBack.setOnClickListener(v -> requireActivity().onBackPressed());
 
+        // 시작 버튼 클릭 시 첫 번째 질문으로 이동
+        btnStart.setOnClickListener(v -> {
+            startLayout.setVisibility(View.GONE);
+            questionLayout.setVisibility(View.VISIBLE);
+            loadQuestion();
+        });
+
+        // 다음 버튼 클릭
         btnNext.setOnClickListener(v -> {
             if (rgOptions.getCheckedRadioButtonId() == -1) {
-                return;
+                return; // 선택하지 않은 경우
             }
 
-            // 선택한 답변의 점수 누적
+            // 선택한 답변의 점수 계산
             RadioButton selectedOption = view.findViewById(rgOptions.getCheckedRadioButtonId());
             int selectedIndex = rgOptions.indexOfChild(selectedOption);
             for (int i = 0; i < scores.length; i++) {
@@ -106,6 +123,7 @@ public class UtilRecomendationFragment extends Fragment {
             }
         });
 
+        // 다시 하기 버튼 클릭
         btnRetry.setOnClickListener(v -> resetTest());
 
         return view;
@@ -117,7 +135,6 @@ public class UtilRecomendationFragment extends Fragment {
         for (String option : options[currentQuestionIndex]) {
             RadioButton radioButton = new RadioButton(getContext());
             radioButton.setText(option);
-            radioButton.setTextSize(16);
             rgOptions.addView(radioButton);
         }
         rgOptions.clearCheck();
@@ -126,6 +143,7 @@ public class UtilRecomendationFragment extends Fragment {
     }
 
     private void showResult() {
+        // 점수 배열에서 최대값의 인덱스 찾기
         int maxScoreIndex = 0;
         for (int i = 1; i < scores.length; i++) {
             if (scores[i] > scores[maxScoreIndex]) {
@@ -133,16 +151,23 @@ public class UtilRecomendationFragment extends Fragment {
             }
         }
 
+        // 결과 제목과 설명 설정
         tvResultTitle.setText(results[maxScoreIndex]);
         tvResultDescription.setText(descriptions[maxScoreIndex]);
 
+        // 결과 레이아웃 표시
         questionLayout.setVisibility(View.GONE);
         resultLayout.setVisibility(View.VISIBLE);
     }
 
     private void resetTest() {
+        // 테스트 상태 초기화
         currentQuestionIndex = 0;
-        scores = new int[]{0, 0, 0, 0};
-        loadQuestion();
+        scores = new int[]{0, 0, 0, 0}; // 점수 초기화
+
+        // 레이아웃 초기화
+        startLayout.setVisibility(View.VISIBLE);
+        questionLayout.setVisibility(View.GONE);
+        resultLayout.setVisibility(View.GONE);
     }
 }

@@ -3337,6 +3337,7 @@ int id btn_review 0x7f090088
 int id btn_save 0x7f090089
 int id btn_search 0x7f09008a
 int id btn_send_comment 0x7f09008b
+int id btn_start 0x7f090296
 int id btn_submit 0x7f09008c
 int id btn_submit_bug_report 0x7f09008d
 int id btn_total_time 0x7f09008e
@@ -3739,6 +3740,7 @@ int id start 0x7f09021a
 int id startHorizontal 0x7f09021b
 int id startToEnd 0x7f09021c
 int id startVertical 0x7f09021d
+int id start_layout 0x7f090297
 int id staticLayout 0x7f09021e
 int id staticPostLayout 0x7f09021f
 int id stop 0x7f090220
@@ -3825,11 +3827,11 @@ int id tv_reply_timestamp 0x7f090270
 int id tv_result_description 0x7f090271
 int id tv_result_title 0x7f090272
 int id tv_review_title 0x7f090273
+int id tv_start_title 0x7f090298
 int id tv_status 0x7f090274
-int id tv_task_1 0x7f090275
-int id tv_task_2 0x7f090276
 int id tv_timestamp 0x7f090277
 int id tv_title 0x7f090278
+int id tv_todo_list 0x7f090299
 int id tv_user_info 0x7f090279
 int id tv_user_name 0x7f09027a
 int id tv_volunteer_date 0x7f09027b
