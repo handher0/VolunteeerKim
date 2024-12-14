@@ -20,12 +20,12 @@
         "source": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-main-42:\\layout\\fragment_chat_add_friend.xml"
     },
     {
-        "merged": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-debug-40:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-main-42:\\mipmap-xxhdpi\\ic_launcher_round.webp"
-    },
-    {
         "merged": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-debug-40:\\layout_fragment_password_change.xml.flat",
         "source": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-main-42:\\layout\\fragment_password_change.xml"
+    },
+    {
+        "merged": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-debug-40:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-main-42:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
         "merged": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-debug-40:\\layout_chat_item_date_header.xml.flat",
@@ -188,6 +188,10 @@
         "source": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-main-42:\\layout\\login_intro.xml"
     },
     {
+        "merged": "com.example.volunteerkim.app-debug-40:/layout_dialog_loading.xml.flat",
+        "source": "com.example.volunteerkim.app-main-42:/layout/dialog_loading.xml"
+    },
+    {
         "merged": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-debug-40:\\anim_slide_in_right.xml.flat",
         "source": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-main-42:\\anim\\slide_in_right.xml"
     },
@@ -322,10 +326,6 @@
     {
         "merged": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-debug-40:\\drawable_rounded_button.xml.flat",
         "source": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-main-42:\\drawable\\rounded_button.xml"
-    },
-    {
-        "merged": "com.example.volunteerkim.app-debug-40:/layout_fragment_home.xml.flat",
-        "source": "com.example.volunteerkim.app-main-42:/layout/fragment_home.xml"
     },
     {
         "merged": "C:\\Users\\cnryw\\.gradle\\daemon\\8.7\\com.example.volunteerkim.app-debug-40:\\layout_fragment_total_time.xml.flat",

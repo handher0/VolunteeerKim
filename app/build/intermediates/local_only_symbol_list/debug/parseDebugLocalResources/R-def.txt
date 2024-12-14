@@ -212,6 +212,7 @@ layout chat_activity_room
 layout chat_item_date_header
 layout chat_item_list
 layout chat_item_message
+layout dialog_loading
 layout fragment_bug_report
 layout fragment_calendar
 layout fragment_chat

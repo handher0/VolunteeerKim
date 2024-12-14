@@ -3995,6 +3995,7 @@ int layout design_navigation_menu 0x7f0c0032
 int layout design_navigation_menu_item 0x7f0c0033
 int layout design_text_input_end_icon 0x7f0c0034
 int layout design_text_input_start_icon 0x7f0c0035
+int layout dialog_loading 0x7f0c008d
 int layout fragment_bug_report 0x7f0c0036
 int layout fragment_calendar 0x7f0c0037
 int layout fragment_chat 0x7f0c0038
