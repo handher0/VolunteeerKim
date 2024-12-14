@@ -19,7 +19,7 @@
             android:id="@+id/textViewLeftMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/black"
             android:textSize="16sp"
             android:maxWidth="250dp"
             android:padding="8dp" />
@@ -28,7 +28,7 @@
             android:id="@+id/textViewLeftTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#BDBDBD"
+            android:textColor="@color/black"
             android:layout_marginTop="4dp"
             android:textSize="12sp" />
     </LinearLayout>
@@ -48,7 +48,7 @@
             android:id="@+id/textViewRightMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/black"
             android:textSize="16sp"
             android:maxWidth="250dp"
             android:padding="8dp" />
@@ -57,7 +57,7 @@
             android:id="@+id/textViewRightTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#BDBDBD"
+            android:textColor="@color/black"
             android:layout_marginTop="4dp"
             android:textSize="12sp" />
     </LinearLayout>

@@ -20,5 +20,7 @@
         android:id="@+id/btn_submit_bug_report"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:text="버그 제출"/>
 </LinearLayout>

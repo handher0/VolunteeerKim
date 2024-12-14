@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="16dp"
+
         android:background="#F5F5F5">
 
         <TextView
@@ -112,12 +113,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/black"
                 android:text="총 봉사시간" />
 
             <Button
                 android:id="@+id/btn_donation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/black"
                 android:layout_marginEnd="8dp"
                 android:text="봉사 달력" />
 
@@ -126,12 +131,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/black"
                 android:text="봉사 랭킹" />
 
             <Button
                 android:id="@+id/btn_recommendation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/black"
                 android:text="봉사 추천" />
         </LinearLayout>
     </HorizontalScrollView>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- 기본 테마 색상 -->
-    <color name="colorPrimary">#8CE577</color>  <!-- 초록색 계열 메인 색상 -->
-    <color name="colorPrimaryDark">#8CE577</color>
+
+    <color name="colorPrimaryDark">#7ECC6C</color>
     <color name="colorPrimaryWeak">#EAF8E4</color>
     <color name="colorAccent">#8BC34A</color>
 

@@ -1390,7 +1390,6 @@ int color cardview_light_background 0x7f050031
 int color cardview_shadow_end_color 0x7f050032
 int color cardview_shadow_start_color 0x7f050033
 int color colorAccent 0x7f050034
-int color colorPrimary 0x7f050035
 int color colorPrimaryDark 0x7f050036
 int color colorPrimaryWeak 0x7f050037
 int color common_google_signin_btn_text_dark 0x7f050038

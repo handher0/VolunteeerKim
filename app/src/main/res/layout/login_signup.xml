@@ -34,6 +34,8 @@
                 android:layout_height="wrap_content"
                 android:text="중복확인"
                 android:textSize="12sp"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/black"
                 android:padding="8dp" />
         </LinearLayout>
 
@@ -92,9 +94,9 @@
             android:id="@+id/btn_next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#F4A8A8"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:text="Next"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/black"
             android:textSize="16sp"
             android:layout_marginTop="16dp"
             android:padding="12dp" />

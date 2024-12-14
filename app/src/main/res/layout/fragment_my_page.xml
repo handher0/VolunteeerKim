@@ -56,6 +56,8 @@
         android:id="@+id/btn_change_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="@color/black"
         android:text="비밀번호 변경"
         android:layout_marginBottom="12dp" />
 
@@ -64,8 +66,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="로그아웃"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:textColor="@android:color/white"
+        android:backgroundTint="@color/colorPrimaryWeak"
+        android:textColor="@android:color/black"
         android:layout_marginBottom="12dp" />
 
     <Button
@@ -73,11 +75,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="고객센터"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="@color/black"
         android:layout_marginBottom="12dp" />
 
     <Button
         android:id="@+id/btn_bug_report"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="@color/black"
         android:text="버그 문의" />
 </LinearLayout>

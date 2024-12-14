@@ -6,7 +6,6 @@ anim slide_out_left
 anim slide_out_right
 color black
 color colorAccent
-color colorPrimary
 color colorPrimaryDark
 color colorPrimaryWeak
 color dividerColor

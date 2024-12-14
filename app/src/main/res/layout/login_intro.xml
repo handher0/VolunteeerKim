@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_gradient"
+    android:background="#BCC1EDA9"
     tools:context=".IntroActivity">
 
     <!-- 상단 제목 -->
@@ -46,25 +46,26 @@
             android:layout_height="wrap_content">
 
             <!-- 로그인 버튼 -->
+
+            <!-- 회원가입 버튼 -->
             <Button
                 android:id="@+id/loginBtn"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_margin="2dp"
                 android:text="로그인"
-                android:backgroundTint="#83B98D"
-                android:textColor="#FFFFFF"
-                android:layout_gravity="center_horizontal" />
+                android:backgroundTint="@color/colorPrimaryWeak"
+                android:textColor="@color/black" />
 
-            <!-- 회원가입 버튼 -->
             <Button
                 android:id="@+id/joinBtn"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_margin="2dp"
                 android:text="회원가입"
-                android:backgroundTint="#6BD5AE"
-                android:textColor="#FFFFFF"
+                android:backgroundTint="@color/colorPrimaryWeak"
+                android:textColor="@color/black"
                 android:layout_gravity="center_horizontal" />
 
             <!-- Google 계정으로 로그인 버튼 -->
@@ -76,7 +77,7 @@
                 android:orientation="horizontal"
                 android:gravity="center"
                 android:background="@drawable/rounded_button"
-                android:backgroundTint="@color/lightGray"
+                android:backgroundTint="@color/colorPrimaryWeak"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp">
 
