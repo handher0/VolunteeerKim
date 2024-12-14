@@ -41,3 +41,12 @@ google-services.json
 
 # OS-specific files
 .DS_Store
+
+# Android Studio 빌드 파일 무시
+app/build/
+.idea/
+*.apk
+*.dex
+*.xml
+*.json
+*.txt
