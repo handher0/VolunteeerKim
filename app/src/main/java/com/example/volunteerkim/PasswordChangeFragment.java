@@ -40,11 +40,10 @@ public class PasswordChangeFragment extends Fragment {
     }
 
     private void changePassword() {
-        String currentPassword = etCurrentPassword.getText().toString().trim();
         String newPassword = etNewPassword.getText().toString().trim();
         String confirmPassword = etConfirmPassword.getText().toString().trim();
 
-        if (TextUtils.isEmpty(currentPassword) || TextUtils.isEmpty(newPassword) || TextUtils.isEmpty(confirmPassword)) {
+        if (TextUtils.isEmpty(newPassword) || TextUtils.isEmpty(confirmPassword)) {
             Toast.makeText(getContext(), "모든 필드를 입력해주세요.", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -55,22 +54,18 @@ public class PasswordChangeFragment extends Fragment {
         }
 
         FirebaseUser user = auth.getCurrentUser();
-        if (user != null && user.getEmail() != null) {
-            auth.signInWithEmailAndPassword(user.getEmail(), currentPassword)
-                    .addOnCompleteListener(task -> {
-                        if (task.isSuccessful()) {
-                            user.updatePassword(newPassword)
-                                    .addOnCompleteListener(updateTask -> {
-                                        if (updateTask.isSuccessful()) {
-                                            Toast.makeText(getContext(), "비밀번호가 변경되었습니다.", Toast.LENGTH_SHORT).show();
-                                        } else {
-                                            Toast.makeText(getContext(), "비밀번호 변경에 실패했습니다.", Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
+        if (user != null) {
+            user.updatePassword(newPassword)
+                    .addOnCompleteListener(updateTask -> {
+                        if (updateTask.isSuccessful()) {
+                            Toast.makeText(getContext(), "비밀번호가 변경되었습니다.", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(getContext(), "현재 비밀번호가 잘못되었습니다.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "비밀번호 변경에 실패했습니다: " + updateTask.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
+        } else {
+            Toast.makeText(getContext(), "사용자 인증 정보가 없습니다.", Toast.LENGTH_SHORT).show();
         }
     }
+
 }

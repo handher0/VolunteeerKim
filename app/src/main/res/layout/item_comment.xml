@@ -53,8 +53,9 @@
             android:id="@+id/btn_reply"
             android:layout_width="wrap_content"
             android:layout_height="32dp"
+            android:paddingBottom="0dp"
             android:text="답글"
-            android:textSize="12sp"
+            android:textSize="12dp"
             style="@style/Widget.MaterialComponents.Button.TextButton"/>
     </LinearLayout>
 
