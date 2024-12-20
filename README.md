@@ -23,8 +23,7 @@
 |:---:|:---:|:---:|
 |숭실대학교|숭실대학교|숭실대학교|
 |김성혁|손영웅|추교준|
-|[@leegh1025](https://github.com/leegh1025)|[@hander0](https://github.com/hander0)|[@wldy4627](https://github.com/wldy4627)|[@jihunjourney](https://github.com/jihunjourney)|[@yumin22](https://github.com/yumin22)|
-
+|[@Bighead-Kor](https://github.com/Bighead-Kor)|[@hander0](https://github.com/hander0)|[@chubeloop](https://github.com/chubeloop)|
 ## 🛠️ Tech
 [JAVA]  [FIREBASE]
 
